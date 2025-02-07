@@ -1,0 +1,2838 @@
+Received: from VI1PR02MB5808.eurprd02.prod.outlook.com (2603:10a6:803:132::19)
+ by AM7PR02MB6241.eurprd02.prod.outlook.com with HTTPS; Thu, 6 Feb 2025
+ 15:43:04 +0000
+Received: from PR1P264CA0123.FRAP264.PROD.OUTLOOK.COM (2603:10a6:102:2cd::8)
+ by VI1PR02MB5808.eurprd02.prod.outlook.com (2603:10a6:803:132::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8398.24; Thu, 6 Feb
+ 2025 15:41:46 +0000
+Received: from AM4PEPF00025F95.EURPRD83.prod.outlook.com
+ (2603:10a6:102:2cd:cafe::15) by PR1P264CA0123.outlook.office365.com
+ (2603:10a6:102:2cd::8) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8398.28 via Frontend Transport; Thu,
+ 6 Feb 2025 15:41:46 +0000
+Authentication-Results: spf=pass (sender IP is 20.93.241.196)
+ smtp.mailfrom=email.belgiantrain.be; dkim=pass (signature was verified)
+ header.d=email.belgiantrain.be;dmarc=pass action=none
+ header.from=email.belgiantrain.be;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of email.belgiantrain.be
+ designates 20.93.241.196 as permitted sender)
+ receiver=protection.outlook.com; client-ip=20.93.241.196;
+ helo=r196.belgiantrain.test.cjmadobe.com; pr=C
+Received: from r196.belgiantrain.test.cjmadobe.com (20.93.241.196) by
+ AM4PEPF00025F95.mail.protection.outlook.com (10.167.16.4) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8445.2 via Frontend Transport; Thu, 6 Feb 2025 15:41:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=email.belgiantrain.be; s=belgiantrain; t=1738856504;
+	bh=hCDEh3iuaZH8fy9ZdOtLaQhwB9GDGihNPiYebD77lZQ=;
+	h=Content-Type:Message-ID:To:Date:MIME-Version:Subject:From;
+	b=EXTNiEqLb+RG+F/Jnxj6SwDlMPboG34WGllC46t9axa9OzRyJjEkTtxM35SaabY/b
+	 2HuWft2gaGG6EaEZeQN10qttB7NLY0Pfmw69QKlEwPGZjkkBkQonvRZ+TXD2FuRJ7G
+	 EwUiHx+0Rz2U6VdX0ihaax2ogXTn5gqh0t6UYqM/Tx7hLl5ViYE7zKVbzTiI/d4+0G
+	 0f7n4g8cYq1jkt5y6zXEwsWR/MPwKqqQoAmRy8b1gKhm18KctBNG2ROE5Dbee8SC+l
+	 CjDzrJai9ErVHQzrZd1La0+2Oqj7nWFkTn7+3TXtlO45B/f2b8AK9PEXpBUhZC2gwe
+	 bnyws363shmuQ==
+X-MSFBL: C+di9EOrFU9ChRcidGmHpaYHB1t/hiyzXWzcvPM9DnU=|eyJtZXNzYWdlX2lkIjo
+	iMDAwMDM4ZDhhNDY3YzRkMTNiOGIiLCJiIjoiYWZmaW5pdHlfZDBkMGJjZmMtNzM
+	0Yy00YmVjLWE2ZDYtZGY4ZjBmMzQ3YjYzX2JhdGNoXzIwLjkzLjI0MS4xOTYiLCJ
+	yY3B0X21ldGEiOnsgImVuY3J5cHQiOiAidjEuX0pTOHBxMGVGQjQwMmFwY0lLTzF
+	mbG1fc3lyX1N3RU4wdzBfb2E4RVM3VmREdDNtNHh6UlpITmNzUEFEOEVtdW5NaWN
+	PSEw5dEh4Z0MxS0EzaVZDTTFqVEhONUFOWDExSTJzNDFnSDVwQ2JwNXRsRXRBWE9
+	5ZTU2T2hMU011TXpjUUVqalBJNEJnMmNEUjlDUGZZY2M1MFpGS0JVb0t1OXdxakl
+	KR2FGWmwydkVIZVY1TjBzY1J2OGUzb25ESko5eE9SRDNUQ2YzVHFxSi04a1VXVll
+	6dS1xNV84Q3J1TlVrLXd6ZFJtYWNxM2xBMVl3SjRpcDlPdnM3ai1uRldwTEZfSlJ
+	HZklUQUNpRE1Ka0l4UHFxWHJHR05uVTAyRk1qTWtvcWM1WXF0dlk2Y3A4T3pVU21
+	RNlMxazBPVkVmSDZDc1FlTWdlX09pVEl2Ylo0WW12bnVTQ1FyMXVFYVJZbFNTR1l
+	Qek12ZHBWa0JYNi1kWFBJNnRqdzBHTzFkNG5yMDF3VDVMWnlEQXJwR3oyZVhTbE5
+	6bDBZSjRiUU5wc20zSUFyajBOM0ZqcC0weEQwcUVzM2ZuUVlfRlUxN01rdDlESGR
+	UWG1GS202ZjVWeG5OTmJJMGVtOFY3UENtRGtrZ3VONWc0R2d4USIgfSwiZyI6ImF
+	mZmluaXR5X2QwZDBiY2ZjLTczNGMtNGJlYy1hNmQ2LWRmOGYwZjM0N2I2M19iYXR
+	jaCIsImNhbXBhaWduX2lkIjoiUE1BLTg5MDc1NzMyIiwic25pcHBldF9jb3VudCI
+	6IjAiLCJjdXN0b21lcl9pZCI6IjEiLCJyIjoiYW5kcmVhcy5vbGlkaXNAYmVsZ2l
+	hbnRyYWluLmJlIiwicmNwdF90YWdzIjpbIF0sInRlbXBsYXRlX2NvbnRlbnRfdHl
+	wZSI6ImlubGluZV9wYXJ0c193aXRoX3N1YnN0aXR1dGlvbnMiLCJ0ZW1wbGF0ZV9
+	2ZXJzaW9uIjoiMCIsInN1YmFjY291bnRfaWQiOiIwIiwidGVtcGxhdGVfaWQiOiJ
+	0ZW1wbGF0ZV8xNDQ5MjUzNTI1MTE0MTM5NCIsInRyYW5zbWlzc2lvbl9pZCI6IjE
+	0NDkyNTM1MjUxMTQxMzk0IiwidGVuYW50X2lkIjoia2V5c3BhY2VfZGVmYXVsdCJ
+	9
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+x-ess-validity: 1739158904
+x-message-profile-id: 05345e36-dbfc-49cd-b664-6290f050bec8
+Message-ID: <05345e36-dbfc-49cd-b664-6290f050bec8@email.belgiantrain.be>
+x-request-id: d64b63e0-e4a0-11ef-911f-f3b58fb4e7e3-7c2e60c6-4e979d55-01a2099a-b62c-4f16-a2dc-f18d4eeb75fb
+To: andreas.olidis@belgiantrain.be
+Date: Thu, 06 Feb 2025 15:41:44 +0000
+Reply-To: debanjana.bhattacharya@ext.belgiantrain.be
+Subject: [Proof]  To be define
+x-message-type: marketing
+From: "nmbs-sncb" <info@email.belgiantrain.be>
+x-unsubscribe-email: unsubscribe@email.belgiantrain.be
+x-affinity-id: d0d0bcfc-734c-4bec-a6d6-df8f0f347b63
+x-execution-mode: batch
+x-msg-execution-id: PMA-89075732
+Return-Path: error@email.belgiantrain.be
+X-MS-Exchange-Organization-ExpirationStartTime: 06 Feb 2025 15:41:45.9907
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 4dbd7e1f-fa16-41fa-318b-08dd46c4c342
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 7919ea65-4c52-4980-bfcd-ce7ffd32f1ea:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM4PEPF00025F95:EE_|VI1PR02MB5808:EE_|AM7PR02MB6241:EE_
+X-MS-Exchange-Organization-AuthSource: AM4PEPF00025F95.EURPRD83.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 4dbd7e1f-fa16-41fa-318b-08dd46c4c342
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|5073199012|4123199012|5063199012|69100299015|1032899013|13003099007|8096899003|2066899003|43540500003;
+X-Forefront-Antispam-Report: CIP:20.93.241.196;CTRY:NL;LANG:fr;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:r196.belgiantrain.test.cjmadobe.com;PTR:r196.belgiantrain.test.cjmadobe.com;CAT:NONE;SFTY:9.25;SFS:(13230040)(5073199012)(4123199012)(5063199012)(69100299015)(1032899013)(13003099007)(8096899003)(2066899003)(43540500003);DIR:INB;SFTY:9.25;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Feb 2025 15:41:45.9595
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4dbd7e1f-fa16-41fa-318b-08dd46c4c342
+X-MS-Exchange-CrossTenant-Id: 7919ea65-4c52-4980-bfcd-ce7ffd32f1ea
+X-MS-Exchange-CrossTenant-AuthSource: AM4PEPF00025F95.EURPRD83.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR02MB5808
+X-MS-Exchange-Transport-EndToEndLatency: 00:01:18.8878598
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8422.008
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003)(1420198);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?aW9KbjhlZ0MwdkJvRHJLSFRNOWhuT0Z0enlYWG9YaUtqak4zcDMwck1UM3h1?=
+ =?utf-8?B?WkRSbHBXcGY2SDhhZEh4bUZKcGZKWThmNXVWeWQxYUt5WVBsS01FTXJNSHhB?=
+ =?utf-8?B?MFBXczNSUEhTWjlyVjdvTnkvZis5SXRJK3VVVmVJaDN6UUllaTlRZDhrWkEz?=
+ =?utf-8?B?Tk9RSjc5K3Y3YTdURWNjcGcwRHhUc1RMdXpFMzVyR21mV3JEWDQ2alFpUGJ4?=
+ =?utf-8?B?Yy8yN2xvbmdBS2JvNWc3ejBZWGF0dmVSRi9HSDlrd0hVaVQ1TXU1dWtOaEhu?=
+ =?utf-8?B?Rkh0Q0tVWG1uZFluYzFKbXlobnBBV1ZLV1dialQ3ZC9BNTJYT2FlSDBxRmdY?=
+ =?utf-8?B?R2IyTU9DUllFRjZTeEdkVEFQTEFmeEVHT2JJNndTSnlGUU1SVUxUeEhaWVBo?=
+ =?utf-8?B?OUNSK1dSbVViZHJYSXB5RExqcWljRUtlK3NxOW1BSzhzR3RLbFBuWTN1bkor?=
+ =?utf-8?B?TE9oL1hyNkZNWjNKekduSlJ0c2lmSC9mTVR1c3RUa2lhWGxTdTExdk1KcGFl?=
+ =?utf-8?B?UGZHZisvbGtacHA1K2crNmRUeVpXaVNVd3VjRnErQnl0MVd2WUVzR2puaWx6?=
+ =?utf-8?B?cmRDVlRQanlPSEc1UlRTckJ6YUlnT3Y4Q29PQlloLytFdi8yMFhNeXFVcjIr?=
+ =?utf-8?B?ZitKOWFiMVhiYlMzRkhIM0oyYnpVMlhqd0o1aHlvd0Q1amphdTR3Y0d6eitB?=
+ =?utf-8?B?N2hpYWhmaHYyQlhrd2xxeG5RWUlTaksrbkg3d3dhVjdqUGU2MzQ5RUM2OUoz?=
+ =?utf-8?B?ZnlGeGJKdS94UXB3NjYrbXcxaUJmYTFSTUxJSkJncG0yYU5WZnp1ZGRDbUxt?=
+ =?utf-8?B?cGs5UzdUOUtFT3gwOFByb0d4SzZLd0krNFFxSzR0THJ2TzhHMUdFRkl5eXpR?=
+ =?utf-8?B?ZU9iRlRPU3lOQ0RITUJGMkJxOEtLV1JrRWhkbjVZQTlRc0V6eU1kY3Q4VW81?=
+ =?utf-8?B?NWVVQTBhWlA4NXNWWUhzN3F6ZkZlWkVQdzF6QndBbFJSZkZucDJlOTM4NGlP?=
+ =?utf-8?B?RGRabzU1QlNmKzlsQzZ2amM1U3lyUXBGdEFKUDJlekx6VjFDUmUxbCtXMktK?=
+ =?utf-8?B?VFdCazAxb3lpWC9VOEFSMlppRDJUZWQyTWNERjJ4Q2pVYkVXbTdRSFN4Rmw3?=
+ =?utf-8?B?M1V0azUvRkRGNC9GZEVXZ0dkUUQxbUQ3bm1aU3RMVWdwZndHSnh2a0toMlQ3?=
+ =?utf-8?B?RWg5NWtLOE9GM0ZMSWxDNExWa3kvbjlia0VwMlFmWlRNcDlsQit2RHVOZFdX?=
+ =?utf-8?B?UXlGbFZjeFpJaGhTN3BBeEpiQzRvRnFFKzhUMjFpQzFDNDhMR1lYSEpZdGZQ?=
+ =?utf-8?B?TXF6RmE2TzJoUy9lTDFPRUFLUlEvODZQcE5zaXFjb05XbTlnbjF5dHRtM1hx?=
+ =?utf-8?B?aWl6VkdYeVQ2OXZSV3RLTkhnaFhZZ3dlRnhHT01ENU5ucDhDSTVDMnp6S0I3?=
+ =?utf-8?B?ZEcwNmtiTnJLOTVDTS96eUNEQUJZa1hlVitraWNOaFVjVWM5ZUpkVVM1TFhH?=
+ =?utf-8?B?dU82azJZY3YxWnVsOTg2RnVnaTl5T3FBaVd0bUk1dUtXT2xiZDJuQ3ppMkg5?=
+ =?utf-8?B?UUs5K3A0ejVmdGV4aFZYR05DSEkrOEczNEUyYm5EUGlxbThTenhaczJRRjNn?=
+ =?utf-8?B?SjFRTmZtZEFhRFdOQ3FEaXd6TFhNUElPSVlwUkQ2ZmpKSkRpQmtLaGpiRmxt?=
+ =?utf-8?B?UkNuTzlMY0NIQTdxMzZCV1JYNWlVWlIrYnUyRkZlTnRVcmtQMTMyWUdwQ1Mr?=
+ =?utf-8?B?WUJtMUIvNFRqQWtFNHpKUGY1Ui84UUN5NVpISFRKSUNrc3Y4ekYwK2Nid3JQ?=
+ =?utf-8?B?UFVZMTBNakZTeUcweFlsZkVkandheWQwTWxuTFNEaHJMWGNRcG1TMEU1cXJ0?=
+ =?utf-8?B?eUtSc0Y1TURrbm1SUHFLNHE5ZERyZmI1Y0Z6N1J2QmRveHp3QVRrZ0pTUis4?=
+ =?utf-8?B?aGZRak80NjVSYlZsM2ZCankvZ2EveEJkL2c2dmxzNExKc1QzK2JUT1pyU3ph?=
+ =?utf-8?B?NVlrMmJuM1FadEw1czJTNDVJRmpWS0ZGNEFoNkQxUU9DKy9ZYVgwV3pxdWNt?=
+ =?utf-8?B?SWlYZE1NbXA2ZmtqbUxLaFhCQjdIdXEzZnQreVVYVmtGVXlNK09tczRZemFT?=
+ =?utf-8?B?dTVLdjBYK1AyUDBsZXhjbkRsVDRRYXZ0SWxZSE1uZWNSdmJIMDE2Sjk4VnFL?=
+ =?utf-8?B?NFhsWkVRNFlYZDAzS01CbkhZVU05YjVzVUhwQWpEV3hZR0Q5dVVGODZoSjA2?=
+ =?utf-8?B?dEt3VXR0K2lNZ3ZxNllTT3pmeFdXbmxqTVhnREgzUTZ3bzJRWnJNcm9nQzRO?=
+ =?utf-8?B?cllDZHhaVUxJWmw2UmhWdk41akplUUVGcHNLWGhxbzFFSVk4RGw0T0UyZEFr?=
+ =?utf-8?B?NUxrUnRQK2pIeEU5SSs5TjJldC9vYjRCSnBNcy93bGdTNWV6Z3BzTzVjS0Mv?=
+ =?utf-8?B?Vkh6OXFBRm4yeGJUT2Y4UnlqaGxkSnJQS0tLMGYvaThVQndNWDQzNmxoamZZ?=
+ =?utf-8?B?WGs3ZlZvc2xKZ1YyVTNyYkNMOXhXOHVBQmMyUFNiSFJSa1ZLMlg4K0VZQkF2?=
+ =?utf-8?B?WktlSGFDUVRtb1MyQ0Y3S01xU21GRGhqZWF4TGdraHYrbkptRE1LR3VYQ05E?=
+ =?utf-8?B?YVV1blNPT2daV0UyQVZqYmVTdzZFWEdBWHRqcmNpOUxyRkRSSFpyRWtBQ2V0?=
+ =?utf-8?B?S0JzTmgvZ1RnUzVoUWdpeVB4ZG9LZnR0TFhxangvZ0RvVFBtRmhYbEZWSXcx?=
+ =?utf-8?B?WFpyZDg4R0hIOTVqWEVuZ0FITGI3dEdXUkgxeEpIRjhGclpDZ0d3N241RXRz?=
+ =?utf-8?B?MWp5Rm4wL0NQUTdwcnBXSDBBaE9HaXgra3lZVjRTWmNRWTNWMHhJdldsRVlD?=
+ =?utf-8?B?S3BYU0thNTdPRm1oWlRTS2F3QT09?=
+MIME-Version: 1.0
+
+<!doctype html><html style=3D""><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><m=
+eta name=3D"content-version" content=3D"3.3.26">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1.0=
+">
+<style data-name=3D"default" type=3D"text/css">body{font-family:sans-serif;=
+margin:0 !important;padding:0 !important;background:#FFFFFF;min-width:750px=
+;}td{padding:0;border-collapse:collapse;}th{font-weight:normal;text-align:l=
+eft;padding:0;}.acr-fragment,.acr-component{padding:0;}.acr-fragment img,.a=
+cr-component img{vertical-align:middle;}.divider-container{padding:5px 0;fo=
+nt-size:0px;}.text-container p{margin:0;}.image-container{line-height:0;}.a=
+cr-tmp-component img,.image-container img{height:auto;}.button-container a{=
+text-decoration:none;color:inherit;}.acr-structure{background-size:auto;bac=
+kground-repeat:no-repeat;}.structure__table{table-layout:fixed;margin:0 aut=
+o;border-spacing:0;background-size:auto;background-repeat:no-repeat;mso-tab=
+le-lspace:0pt !important;mso-table-rspace:0pt !important;}.colspan1,.colspa=
+n2,.colspan3,.colspan4,.colspan33,.colspan66{background-size:auto;backgroun=
+d-repeat:no-repeat;box-sizing:border-box;}.colspan1{width:100%;}.colspan2{w=
+idth:50%;}.colspan3{width:75%;}.colspan4{width:25%;}.colspan33{width:33%;}.=
+colspan66{width:66%;}.component-social-container{width:100%;text-align:cent=
+er;}span.preheader{display:none !important;visibility:hidden;mso-hide:all;o=
+pacity:0;}.ExternalClass{width:100%;}.ExternalClass,.ExternalClass p,.Exter=
+nalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{line=
+-height:100%;}h1,h2,h3,h4,h5{display:block;font-weight:bold;}h1{font-size:2=
+4px;margin:19px 0 19px 0;}h2{font-size:24px;margin:20px 0 20px 0;}h3{font-s=
+ize:19px;margin:19px 0 19px 0;}h4{font-size:16px;margin:21px 0 21px 0;}h5{f=
+ont-size:13px;margin:22px 0 22px 0;}h6{font-size:11px;margin:25px 0 25px 0;=
+}.mso-is-desktop-hidden,.mso-is-desktop-hidden table{mso-hide:all;}@media s=
+creen and (min-width: 500px){.is-desktop-hidden{display:none !important;}.i=
+s-desktop-visible{display:block !important;}.is-mobile-visible{display:none=
+ !important;}}</style><style data-name=3D"custom" type=3D"text/css">#acr-65=
+4623792054615,body{background-color:rgba(255, 255, 255, 1)!important;}.stru=
+cture__table{background-color:rgba(255, 255, 255, 1)!important;}</style><st=
+yle data-name=3D"media-default-max-width-500px" type=3D"text/css">@media sc=
+reen and (max-width: 500px){body{width:100% !important;min-width:0px !impor=
+tant;}.structure__table{width:100%;}.colspan1,.colspan2,.colspan3,.colspan4=
+,.colspan33,.colspan66,.colspan-n{display:block !important;min-width:100%;}=
+.container-small-size .colspan1,.container-small-size .colspan2,.container-=
+small-size .colspan3,.container-small-size .colspan4,.container-small-size =
+.colspan33,.container-small-size .colspan66,.container-small-size .colspan-=
+n{display:table-cell !important;width:100% !important;}.is-mobile-hidden{di=
+splay:none !important;}.is-mobile-visible{display:block !important;}.is-des=
+ktop-visible{display:none !important;}}</style><style data-name=3D"media-cu=
+stom-max-width-500px" type=3D"text/css">@media screen and (max-width: 500px=
+){#acr-83846140 th,#acr-2523837 th{display:table-cell !important;}}</style>=
+<!--[if gte mso 9]><style acrite-mso-css=3D"true">.image-container div {  d=
+isplay: block;}.structure__table td {  padding: 0;  border: none;}.button-c=
+ontainer {  border: none !important;  padding: 0 !important;  margin: 0 !im=
+portant;  line-height: normal !important;}.acr-structure {  margin: 0 !impo=
+rtant;}.acr-component {  margin: 0 !important;}.acr-fragment {  margin: 0 !=
+important;}.colspan1, .colspan2, .colspan3, .colspan4, .colspan33, .colspan=
+66 {  box-sizing: border-box !important;}.divider-mso-hidden {  border: non=
+e !important;}</style><![endif]-->
+</head>
+<body class=3D"" id=3D"acr-654623792054615">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" styl=
+e=3D" aspect-ratio: revert !important; background: revert !important; block=
+-size: revert !important; border: revert !important; bottom: revert !import=
+ant; color: revert !important; color-scheme: revert !important; content-vis=
+ibility: revert !important; cursor: revert !important; direction: revert !i=
+mportant; display: revert !important; font-size: revert !important; height:=
+ revert !important; hyphens: revert !important; letter-spacing: revert !imp=
+ortant; line-height: revert !important; margin: revert !important; opacity:=
+ revert !important; order: revert !important; outline: revert !important; o=
+verflow: revert !important; padding: revert !important; position: revert !i=
+mportant; resize: revert !important; rotate: revert !important; scale: reve=
+rt !important; tab-size: revert !important; table-layout: revert !important=
+; text-align: revert !important; text-indent: revert !important; text-orien=
+tation: revert !important; text-overflow: revert !important; text-shadow: r=
+evert !important; text-transform: revert !important; text-wrap: revert !imp=
+ortant; top: revert !important; transition: revert !important; user-select:=
+ revert !important; vertical-align: revert !important; visibility: revert !=
+important; white-space: revert !important; width: revert !important; word-b=
+reak: revert !important; word-spacing: revert !important; writing-mode: rev=
+ert !important; zoom: revert !important; cellpadding: 0 !important; border:=
+ 0 !important; cellspacing: 0 !important; display: table !important; width:=
+ 100% !important; table-layout: fixed !important; border-collapse: seperate=
+ !important; float: none !important; border-spacing: 0px 0px !important; " =
+align=3D"left">
+<tbody style=3D" aspect-ratio: revert !important; background: revert !impor=
+tant; block-size: revert !important; border: revert !important; bottom: rev=
+ert !important; color: revert !important; color-scheme: revert !important; =
+content-visibility: revert !important; cursor: revert !important; direction=
+: revert !important; display: revert !important; font-size: revert !importa=
+nt; height: revert !important; hyphens: revert !important; letter-spacing: =
+revert !important; line-height: revert !important; margin: revert !importan=
+t; opacity: revert !important; order: revert !important; outline: revert !i=
+mportant; overflow: revert !important; padding: revert !important; position=
+: revert !important; resize: revert !important; rotate: revert !important; =
+scale: revert !important; tab-size: revert !important; table-layout: revert=
+ !important; text-align: revert !important; text-indent: revert !important;=
+ text-orientation: revert !important; text-overflow: revert !important; tex=
+t-shadow: revert !important; text-transform: revert !important; text-wrap: =
+revert !important; top: revert !important; transition: revert !important; u=
+ser-select: revert !important; vertical-align: revert !important; visibilit=
+y: revert !important; white-space: revert !important; width: revert !import=
+ant; word-break: revert !important; word-spacing: revert !important; writin=
+g-mode: revert !important; zoom: revert !important; display: block !importa=
+nt; ">
+<tr style=3D" aspect-ratio: revert !important; background: revert !importan=
+t; block-size: revert !important; border: revert !important; bottom: revert=
+ !important; color: revert !important; color-scheme: revert !important; con=
+tent-visibility: revert !important; cursor: revert !important; direction: r=
+evert !important; display: revert !important; font-size: revert !important;=
+ height: revert !important; hyphens: revert !important; letter-spacing: rev=
+ert !important; line-height: revert !important; margin: revert !important; =
+opacity: revert !important; order: revert !important; outline: revert !impo=
+rtant; overflow: revert !important; padding: revert !important; position: r=
+evert !important; resize: revert !important; rotate: revert !important; sca=
+le: revert !important; tab-size: revert !important; table-layout: revert !i=
+mportant; text-align: revert !important; text-indent: revert !important; te=
+xt-orientation: revert !important; text-overflow: revert !important; text-s=
+hadow: revert !important; text-transform: revert !important; text-wrap: rev=
+ert !important; top: revert !important; transition: revert !important; user=
+-select: revert !important; vertical-align: revert !important; visibility: =
+revert !important; white-space: revert !important; width: revert !important=
+; word-break: revert !important; word-spacing: revert !important; writing-m=
+ode: revert !important; zoom: revert !important; ">
+<td valign=3D"middle" width=3D"1px" bgcolor=3D"#A6A6A6" cellpadding=3D"7px =
+2px 7px 2px" style=3D" aspect-ratio: revert !important; background: revert =
+!important; block-size: revert !important; border: revert !important; botto=
+m: revert !important; color: revert !important; color-scheme: revert !impor=
+tant; content-visibility: revert !important; cursor: revert !important; dir=
+ection: revert !important; display: revert !important; font-size: revert !i=
+mportant; height: revert !important; hyphens: revert !important; letter-spa=
+cing: revert !important; line-height: revert !important; margin: revert !im=
+portant; opacity: revert !important; order: revert !important; outline: rev=
+ert !important; overflow: revert !important; padding: revert !important; po=
+sition: revert !important; resize: revert !important; rotate: revert !impor=
+tant; scale: revert !important; tab-size: revert !important; table-layout: =
+revert !important; text-align: revert !important; text-indent: revert !impo=
+rtant; text-orientation: revert !important; text-overflow: revert !importan=
+t; text-shadow: revert !important; text-transform: revert !important; text-=
+wrap: revert !important; top: revert !important; transition: revert !import=
+ant; user-select: revert !important; vertical-align: revert !important; vis=
+ibility: revert !important; white-space: revert !important; width: revert !=
+important; word-break: revert !important; word-spacing: revert !important; =
+writing-mode: revert !important; zoom: revert !important; padding: 7px 2px =
+7px 2px !important; background-color: #A6A6A6 !important; valign: middle !i=
+mportant; width: 0px !important; ">
+</td>
+<td valign=3D"middle" width=3D"100%" bgcolor=3D"#EAEAEA" cellpadding=3D"7px=
+ 5px 7px 15px" color=3D"#212121" style=3D" aspect-ratio: revert !important;=
+ background: revert !important; block-size: revert !important; border: reve=
+rt !important; bottom: revert !important; color: revert !important; color-s=
+cheme: revert !important; content-visibility: revert !important; cursor: re=
+vert !important; direction: revert !important; display: revert !important; =
+font-size: revert !important; height: revert !important; hyphens: revert !i=
+mportant; letter-spacing: revert !important; line-height: revert !important=
+; margin: revert !important; opacity: revert !important; order: revert !imp=
+ortant; outline: revert !important; overflow: revert !important; padding: r=
+evert !important; position: revert !important; resize: revert !important; r=
+otate: revert !important; scale: revert !important; tab-size: revert !impor=
+tant; table-layout: revert !important; text-align: revert !important; text-=
+indent: revert !important; text-orientation: revert !important; text-overfl=
+ow: revert !important; text-shadow: revert !important; text-transform: reve=
+rt !important; text-wrap: revert !important; top: revert !important; transi=
+tion: revert !important; user-select: revert !important; vertical-align: re=
+vert !important; visibility: revert !important; white-space: revert !import=
+ant; width: revert !important; word-break: revert !important; word-spacing:=
+ revert !important; writing-mode: revert !important; zoom: revert !importan=
+t; width: 100% !important; background-color: #EAEAEA !important; padding: 7=
+px 5px 7px 15px !important; font-family: wf_segoe-ui_normal, Segoe UI, Sego=
+e WP, Tahoma, Arial, sans-serif !important; font-size: 12px !important; fon=
+t-weight: normal !important; color: #212121 !important; text-align: left !i=
+mportant; word-wrap: break-word !important; ">
+<div style=3D" aspect-ratio: revert !important; background: revert !importa=
+nt; block-size: revert !important; border: revert !important; bottom: rever=
+t !important; color: revert !important; color-scheme: revert !important; co=
+ntent-visibility: revert !important; cursor: revert !important; direction: =
+revert !important; display: revert !important; font-size: revert !important=
+; height: revert !important; hyphens: revert !important; letter-spacing: re=
+vert !important; line-height: revert !important; margin: revert !important;=
+ opacity: revert !important; order: revert !important; outline: revert !imp=
+ortant; overflow: revert !important; padding: revert !important; position: =
+revert !important; resize: revert !important; rotate: revert !important; sc=
+ale: revert !important; tab-size: revert !important; table-layout: revert !=
+important; text-align: revert !important; text-indent: revert !important; t=
+ext-orientation: revert !important; text-overflow: revert !important; text-=
+shadow: revert !important; text-transform: revert !important; text-wrap: re=
+vert !important; top: revert !important; transition: revert !important; use=
+r-select: revert !important; vertical-align: revert !important; visibility:=
+ revert !important; white-space: revert !important; width: revert !importan=
+t; word-break: revert !important; word-spacing: revert !important; writing-=
+mode: revert !important; zoom: revert !important; ">
+You don't often get email from info@email.belgiantrain.be. <a href=3D"https=
+://aka.ms/LearnAboutSenderIdentification" style=3D"background: revert !impo=
+rtant;color: revert !important;content-visibility: revert !important;direct=
+ion: revert !important;display: revert !important;font-size: revert !import=
+ant;opacity: revert !important;rotate: revert !important;scale: revert !imp=
+ortant;visibility: revert !important;">
+Learn why this is important</a> </div>
+</td>
+<td valign=3D"middle" align=3D"left" width=3D"75px" bgcolor=3D"#EAEAEA" cel=
+lpadding=3D"7px 5px 7px 5px" color=3D"#212121" style=3D" aspect-ratio: reve=
+rt !important; background: revert !important; block-size: revert !important=
+; border: revert !important; bottom: revert !important; color: revert !impo=
+rtant; color-scheme: revert !important; content-visibility: revert !importa=
+nt; cursor: revert !important; direction: revert !important; display: rever=
+t !important; font-size: revert !important; height: revert !important; hyph=
+ens: revert !important; letter-spacing: revert !important; line-height: rev=
+ert !important; margin: revert !important; opacity: revert !important; orde=
+r: revert !important; outline: revert !important; overflow: revert !importa=
+nt; padding: revert !important; position: revert !important; resize: revert=
+ !important; rotate: revert !important; scale: revert !important; tab-size:=
+ revert !important; table-layout: revert !important; text-align: revert !im=
+portant; text-indent: revert !important; text-orientation: revert !importan=
+t; text-overflow: revert !important; text-shadow: revert !important; text-t=
+ransform: revert !important; text-wrap: revert !important; top: revert !imp=
+ortant; transition: revert !important; user-select: revert !important; vert=
+ical-align: revert !important; visibility: revert !important; white-space: =
+revert !important; width: revert !important; word-break: revert !important;=
+ word-spacing: revert !important; writing-mode: revert !important; zoom: re=
+vert !important; width: 75px !important; background-color: #EAEAEA !importa=
+nt; padding: 7px 5px 7px 5px !important; font-family: wf_segoe-ui_normal, S=
+egoe UI, Segoe WP, Tahoma, Arial, sans-serif !important; font-size: 12px !i=
+mportant; font-weight: normal !important; color: #212121 !important; text-a=
+lign: left !important; word-wrap: break-word !important; align: left !impor=
+tant; ">
+</td>
+</tr>
+</tbody>
+</table>
+<div><span style=3D"display:none !important;visibility:hidden;mso-hide:all;=
+opacity:0;" class=3D"acr-preheader">Preheader here</span>
+<div class=3D"acr-container">
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:6f622e79-759b-=
+4eb1-aac7-6c19f2944909" data-contenteditable=3D"false">
+<div id=3D"acr-83846140">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div class=3D"acr-fragment acr-component" style=3D"color:rgb(85, 85, 85);pa=
+dding:5px 10px;" data-component-id=3D"text" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"color: rgb(85, 85, 85); padding: 5px 10px;"><![e=
+ndif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><br>
+</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+<th class=3D"colspan2">
+<div class=3D"acr-fragment acr-component" style=3D"color:rgb(85, 85, 85);pa=
+dding:5px 10px;font-family:Arial;" data-component-id=3D"text" data-contente=
+ditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"color: rgb(85, 85, 85); padding: 5px 10px; font-=
+family: Arial;"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:right;"><span style=3D"font-size:10px;"><a class=3D"=
+arc-link" data-nl-type=3D"mirrorPage" href=3D"" id=3D"acr-link-92470530" st=
+yle=3D"text-decoration:underline;" target=3D"_blank" data-tracking-type=3D"=
+MIRROR_PAGE">Web version</a></span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:8a1de988-2fc9-=
+4bea-9e88-0e92f72c5f7f" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<th class=3D"colspan1 is-mobile-hidden" style=3D"padding-top:0px;padding-bo=
+ttom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<div class=3D"acr-fragment acr-component image-container is-mobile-hidden" =
+style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-co=
+ntenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%3Futm_=
+campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated%26utm_cont=
+ent%3Dheader-fr-header-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40belg=
+iantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd=
+32f1ea%7C0%7C0%7C638744533850597544%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGk=
+iOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%=
+3D%7C40000%7C%7C%7C&amp;sdata=3DQT5YyvkPpmhIqUwsT3b1omeLkulxCUrBq7vwVuCNeSM=
+%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trains?utm=
+_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3Ddedicated&amp;u=
+tm_content=3Dheader-fr-header-warmup-v1" shash=3D"KT+vK0S1ZQZnDr5nN7uW/uTtj=
+0HN0RvCv23TH9cEqzDOpnKJ7TLzakrGa+1G3J5bv15vMNfvQiWUcY517k+JQDJB0oRyjQTakc8A=
+lV1q7YOZgsLCbPuKkk/Jsqy/yALfTqXw5x38Cql9NLVxmkkVhxKZiiAndRMRKPIe72T1V6I=3D"=
+ id=3D"acr-link-70000939" style=3D"text-decoration:underline;" target=3D"_b=
+lank"><img src=3D"http://res2.international.belgiantrain.be/res/belgiantrai=
+n_mkt_prod2/32244c273da705bf2c8b55e84cc741fe915bdd1f68bd769c777b4d76127ad7c=
+6.png" style=3D"width:100%;height:auto;max-width:100%;" width=3D"640" heigh=
+t=3D"200"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<th class=3D"colspan1 is-desktop-hidden" style=3D"padding-top:0px;padding-b=
+ottom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-desktop-hidden"=
+ style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-c=
+ontenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%3Futm_=
+campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated%26utm_cont=
+ent%3Dheader-fr-header-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40belg=
+iantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd=
+32f1ea%7C0%7C0%7C638744533850625359%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGk=
+iOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%=
+3D%7C40000%7C%7C%7C&amp;sdata=3D6XEQdngn2NeUUixmjt6PHEKbBKJ4KhAGrMPjGRZ0ago=
+%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trains?utm=
+_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3Ddedicated&amp;u=
+tm_content=3Dheader-fr-header-warmup-v1" shash=3D"Dwp4cybxcmcoDIt18ZCYT8Man=
+zT+MM0oGKM2DGZ+hztd+DL7UXeFn6SXtlzGG8wY5dmu2ua1GxXv41L5BaOajk078xRz1f7PW6Oh=
+sJXWXl+VhY2ftfMreMj6a4KzkTLvklHEhXlZyd8E+k+XNtd+vcthl6EVEdfyKPyux3EAPmE=3D"=
+ id=3D"acr-link-80219670" style=3D"text-decoration:underline;" target=3D"_b=
+lank"><img src=3D"http://res2.international.belgiantrain.be/res/belgiantrai=
+n_mkt_prod2/7c0787e456375171c8c0257e538be2cd08630bbb3bd6ca421d95f53950692e2=
+6.png" style=3D"width:100%;height:auto;max-width:100%;" width=3D"640" heigh=
+t=3D"274"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+</div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:d94c0098-ded6-=
+4715-aa73-757603140d92" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;color:rgb(0, 105, 180);" data-component-id=3D"text" data-contentedit=
+able=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; color: rgb(0,=
+ 105, 180);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-weight:700;">R=C3=A9servez vos tickets de train inte=
+rnationaux</span></p>
+<p><span style=3D"font-size:12px;font-weight:700;">Plus de 8000 destination=
+s en Europe</span><span style=3D"font-weight:700;font-size:12px;">&nbsp;</s=
+pan></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;font-size:10.5pt;color:rgb(85, 85, 85);" data-component-id=3D"text" =
+data-has-int-mso-hack=3D"true" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; font-size: 10=
+.5pt; color: rgb(85, 85, 85);" ><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-size:10.5pt;">Tout commence ici, la SNCB assure vos =
+d=C3=A9placements en train en Belgique. Mais saviez-vous qu'avec SNCB Inter=
+national, vous acc=C3=A9dez =C3=A0 une plateforme pour les voyages hors de =
+nos fronti=C3=A8res ?</span></p>
+<p>Avec des nouvelles offres comme OUIGO vers Paris et Eurocity Direct vers=
+ Rotterdam et Amsterdam, 2025 est l=E2=80=99ann=C3=A9e parfaite pour (re)d=
+=C3=A9couvrir l=E2=80=99Europe en train !
+</p>
+<p>Sur le site ou l=E2=80=99app SNCB International, trouvez facilement le t=
+rain qui vous emm=C3=A8ne vers la gare de votre choix. Pas encore de destin=
+ation en vue ? Faites le plein d'inspiration, comparez les options et r=C3=
+=A9servez vos billets au meilleur prix.
+</p>
+<p>Besoin d=E2=80=99aide ? Nos conseillers sont =C3=A0 votre disposition po=
+ur vous guider et r=C3=A9pondre =C3=A0 vos questions.
+</p>
+<p><br>
+</p>
+<p></p>
+<p></p>
+<p></p>
+<p><span style=3D"font-size:14px;"></span></p>
+<p><span style=3D"font-size:14px;"></span></p>
+<p><span style=3D"font-size:14px;"></span></p>
+<p><span style=3D"font-size:14px;"></span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+<span style=3D"font-size:12px;"></span></div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;color:rgb(0, 105, 180);" data-component-id=3D"text" data-contentedit=
+able=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; color: rgb(0,=
+ 105, 180);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-weight:700;">Eurostar : =C3=A0 grande vitesse vers L=
+ondres, Paris, Amsterdam et Cologne.</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:8a1de988-2fc9-=
+4bea-9e88-0e92f72c5f7f" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<th class=3D"colspan1 is-mobile-hidden" style=3D"padding-top:0px;padding-bo=
+ttom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<div class=3D"acr-fragment acr-component image-container is-mobile-hidden" =
+style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-co=
+ntenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEuro=
+star%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated=
+%26utm_content%3Dimage-fr-eurostar-warmup-v1&amp;data=3D05%7C02%7Candreas.o=
+lidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c5249=
+80bfcdce7ffd32f1ea%7C0%7C0%7C638744533850640955%7CUnknown%7CTWFpbGZsb3d8eyJ=
+FbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIl=
+dUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3D%2BjuqXQ6zHQ5pbykWN9P%2FnOAlzdq=
+JMI2bs1W5xgC81sw%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.c=
+om/FR/Trains/Eurostar?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm=
+_source=3Ddedicated&amp;utm_content=3Dimage-fr-eurostar-warmup-v1" shash=3D=
+"ybUCbArx8xhS+qTDNqH9UqPnDG2jhASaJBrc1NMLQMbFzrvP6T2xzp7GTwytRhzmdh+gEovOVI=
+i3UmBfb5EbOfXuPjRghSNM93cUg8FioocPjAImXtOuadXot74RewYySi20ot96csKw1jhV32mSt=
+5lR3ShdH+ndfY+V+9PNrbI=3D" id=3D"acr-link-63328012" style=3D"text-decoratio=
+n:underline;" target=3D"_blank"><img style=3D"height:auto;width:100%;" widt=
+h=3D"640" data-medialibrary-source=3D"aem" class=3D"" title=3D"Eurostar" al=
+t=3D"Eurostar" height=3D"250" src=3D"https://cdn.email.belgiantrain.be/6429=
+7e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:f33f24f6-592c-4846-9255-dca90=
+98d2827/oak:1.0::ci:e32f3fff0ce795b6be8f0047a68fcba5/f080fd86-e457-37fe-882=
+5-c10e7fcf63ee"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<th class=3D"colspan1 is-desktop-hidden" style=3D"padding-top:0px;padding-b=
+ottom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-desktop-hidden"=
+ style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-c=
+ontenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEuro=
+star%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated=
+%26utm_content%3Dimage-fr-eurostar-warmup-v1&amp;data=3D05%7C02%7Candreas.o=
+lidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c5249=
+80bfcdce7ffd32f1ea%7C0%7C0%7C638744533850655229%7CUnknown%7CTWFpbGZsb3d8eyJ=
+FbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIl=
+dUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3D3xvK5%2Ba1D1G5odD6COC19NyfF3WHY=
+jkDJln9tuAonGE%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.com=
+/FR/Trains/Eurostar?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_s=
+ource=3Ddedicated&amp;utm_content=3Dimage-fr-eurostar-warmup-v1" shash=3D"u=
+hJi/SGuSKM8Fco0RUmy1D+mPuGUOdJJ4YZ0kuSyX/kE/hHCc0CLYTktjYmXdumeZJiyfWMZw6S/=
+aRvmnicYNT6+IB6w6vLJZVLEx1VibAMXo2GZkAnpHj4EeciORZK+5E6zr8ZRfNvE9e7TaGjIjlc=
+ot/XXVV4bEmUYD9KmMLM=3D" id=3D"acr-link-64370561" style=3D"text-decoration:=
+underline;" target=3D"_blank"><img width=3D"640" data-medialibrary-source=
+=3D"aem" style=3D"height:auto;width:100%;" class=3D"" title=3D"Eurostar" al=
+t=3D"Eurostar" height=3D"400" src=3D"https://cdn.email.belgiantrain.be/6429=
+7e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:9308e6ef-2b4f-4896-bc8f-7314c=
+cb88994/oak:1.0::ci:511be4ebd1e4ae7339595db65ea617f4/9f6a11ca-b738-3a1d-905=
+8-a643df72a62a"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"2-2-column" data-structur=
+e-name=3D"richtext.structure_2_2_column" style=3D"vertical-align:top;text-a=
+lign:start;" data-has-int-mso-hack=3D"true">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: start;" ><![endif]-->
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:0px 10px;font-size:10.5pt;color:rgb(85, 85, 85);" data-component-id=3D"te=
+xt" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:justify;">Les trains Eurostar relient la Belgique, l=
+a France, la Grande-Bretagne, les Pays-Bas et l=E2=80=99Allemagne et desser=
+vent une quinzaine de destinations.</p>
+<p><br>
+</p>
+<p style=3D"text-align:right;"><a class=3D"arc-link" data-nl-type=3D"extern=
+alLink" href=3D"https://eur01.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEurostar%3Futm_campaign%3Dbeurope=
+%26utm_medium%3Demail%26utm_source%3Ddedicated%26utm_content%3Dcta-fr-euros=
+tar-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.be%7C4dbd7=
+e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C0%7C0%7C63=
+8744533850668858%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLj=
+AuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C=
+&amp;sdata=3DCoPaljsxfAQE1QGJm1W1s8DeY%2Fhg%2BhIf%2FOMOeiU1S8s%3D&amp;reser=
+ved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trains/Eurostar?utm_cam=
+paign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3Ddedicated&amp;utm_c=
+ontent=3Dcta-fr-eurostar-warmup-v1" shash=3D"p+/yi3iiBF8N0IsIMxS8q03HJ8DsEa=
+b3SmxByhvAiEni+B3ROrSn+FIT6wxNj44Z+UAp2KGuuCYGk53+6GeQPACfq33gnrPh1Yp95ZQ+q=
+JoStWk6nCXOm5CBYgYN0cGNJgluVUKyEH6p9TEAnvpA8vHugAmIr+ZR862mlg5YPm0=3D" id=
+=3D"acr-link-74088101" style=3D"text-decoration:underline;" target=3D"_blan=
+k">En
+ savoir plus &gt;</a></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" data-component-id=3D"text" style=
+=3D"font-family:Arial;padding:0px 10px;font-size:10.5pt;color:rgb(85, 85, 8=
+5);height:auto;width:auto;text-align:left;vertical-align:baseline;" data-ha=
+s-int-mso-hack=3D"true" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"auto"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85); height: auto; text-align: left;" ><![endi=
+f]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p>=E2=9A=A1 Trains =C3=A0 grande vitesse </p>
+<p>=F0=9F=92=BA3 classes de confort </p>
+<p>=F0=9F=8E=AB Tous les billets sont =C3=A9changeables</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;color:rgb(0, 105, 180);" data-component-id=3D"text" data-contentedit=
+able=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; color: rgb(0,=
+ 105, 180);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-weight:700;">TGV INOUI : =C3=A0 grande vitesse vers =
+25 villes fran=C3=A7aises.</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:8a1de988-2fc9-=
+4bea-9e88-0e92f72c5f7f" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<th class=3D"colspan1 is-mobile-hidden" style=3D"padding-top:0px;padding-bo=
+ttom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<div class=3D"acr-fragment acr-component image-container is-mobile-hidden" =
+style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-co=
+ntenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FTGV-=
+Bruxelles-France%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source=
+%3Ddedicated%26utm_content%3Dimage-fr-tgv-warmup-v1&amp;data=3D05%7C02%7Can=
+dreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea6=
+54c524980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850682334%7CUnknown%7CTWFpbGZs=
+b3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWF=
+pbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3D6pgmEyMNWKRCq0Jc907SrsB%=
+2FsXVemmuh2Ipm1i8PvXA%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-eur=
+ope.com/FR/Trains/TGV-Bruxelles-France?utm_campaign=3Dbeurope&amp;utm_mediu=
+m=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dimage-fr-tgv-warmup-=
+v1" shash=3D"lAxU3ZG2idcNziBB0AkwmHn4md+0MM66IOKRXdFXm+d1f00hxlLAFOqCUTlDfU=
++HNBlCs8Zj1WJDNaSLgcYJXBMbNRUrJI1fTdzlGJtFiJ5LBvf9bkPM95n75PFkIUro5Ivf8cFxI=
+11wWbcZXm9yCAqqK7Z9L7QuP73OCxGNTGs=3D" id=3D"acr-link-76766317" style=3D"te=
+xt-decoration:underline;" target=3D"_blank"><img style=3D"height:auto;width=
+:100%;" width=3D"640" data-medialibrary-source=3D"aem" class=3D"" title=3D"=
+TGV Inoui" alt=3D"TGV Inoui" height=3D"250" src=3D"https://cdn.email.belgia=
+ntrain.be/64297e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:45f7add5-b7a3-4=
+7ab-aeb4-686178a21ffd/oak:1.0::ci:e148ccae554f356b265eccf89f131603/eed3b251=
+-d5b1-3330-ac9b-187f6ac674b3"></a><!--[if mso]></td></tr></table><![endif]-=
+-></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<th class=3D"colspan1 is-desktop-hidden" style=3D"padding-top:0px;padding-b=
+ottom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-desktop-hidden"=
+ style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-c=
+ontenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FTGV-=
+Bruxelles-France%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source=
+%3Ddedicated%26utm_content%3Dimage-fr-tgv-warmup-v1&amp;data=3D05%7C02%7Can=
+dreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea6=
+54c524980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850695760%7CUnknown%7CTWFpbGZs=
+b3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWF=
+pbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3DBnwVPKpUDp4nfK57nonvK1gV=
+8u4OlUE3Pa%2FZjKhein4%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-eur=
+ope.com/FR/Trains/TGV-Bruxelles-France?utm_campaign=3Dbeurope&amp;utm_mediu=
+m=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dimage-fr-tgv-warmup-=
+v1" shash=3D"QwHh32ty7Q/9O+DAB2vQXBn7Ae2J2bD5Btsb29sMBCaC90rqOXtgsy9A+DQxgA=
+4zQaBsZSjmbCgx9a1zJBv49FY+9lWwG36Ji2n9ic/quXGhUFI4IRvSM8reoepC8zFkiYodhAJ5C=
+5Xqwk3thK+BFn8tqwKm+KlVtdyZ6KO7vsM=3D" id=3D"acr-link-582217" style=3D"text=
+-decoration:underline;" target=3D"_blank"><img style=3D"height:auto;width:1=
+00%;" width=3D"640" data-medialibrary-source=3D"aem" class=3D"" title=3D"TG=
+V Inoui" alt=3D"TGV Inoui" height=3D"400" src=3D"https://cdn.email.belgiant=
+rain.be/64297e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:bfc065e9-2ad0-4af=
+6-abd2-f1c6d56a8e84/oak:1.0::ci:6ba5cd337d441da6389042dc6646b3cb/ad4c2801-1=
+ac1-38cd-9d7c-4661bdd40a72"></a><!--[if mso]></td></tr></table><![endif]-->=
+</div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"2-2-column" data-structur=
+e-name=3D"richtext.structure_2_2_column" style=3D"vertical-align:top;text-a=
+lign:start;" data-has-int-mso-hack=3D"true">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: start;" ><![endif]-->
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:0px 10px;font-size:10.5pt;color:rgb(85, 85, 85);" data-component-id=3D"te=
+xt" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:justify;">Du nord au sud et d=E2=80=99est en ouest, =
+rejoignez =C3=A0 grande vitesse des villes incontournables telles que Lille=
+, Strasbourg, Rennes, Lyon, Avignon, Marseille,=E2=80=A6</p>
+<p><br>
+</p>
+<p style=3D"text-align:right;"><a class=3D"arc-link" data-nl-type=3D"extern=
+alLink" href=3D"https://eur01.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FTGV-Bruxelles-France%3Futm_campai=
+gn%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated%26utm_content%3D=
+cta-fr-tgv-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.be%=
+7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C0%7=
+C0%7C638744533850708875%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlY=
+iOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7=
+C%7C%7C&amp;sdata=3DWkVMKIw6b%2BrKF5MUCpJe1rdXjmWfZWi0EpTPG2J%2F51I%3D&amp;=
+reserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trains/TGV-Bruxell=
+es-France?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3Dde=
+dicated&amp;utm_content=3Dcta-fr-tgv-warmup-v1" shash=3D"w6KKYVfXDifBZlt+SG=
++06r280qNLxRF7ICWjUmBDeuFDd+eGbzG/qZaajOSnXENVkKX0AujdMKbaQb0b8XXPBpElmqnQG=
+RB6fApIiCTXkOQOlhTDp/qPNud0NY1vb4WpiPnvbzqKdbwlDYixvGsbB78zL6eGntMaoBJstl1A=
+tq8=3D" style=3D"text-decoration:underline;" target=3D"_blank">En
+ savoir plus &gt;</a></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" data-component-id=3D"text" style=
+=3D"font-family:Arial;padding:0px 10px;font-size:10.5pt;color:rgb(85, 85, 8=
+5);height:auto;width:auto;text-align:left;vertical-align:baseline;" data-ha=
+s-int-mso-hack=3D"true" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"auto"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85); height: auto; text-align: left;" ><![endi=
+f]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p>=E2=9A=A1 Trains =C3=A0 grande vitesse </p>
+<p>=F0=9F=92=BA2 classes de confort </p>
+<p>=F0=9F=94=80 Nombreuses connections locales</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;color:rgb(0, 105, 180);" data-component-id=3D"text" data-contentedit=
+able=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; color: rgb(0,=
+ 105, 180);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-weight:700;">Eurocity Direct : le nouveau train rapi=
+de vers les Pays-Bas.</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:8a1de988-2fc9-=
+4bea-9e88-0e92f72c5f7f" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<th class=3D"colspan1 is-mobile-hidden" style=3D"padding-top:0px;padding-bo=
+ttom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<div class=3D"acr-fragment acr-component image-container is-mobile-hidden" =
+style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-co=
+ntenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEuro=
+city-Direct%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Dde=
+dicated%26utm_content%3Dimage-fr-ecd-warmup-v1&amp;data=3D05%7C02%7Candreas=
+.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c52=
+4980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850721928%7CUnknown%7CTWFpbGZsb3d8e=
+yJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIs=
+IldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3DxsUM50eDTI11OTG6qH7UA5QhfXUxw=
+61ba0GDmQE84Po%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.com=
+/FR/Trains/Eurocity-Direct?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&am=
+p;utm_source=3Ddedicated&amp;utm_content=3Dimage-fr-ecd-warmup-v1" shash=3D=
+"DCU5kf/7s56CvrDEr1nMoxz0dpW93B812P9Zx9KHS0GOo9hIhxCVtHP6qtB5NG2dVang0nKP8s=
+heY4j2Q3bdIpxIULxkWDraW9egaHnVg7eTm2M7ECbWvPA4TWl4jAXP54z5ZhISD24s3II3isyfF=
+RX/DBIoDkOOsYRb8y124Bs=3D" id=3D"acr-link-58341943" style=3D"text-decoratio=
+n:underline;" target=3D"_blank"><img style=3D"height:auto;width:100%;" widt=
+h=3D"640" data-medialibrary-source=3D"aem" class=3D"" title=3D"Eurocity Dir=
+ect" alt=3D"Eurocity Direct" height=3D"250" src=3D"https://cdn.email.belgia=
+ntrain.be/64297e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:3084f24b-e0b8-4=
+270-b10b-4b14f60e0c22/oak:1.0::ci:0a46194bfa89a6dbb7c18d40da04c845/5b5b5ff8=
+-49f1-3f43-a2cc-9b1c6712905e"></a><!--[if mso]></td></tr></table><![endif]-=
+-></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<th class=3D"colspan1 is-desktop-hidden" style=3D"padding-top:0px;padding-b=
+ottom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-desktop-hidden"=
+ style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-c=
+ontenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEuro=
+city-Direct%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Dde=
+dicated%26utm_content%3Dimage-fr-ecd-warmup-v1&amp;data=3D05%7C02%7Candreas=
+.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c52=
+4980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850736083%7CUnknown%7CTWFpbGZsb3d8e=
+yJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIs=
+IldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3DSDzBj%2BJ%2F9VeUEJhVCFS3B%2Bv=
+0284VF4z1fh%2BJdEoTf%2FY%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-=
+europe.com/FR/Trains/Eurocity-Direct?utm_campaign=3Dbeurope&amp;utm_medium=
+=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dimage-fr-ecd-warmup-v=
+1" shash=3D"JP2cJ2G6aGwz6+U1eCN8Hrh9AJ0cpnSGiw4D445/iZXnLdO7uVIPHgbPaN1r340=
+Ce2oyou2H+7c6dzz+j1/fyMEARNB4LQLBUdE9P4MP5aIYxMoc0+Oa6DJz58BvfkVgeuc1f+edRV=
+3MIxoKmDfNGYNJUA3hIhI3Sx2XjqT+HY0=3D" id=3D"acr-link-1620574" style=3D"text=
+-decoration:underline;" target=3D"_blank"><img style=3D"height:auto;width:1=
+00%;" width=3D"640" class=3D"" data-medialibrary-source=3D"aem" title=3D"Eu=
+rocity Direct" alt=3D"Eurocity Direct" height=3D"400" src=3D"https://cdn.em=
+ail.belgiantrain.be/64297e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:62ace=
+cab-899e-4f8c-aebe-85bc4a936e09/oak:1.0::ci:ba5c97f781caca43d662f604284a80e=
+0/1d5f722b-b635-3bf4-ba5f-753618e6b166"></a><!--[if mso]></td></tr></table>=
+<![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"2-2-column" data-structur=
+e-name=3D"richtext.structure_2_2_column" style=3D"vertical-align:top;text-a=
+lign:start;" data-has-int-mso-hack=3D"true">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: start;" ><![endif]-->
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:0px 10px;font-size:10.5pt;color:rgb(85, 85, 85);" data-component-id=3D"te=
+xt" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:justify;">Lanc=C3=A9 en d=C3=A9cembre 2024, l=E2=80=
+=99Eurocity Direct relie quotidiennement la Belgique =C3=A0 Rotterdam, Schi=
+phol et Amsterdam.</p>
+<p><br>
+</p>
+<p style=3D"text-align:right;"><a class=3D"arc-link" data-nl-type=3D"extern=
+alLink" href=3D"https://eur01.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEurocity-Direct%3Futm_campaign%3D=
+beurope%26utm_medium%3Demail%26utm_source%3Ddedicated%26utm_content%3Dcta-f=
+r-ecd-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.be%7C4db=
+d7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C0%7C0%7C=
+638744533850749699%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIw=
+LjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%=
+7C&amp;sdata=3D%2FPzgVOJ1gnG7tsqflBpiz8raQHjz5ihkO7nwW3u6Us0%3D&amp;reserve=
+d=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trains/Eurocity-Direct?ut=
+m_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3Ddedicated&amp;=
+utm_content=3Dcta-fr-ecd-warmup-v1" shash=3D"dNZ2BkgChl2kxOsnzn7inkJahVYLil=
+pY3UVPIFWDtwBLPtQJWlE9ytzzYT4TuYv2zaFBM2WFUCKi0+tmFw318v/m13ckOuYtr7EmeLsCh=
+/hB7GGORpnXyDyKCqsjEBv0eMskle5Yo1K+6eTG7bLw0dLE11ulL3EuGmGaHUTXMwE=3D" styl=
+e=3D"text-decoration:underline;" target=3D"_blank">En
+ savoir plus &gt;</a></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" data-component-id=3D"text" style=
+=3D"font-family:Arial;padding:0px 10px;font-size:10.5pt;color:rgb(85, 85, 8=
+5);height:auto;width:auto;text-align:left;vertical-align:baseline;" data-ha=
+s-int-mso-hack=3D"true" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"auto"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85); height: auto; text-align: left;" ><![endi=
+f]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p>=F0=9F=86=95 Nouveaux trains </p>
+<p>=F0=9F=94=81 Rapidit=C3=A9 et fr=C3=A9quence : 16 trains par jour </p>
+<p>=F0=9F=A7=92 Gratuit pour les -12 ans accompagn=C3=A9s d'un adulte</p>
+<p><br>
+</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;color:rgb(0, 105, 180);" data-component-id=3D"text" data-contentedit=
+able=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; color: rgb(0,=
+ 105, 180);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-weight:700;">EuroCity : liaisons bon march=C3=A9 ver=
+s Breda et Rotterdam.</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:8a1de988-2fc9-=
+4bea-9e88-0e92f72c5f7f" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<th class=3D"colspan1 is-mobile-hidden" style=3D"padding-top:0px;padding-bo=
+ttom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<div class=3D"acr-fragment acr-component image-container is-mobile-hidden" =
+style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-co=
+ntenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEuro=
+City%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated=
+%26utm_content%3Dimage-fr-ec-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%=
+40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcd=
+ce7ffd32f1ea%7C0%7C0%7C638744533850764780%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0e=
+U1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoy=
+fQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3D1wSexTPaZqUdfOvNIJTuJOqUav9%2BlMMKAQO=
+31SIUmrY%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Tr=
+ains/EuroCity?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=
+=3Ddedicated&amp;utm_content=3Dimage-fr-ec-warmup-v1" shash=3D"y1XiXKf9D1ro=
+tQ535jSKHQ4X3xa7zPuABlWp43q59zb1ToVFi12IHUoaMIeZ/YdzWRpMkO1fFU7G5iybYHWdtZj=
+GgqbxC5zAy/6/kXO26CbvPcfNYsp6j+q454df38/78kXVEqGbEY6a/BXGuZ9Y+FHtR929DfeWqD=
+xk9vJJgq8=3D" id=3D"acr-link-25613346" style=3D"text-decoration:underline;"=
+ target=3D"_blank"><img width=3D"640" data-medialibrary-source=3D"aem" styl=
+e=3D"height:auto;width:100%;" class=3D"" title=3D"EuroCity" alt=3D"EuroCity=
+" height=3D"250" src=3D"https://cdn.email.belgiantrain.be/64297e00-edf6-11e=
+a-9d34-7703acf36721/urn:aaid:aem:05320117-d663-4c06-8269-61117a479b19/oak:1=
+.0::ci:55a81b1257ce170e0e886a673c256074/da52f290-2625-3eb4-a607-c5250a9851b=
+b"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<th class=3D"colspan1 is-desktop-hidden" style=3D"padding-top:0px;padding-b=
+ottom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-desktop-hidden"=
+ style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-c=
+ontenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEuro=
+City%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated=
+%26utm_content%3Dimage-fr-ec-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%=
+40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcd=
+ce7ffd32f1ea%7C0%7C0%7C638744533850782085%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0e=
+U1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoy=
+fQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3DnLA4T%2BALyX7C21YgVYKxVqCj6zIrSJKqyk0=
+BEoVnbtU%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Tr=
+ains/EuroCity?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=
+=3Ddedicated&amp;utm_content=3Dimage-fr-ec-warmup-v1" shash=3D"YpY9da79J++Z=
+luOfvMHX2ybJaTc+22sQhungvvaGXRzcc7a7mfH5zDSHshVFdRR26xYv8gVUqoUQQE9iZ0KYeTU=
+oAEM+7Vc9UupNyI/VwgjGGIYe2b9qCbIohZaSYAXqiNQHySWC6BhkSftLEzP6g1xUOF3Is40TOR=
+g4cc+TuFk=3D" id=3D"acr-link-32596425" style=3D"text-decoration:underline;"=
+ target=3D"_blank"><img style=3D"height:auto;width:100%;" width=3D"640" dat=
+a-medialibrary-source=3D"aem" class=3D"" title=3D"EuroCity" alt=3D"EuroCity=
+" height=3D"400" src=3D"https://cdn.email.belgiantrain.be/64297e00-edf6-11e=
+a-9d34-7703acf36721/urn:aaid:aem:445f94b3-2ed7-4632-8beb-0663a585abd1/oak:1=
+.0::ci:8efbd176d36d63e4d0e8c85d03f0ff4e/fddb1cdb-41d4-399a-966a-1ddc2ba3b26=
+3"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"2-2-column" data-structur=
+e-name=3D"richtext.structure_2_2_column" style=3D"vertical-align:top;text-a=
+lign:start;" data-has-int-mso-hack=3D"true">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: start;" ><![endif]-->
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:0px 10px;font-size:10.5pt;color:rgb(85, 85, 85);" data-component-id=3D"te=
+xt" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:justify;">Ce train offre des liaisons quotidiennes f=
+lexibles de Bruxelles =C3=A0 Breda et Rotterdam, en passant par Malines et =
+Anvers.</p>
+<p><br>
+</p>
+<p style=3D"text-align:right;"><a class=3D"arc-link" data-nl-type=3D"extern=
+alLink" href=3D"https://eur01.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEuroCity%3Futm_campaign%3Dbeurope=
+%26utm_medium%3Demail%26utm_source%3Ddedicated%26utm_content%3Dcta-fr-ec-wa=
+rmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1=
+641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C0%7C0%7C63874453=
+3850795354%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAw=
+MCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;s=
+data=3Dw%2FVoOAgzuPW03UA7WnDNREOjpfJkSd1f27c4X5eDmxo%3D&amp;reserved=3D0" o=
+riginalsrc=3D"https://www.b-europe.com/FR/Trains/EuroCity?utm_campaign=3Dbe=
+urope&amp;utm_medium=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dc=
+ta-fr-ec-warmup-v1" shash=3D"h9lOybEn+6ACv3qyBp8BBEiseQsgsYyBcLBFrvKH0mezy6=
+61za8vB9uvsSOsJPKkBddfPX7aKfuqmehP/r1o/l17DKQ1ws7OzfzRjjM7KBLiBz5OaTiiblz8Y=
+diAq22XWhmGkX/0I+6RJAoxYJ0wgEfuhaRAraxy2XIeKdF0R14=3D" style=3D"text-decora=
+tion:underline;" target=3D"_blank">En
+ savoir plus &gt;</a></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" data-component-id=3D"text" style=
+=3D"font-family:Arial;padding:0px 10px;font-size:10.5pt;color:rgb(85, 85, 8=
+5);height:auto;width:auto;text-align:left;vertical-align:baseline;" data-ha=
+s-int-mso-hack=3D"true" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"auto"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85); height: auto; text-align: left;" ><![endi=
+f]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p>=F0=9F=94=81 Fr=C3=A9quence : 16 trains par jour </p>
+<p>=F0=9F=8F=B7=EF=B8=8F Prix attractif li=C3=A9 =C3=A0 la flexibilit=C3=A9=
+ du ticket et au degr=C3=A9 de fr=C3=A9quentation du train
+</p>
+<p>=F0=9F=A7=92 Gratuit pour les -12 ans accompagn=C3=A9s d'un adulte</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;color:rgb(0, 105, 180);" data-component-id=3D"text" data-contentedit=
+able=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; color: rgb(0,=
+ 105, 180);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-weight:700;">ICE : la grande vitesse vers l=E2=80=99=
+Allemagne.</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:8a1de988-2fc9-=
+4bea-9e88-0e92f72c5f7f" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<th class=3D"colspan1 is-mobile-hidden" style=3D"padding-top:0px;padding-bo=
+ttom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<div class=3D"acr-fragment acr-component image-container is-mobile-hidden" =
+style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-co=
+ntenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FICE%=
+3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated%26ut=
+m_content%3Dimage-fr-ice-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40be=
+lgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7f=
+fd32f1ea%7C0%7C0%7C638744533850808267%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hc=
+GkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3=
+D%3D%7C40000%7C%7C%7C&amp;sdata=3DgaeAHoXvEaI92CIgK%2BMrHrAIjNsz3TLmOVb1l0X=
+ZuiU%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trains=
+/ICE?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3Ddedicat=
+ed&amp;utm_content=3Dimage-fr-ice-warmup-v1" shash=3D"HKRVTdR4FGE1ndh7odm9+=
+43wmnC4kbM2592HFtVYf/XmOu8I+CzEICZk1XnjMAtdDY5v/WTrs/Bwd97W767xc7K+E7cSHg2T=
+RuRtJapTaoIpd1xLXSZDcEZTtrMueP7W3QrXUjXEpB1D+SWRk4uF2f5i2CFahgP1qp1xE58vUV8=
+=3D" id=3D"acr-link-23918795" style=3D"text-decoration:underline;" target=
+=3D"_blank"><img style=3D"height:auto;width:100%;" width=3D"640" data-media=
+library-source=3D"aem" class=3D"" title=3D"ICE" alt=3D"ICE" height=3D"250" =
+src=3D"https://cdn.email.belgiantrain.be/64297e00-edf6-11ea-9d34-7703acf367=
+21/urn:aaid:aem:b803bd82-1e7a-4bdb-8cd8-21cbea9a2f13/oak:1.0::ci:f324dddf62=
+d2d29a8a28be79393af5d5/1f1afb07-cf1a-38da-913a-60bf4f11fbd8"></a><!--[if ms=
+o]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<th class=3D"colspan1 is-desktop-hidden" style=3D"padding-top:0px;padding-b=
+ottom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-desktop-hidden"=
+ style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-c=
+ontenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FICE%=
+3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated%26ut=
+m_content%3Dimage-fr-ice-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40be=
+lgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7f=
+fd32f1ea%7C0%7C0%7C638744533850821548%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hc=
+GkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3=
+D%3D%7C40000%7C%7C%7C&amp;sdata=3DMz8X5HTVWb2riWmb%2FYYj3PL4J%2BuntPSZAq9V2=
+ZmuhHg%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trai=
+ns/ICE?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3Ddedic=
+ated&amp;utm_content=3Dimage-fr-ice-warmup-v1" shash=3D"iw17SRq3jjYq73kIhHx=
+J/4v5+krfCihLA8Cm+gcJY08qeUiIhXwfGYjHH5EyOb/CNmrpCl1mG+ASxrIu0iY+EX1reIPVA6=
+Y2We0ObexyQiOyugG49b0aJuoPIczFglienYDNMRv/69b1Y0m95+/oJGgMQW3JqCkJVeTiC6TxK=
+O4=3D" id=3D"acr-link-528874" style=3D"text-decoration:underline;" target=
+=3D"_blank"><img width=3D"640" data-medialibrary-source=3D"aem" style=3D"he=
+ight:auto;width:100%;" class=3D"" title=3D"ICE" alt=3D"ICE" height=3D"400" =
+src=3D"https://cdn.email.belgiantrain.be/64297e00-edf6-11ea-9d34-7703acf367=
+21/urn:aaid:aem:62bc8514-e224-4771-a597-fdf643b9e1fc/oak:1.0::ci:28b16617c4=
+7950ffe72f7cc9129a9ddf/35d0983b-f9ba-3f39-a1b5-e40445a76227"></a><!--[if ms=
+o]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"2-2-column" data-structur=
+e-name=3D"richtext.structure_2_2_column" style=3D"vertical-align:top;text-a=
+lign:start;" data-has-int-mso-hack=3D"true">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: start;" ><![endif]-->
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:0px 10px;font-size:10.5pt;color:rgb(85, 85, 85);" data-component-id=3D"te=
+xt" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:justify;">Avec ICE, vous rejoignez Aix-la-Chapelle, =
+D=C3=BCsseldorf, Cologne, Francfort et profitez d=E2=80=99une myriade de co=
+nnections locales pour voyager partout en Allemagne.</p>
+<p><br>
+</p>
+<p style=3D"text-align:right;"><a class=3D"arc-link" data-nl-type=3D"extern=
+alLink" href=3D"https://eur01.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FICE%3Futm_campaign%3Dbeurope%26ut=
+m_medium%3Demail%26utm_source%3Ddedicated%26utm_content%3Dcta-fr-ice-warmup=
+-v1&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1641f=
+a318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850=
+834910%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIs=
+IlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=
+=3DAau9CxWAuufCEQdoSUWPpNrEpl9Dw%2Bzz0WV2lBHn%2FTU%3D&amp;reserved=3D0" ori=
+ginalsrc=3D"https://www.b-europe.com/FR/Trains/ICE?utm_campaign=3Dbeurope&a=
+mp;utm_medium=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dcta-fr-i=
+ce-warmup-v1" shash=3D"tLonDxCZo7KmSXf1GU8ikg0pDjjjLAQDNErQn+qGb1/H4ju4ixtZ=
+DWQGGwbnlOqQ3W41+u6Bkapp0+pJj6zZ+mi8VyCYdY5zClIqadowJ7a56Sbe/3N5gPvCPiAX1eB=
+Nw8FlBu8p9DljMHDm/Vr5TjlbPo08zLyXbw6VAtMtVDk=3D" style=3D"text-decoration:u=
+nderline;" target=3D"_blank">En
+ savoir plus &gt;</a></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" data-component-id=3D"text" style=
+=3D"font-family:Arial;padding:0px 10px;font-size:10.5pt;color:rgb(85, 85, 8=
+5);height:auto;width:auto;text-align:left;vertical-align:baseline;" data-ha=
+s-int-mso-hack=3D"true" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"auto"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85); height: auto; text-align: left;" ><![endi=
+f]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p>=F0=9F=86=95 Nouveaux trains </p>
+<p>=E2=9A=A1 Trains =C3=A0 grande vitesse </p>
+<p>=F0=9F=A7=92 Gratuit pour les enfants de moins de 15 ans accompagn=C3=A9=
+s </p>
+<p><br>
+</p>
+<p><br>
+</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;color:rgb(0, 105, 180);" data-component-id=3D"text" data-contentedit=
+able=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; color: rgb(0,=
+ 105, 180);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-weight:700;">OUIGO : liaisons bon march=C3=A9 entre =
+Bruxelles, Mons et Paris.</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:8a1de988-2fc9-=
+4bea-9e88-0e92f72c5f7f" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<th class=3D"colspan1 is-mobile-hidden" style=3D"padding-top:0px;padding-bo=
+ttom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<div class=3D"acr-fragment acr-component image-container is-mobile-hidden" =
+style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-co=
+ntenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FOUIG=
+O-Bruxelles-Paris%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_sourc=
+e%3Ddedicated%26utm_content%3Dimage-fr-ouigo-warmup-v1&amp;data=3D05%7C02%7=
+Candreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919=
+ea654c524980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850848096%7CUnknown%7CTWFpb=
+GZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoi=
+TWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3D1m%2B48RdDX4FLyrOmdoE=
+PXucN8g%2FgQLLQ1uOmfXAp53w%3D&amp;reserved=3D0" originalsrc=3D"https://www.=
+b-europe.com/FR/Trains/OUIGO-Bruxelles-Paris?utm_campaign=3Dbeurope&amp;utm=
+_medium=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dimage-fr-ouigo=
+-warmup-v1" shash=3D"FsxJLfgEN285UeENsBbrp3CFVwV/g1OaHlrArrW3WatgLLVHCAaH5U=
+2ZeACmzO5c0ykC16MCdGjg6mJxSgpmHpw/+iklqsja4o1fh64FzcETMC5v7nOvPGPQ+/RKrKX2J=
+s4A/UYA0DmieYKctOdyV54TlTzHX8s3W5Jms0FAgkM=3D" id=3D"acr-link-46896082" sty=
+le=3D"text-decoration:underline;" target=3D"_blank"><img width=3D"640" data=
+-medialibrary-source=3D"aem" style=3D"height:auto;width:100%;" class=3D"" t=
+itle=3D"Ouigo" alt=3D"Ouigo" height=3D"250" src=3D"https://cdn.email.belgia=
+ntrain.be/64297e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:d7cd8dc9-fdc3-4=
+905-a43c-9ce24db96c71/oak:1.0::ci:0f834be71fa5e3289984614f2b3f5e56/50b31182=
+-b053-3389-9490-5a27e9efa6d7"></a><!--[if mso]></td></tr></table><![endif]-=
+-></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<th class=3D"colspan1 is-desktop-hidden" style=3D"padding-top:0px;padding-b=
+ottom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-desktop-hidden"=
+ style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-c=
+ontenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FOUIG=
+O-Bruxelles-Paris%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_sourc=
+e%3Ddedicated%26utm_content%3Dimage-fr-ouigo-warmup-v1&amp;data=3D05%7C02%7=
+Candreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919=
+ea654c524980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850861946%7CUnknown%7CTWFpb=
+GZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoi=
+TWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3D5hSIJwqr2unYpu5fqzapC=
+ybfh4v7Mf44Rc1BkYSNha0%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-eu=
+rope.com/FR/Trains/OUIGO-Bruxelles-Paris?utm_campaign=3Dbeurope&amp;utm_med=
+ium=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dimage-fr-ouigo-war=
+mup-v1" shash=3D"DTG2rpklYDSwgPTEMCT79pD5Qzuf5IIVRXfQsBLuR2b8bADY7ixi4i9gLf=
+M+miLN+r8vjfOPlAXR6+QZqFy1K1tN6pQ9I1ZNT1NdG8+8fOkVF3bu+HWXZalIjH9OlZz85OjyO=
+FnCajEfa7S6sHm7THIveO26cKGdyiFJGjDkTCo=3D" id=3D"acr-link-75859454" style=
+=3D"text-decoration:underline;" target=3D"_blank"><img width=3D"640" data-m=
+edialibrary-source=3D"aem" style=3D"height:auto;width:100%;" class=3D"" tit=
+le=3D"OuiGo" alt=3D"OuiGo" height=3D"400" src=3D"https://cdn.email.belgiant=
+rain.be/64297e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:58d0d221-2bc3-40b=
+1-9c13-f8c6598aa568/oak:1.0::ci:49d2a99034c74483f99deb0e361444c4/78698d9f-a=
+e0b-3dca-bd5a-b9ad33bfdc74"></a><!--[if mso]></td></tr></table><![endif]-->=
+</div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"2-2-column" data-structur=
+e-name=3D"richtext.structure_2_2_column" style=3D"vertical-align:top;text-a=
+lign:start;" data-has-int-mso-hack=3D"true">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: start;" ><![endif]-->
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:0px 10px;font-size:10.5pt;color:rgb(85, 85, 85);" data-component-id=3D"te=
+xt" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:justify;">Ces nouveaux trains empruntent les lignes =
+ferroviaires classiques et relient Bruxelles et Mons =C3=A0 Paris-Nord =C3=
+=A0 des tarifs tr=C3=A8s comp=C3=A9titifs.</p>
+<p><br>
+</p>
+<p style=3D"text-align:right;"><a class=3D"arc-link" data-nl-type=3D"extern=
+alLink" href=3D"https://eur01.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FOUIGO-Bruxelles-Paris%3Futm_campa=
+ign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated%26utm_content%3=
+Dcta-fr-ouigo-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.=
+be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C=
+0%7C0%7C638744533850875459%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUs=
+IlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C4000=
+0%7C%7C%7C&amp;sdata=3D3JOO42M9MVTUlPXswiN1B2T9LqBQA%2F5sfIi5RS86q6c%3D&amp=
+;reserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trains/OUIGO-Brux=
+elles-Paris?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3D=
+dedicated&amp;utm_content=3Dcta-fr-ouigo-warmup-v1" shash=3D"hUDBAwWcvOIWeg=
+xXlvAjIzi0l51/IMMwjIheq8wN/nug3MyB3u6qmaYK8a6A+Xjod+REmgeSWMXjv+XzseAnze4aF=
+tfMLPlB0uX9e840psn6Ezim8lmdGaAQ8StthsX7k6CZCRR3giGTxZOxMBefwpZ3vMcU9sjGTuCz=
+bpEiWyk=3D" style=3D"text-decoration:underline;" target=3D"_blank">En
+ savoir plus &gt;</a></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" data-component-id=3D"text" style=
+=3D"font-family:Arial;padding:0px 10px;font-size:10.5pt;color:rgb(85, 85, 8=
+5);height:auto;width:auto;text-align:left;vertical-align:baseline;" data-ha=
+s-int-mso-hack=3D"true" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"auto"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85); height: auto; text-align: left;" ><![endi=
+f]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p>=F0=9F=92=BA Si=C3=A8ges disponibles d=C3=A8s 10 =E2=82=AC </p>
+<p>=F0=9F=8F=B7=EF=B8=8F Prix plafonn=C3=A9 =C3=A0 max. 59 =E2=82=AC </p>
+<p>=F0=9F=A7=92Seulement 8 =E2=82=AC pour les enfants</p>
+<p><br>
+</p>
+<p><br>
+</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;color:rgb(0, 105, 180);" data-component-id=3D"text" data-contentedit=
+able=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; color: rgb(0,=
+ 105, 180);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-weight:700;">Trains r=C3=A9gionaux transfrontaliers =
+: juste de l=E2=80=99autre c=C3=B4t=C3=A9 de la fronti=C3=A8re.</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:8a1de988-2fc9-=
+4bea-9e88-0e92f72c5f7f" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<th class=3D"colspan1 is-mobile-hidden" style=3D"padding-top:0px;padding-bo=
+ttom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<div class=3D"acr-fragment acr-component image-container is-mobile-hidden" =
+style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-co=
+ntenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FTrai=
+ns-regionaux%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Dd=
+edicated%26utm_content%3Dimage-fr-regional-warmup-v1&amp;data=3D05%7C02%7Ca=
+ndreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea=
+654c524980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850889041%7CUnknown%7CTWFpbGZ=
+sb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTW=
+FpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3DlbMtMgvYjZIroXxqTmMncq0=
+xMUiegVNX7JgBmMvD%2FkE%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-eu=
+rope.com/FR/Trains/Trains-regionaux?utm_campaign=3Dbeurope&amp;utm_medium=
+=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dimage-fr-regional-war=
+mup-v1" shash=3D"AHq/fXntpo+JPdjHAvqc2qZ1Iq/EufAEf8gzb+TDeK8Pr97lXU6aEXS/EW=
+2SvV8hoKpCxKtzyIdt22YAG9W5LnbvXglEdKwj+Ve21jI8U42AzKmJae2EpTuk4bPzFKW6Byf2T=
+MJE8r98qeQHZSrnTI+XO6E3SxXFhTfTZhtsRVo=3D" id=3D"acr-link-24029268" style=
+=3D"text-decoration:underline;" target=3D"_blank"><img width=3D"640" data-m=
+edialibrary-source=3D"aem" style=3D"height:auto;width:100%;" class=3D"" tit=
+le=3D"trains r=C3=A9gionaux transfrontaliers" alt=3D"trains r=C3=A9gionaux =
+transfrontaliers" height=3D"250" src=3D"https://cdn.email.belgiantrain.be/6=
+4297e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:0c416bdb-2829-4977-a1a3-bd=
+02f54b2cb7/oak:1.0::ci:b82474b616d3544b1c78205a9ab40ed7/f1aac624-1c63-314a-=
+8ca9-b6ae677b0259"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<th class=3D"colspan1 is-desktop-hidden" style=3D"padding-top:0px;padding-b=
+ottom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-desktop-hidden"=
+ style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-c=
+ontenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FTrai=
+ns-regionaux%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Dd=
+edicated%26utm_content%3Dimage-fr-regional-warmup-v1&amp;data=3D05%7C02%7Ca=
+ndreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea=
+654c524980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850903043%7CUnknown%7CTWFpbGZ=
+sb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTW=
+FpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3DZMBUAv%2FYi2rUiijOmoxLq=
+EyyAd43grWHWqYCfte4qPw%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-eu=
+rope.com/FR/Trains/Trains-regionaux?utm_campaign=3Dbeurope&amp;utm_medium=
+=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dimage-fr-regional-war=
+mup-v1" shash=3D"u5YPUyojQ+r6ipwFzgJ3dWe+7ea7/rx3vyLJhnUCgftgK6ZqB1gnshqMyt=
+ujQZTjGsY1cr1zbUlyzhD9qsgUtgsWpEP43KZBO4qOWtWcKo6RDC/38+iAw+RwnM6OPWhV+PwX3=
+WjJ8NYB6r4J9DF2NG8YXzzIrtx4AuKOkP7Ndcc=3D" id=3D"acr-link-32917963" style=
+=3D"text-decoration:underline;"><img width=3D"640" data-medialibrary-source=
+=3D"aem" style=3D"height:auto;width:100%;" class=3D"" title=3D"Trains r=C3=
+=A9gionaux transfrontaliers" alt=3D"Trains r=C3=A9gionaux transfrontaliers"=
+ height=3D"400" src=3D"https://cdn.email.belgiantrain.be/64297e00-edf6-11ea=
+-9d34-7703acf36721/urn:aaid:aem:2b29921c-f038-45bd-b830-e3a3929dfb02/oak:1.=
+0::ci:72d16dd5c482f75d7fe214e0996e4984/797fb1bd-4eb5-3171-85bf-8befd6a1662f=
+"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"2-2-column" data-structur=
+e-name=3D"richtext.structure_2_2_column" style=3D"vertical-align:top;text-a=
+lign:start;" data-has-int-mso-hack=3D"true">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: start;" ><![endif]-->
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:0px 10px;font-size:10.5pt;color:rgb(85, 85, 85);" data-component-id=3D"te=
+xt" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:justify;">Gr=C3=A2ce =C3=A0 notre gamme de trains r=
+=C3=A9gionaux, vous pouvez facilement traverser la fronti=C3=A8re pour vous=
+ vous rendre chez nos voisins.</p>
+<p><br>
+</p>
+<p style=3D"text-align:right;"><a class=3D"arc-link" data-nl-type=3D"extern=
+alLink" href=3D"https://eur01.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FTrains-regionaux%3Futm_campaign%3=
+Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated%26utm_content%3Dcta-=
+fr-regional-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.be=
+%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C0%=
+7C0%7C638744533850916973%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIl=
+YiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%=
+7C%7C%7C&amp;sdata=3DI5fhxIjhpyssq86FrUNk0NYyhr36XPjt6%2Ft8k46uDNQ%3D&amp;r=
+eserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trains/Trains-regio=
+naux?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3Ddedicat=
+ed&amp;utm_content=3Dcta-fr-regional-warmup-v1" shash=3D"sC4UYOj3/q9l7yZIgN=
+6koFct5jx38JStY+w9lYkOjE/l6oCEM8XGmem7/tjzQKRzmOMKKSAwohqLMBnZXufFLbhHr85vO=
+mLqsfAyeUHhW2e4F9zHsm+ki20Vju+tQzq2fjZJMTB9kRVMEwzTHE2K6b/TxZ/Gc1jB+/zliDNu=
+ZMk=3D" style=3D"text-decoration:underline;" target=3D"_blank">En
+ savoir plus &gt;</a></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" data-component-id=3D"text" style=
+=3D"font-family:Arial;padding:0px 10px;font-size:10.5pt;color:rgb(85, 85, 8=
+5);height:auto;width:auto;text-align:left;vertical-align:baseline;" data-ha=
+s-int-mso-hack=3D"true" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"auto"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85); height: auto; text-align: left;" ><![endi=
+f]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p>=F0=9F=94=81 Fr=C3=A9quence optimale quotidionne </p>
+<p>=F0=9F=94=80 Correspondance ais=C3=A9e avec les r=C3=A9seaux ferroviaire=
+s de nos pays voisins </p>
+<p>=F0=9F=8E=AB Diff=C3=A9rentes formules d'abonnements</p>
+<p><br>
+</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;color:rgb(0, 105, 180);" data-component-id=3D"text" data-contentedit=
+able=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; color: rgb(0,=
+ 105, 180);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-weight:700;">Nightjet : r=C3=A9veillez-vous =C3=A0 V=
+ienne ou Berlin</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:8a1de988-2fc9-=
+4bea-9e88-0e92f72c5f7f" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<th class=3D"colspan1 is-mobile-hidden" style=3D"padding-top:0px;padding-bo=
+ttom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<div class=3D"acr-fragment acr-component image-container is-mobile-hidden" =
+style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-co=
+ntenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FNigh=
+tjet%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated=
+%26utm_content%3Dimage-fr-nj-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%=
+40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcd=
+ce7ffd32f1ea%7C0%7C0%7C638744533850931623%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0e=
+U1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoy=
+fQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3Dd39UByUaxHpO2Wb3lu48MAOwwWlk5bluqRajk=
+riIp6s%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trai=
+ns/Nightjet?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3D=
+dedicated&amp;utm_content=3Dimage-fr-nj-warmup-v1" shash=3D"I6JGpNX6QpfI3YQ=
+hq9h3CnTrQAYkJ2MDEleoVJ5Z5d2worccqmPEu7/CZJo6Z5j/A5o6n9ukWLGMRibQMSDA4NWpFj=
+OLo7gw/s2KjyykYykI1ylURdjaXCIqGwtRUaWdDgEq0luLMxHvokiLsjtJsSLf2bipVnQGKt4hp=
+bTpjoI=3D" id=3D"acr-link-97359459" style=3D"text-decoration:underline;" ta=
+rget=3D"_blank"><img style=3D"height:auto;width:100%;" width=3D"640" data-m=
+edialibrary-source=3D"aem" class=3D"" title=3D"Nightjet" alt=3D"Nightjet" h=
+eight=3D"250" src=3D"https://cdn.email.belgiantrain.be/64297e00-edf6-11ea-9=
+d34-7703acf36721/urn:aaid:aem:e84208bc-da54-4d11-ad85-9bff217108a4/oak:1.0:=
+:ci:5cf09df1da1830ea8c84bed0e32f559c/c83406a2-710a-30c2-a8cb-6ca5d08d6b36">=
+</a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<th class=3D"colspan1 is-desktop-hidden" style=3D"padding-top:0px;padding-b=
+ottom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-desktop-hidden"=
+ style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-c=
+ontenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FNigh=
+tjet%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated=
+%26utm_content%3Dimage-fr-nj-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%=
+40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcd=
+ce7ffd32f1ea%7C0%7C0%7C638744533850946847%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0e=
+U1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoy=
+fQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3Ds7jAypxOniIIZQfvoTScwwr3mddxNjB3Wd%2F=
+3MoMvYQU%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Tr=
+ains/Nightjet?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=
+=3Ddedicated&amp;utm_content=3Dimage-fr-nj-warmup-v1" shash=3D"t9F6z0P/PnQV=
+AAVLfHP4+iDCa/2KSFDPbTmtnYXE6v9Y+B3iXbpGgdu1FYaPOdnKXS3C87Iz1w2XnvKfA3U7ol8=
+7b3W5a4SlvRpogGktSlwIwgHdCkVDNueXNvosCNTvpfhIeY0sfMum+StAy+De7FDh9lonqnAyVU=
+H019SN02k=3D" id=3D"acr-link-71349345" style=3D"text-decoration:underline;"=
+ target=3D"_blank"><img width=3D"640" data-medialibrary-source=3D"aem" styl=
+e=3D"height:auto;width:100%;" class=3D"" title=3D"Nightjet" alt=3D"Nightjet=
+" height=3D"400" src=3D"https://cdn.email.belgiantrain.be/64297e00-edf6-11e=
+a-9d34-7703acf36721/urn:aaid:aem:758959a0-3ebb-464d-82ef-97a7484d224c/oak:1=
+.0::ci:41cd3783a31cbc8c52950fd02c6508d7/e5d12269-52dd-3195-ad53-1505ffa7e79=
+e"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"2-2-column" data-structur=
+e-name=3D"richtext.structure_2_2_column" style=3D"vertical-align:top;text-a=
+lign:start;" data-has-int-mso-hack=3D"true">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: start;" ><![endif]-->
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:0px 10px;font-size:10.5pt;color:rgb(85, 85, 85);" data-component-id=3D"te=
+xt" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:justify;">Les trains Nightjet circulent plusieurs fo=
+is par semaine et vous emm=C3=A8nent de Bruxelles et Li=C3=A8ge =C3=A0 Vien=
+ne ou Berlin.</p>
+<p><br>
+</p>
+<p style=3D"text-align:right;"><a class=3D"arc-link" data-nl-type=3D"extern=
+alLink" href=3D"https://eur01.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FNightjet%3Futm_campaign%3Dbeurope=
+%26utm_medium%3Demail%26utm_source%3Ddedicated%26utm_content%3Dcta-fr-nj-wa=
+rmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1=
+641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C0%7C0%7C63874453=
+3850960652%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAw=
+MCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;s=
+data=3DeQl0WIFgutitVi6LpFAaCee620Sz3pe3Kr1At6l4TlY%3D&amp;reserved=3D0" ori=
+ginalsrc=3D"https://www.b-europe.com/FR/Trains/Nightjet?utm_campaign=3Dbeur=
+ope&amp;utm_medium=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dcta=
+-fr-nj-warmup-v1" shash=3D"w574CAipU4hn8kHpN4QqSVNNd+h/rSNL5WN4euieOSqUqLx9=
+5k9lcA288bCUragt6PSTijUvgE+5Ey23POmE2VPQDGm3KGbLhzP6huiYLe86woUDyw1cOKAK1wi=
+0QrZgxHv484TPwGW1MSbJUhm8/QyewN5zc5uNRVOiHeHJcU4=3D" style=3D"text-decorati=
+on:underline;" target=3D"_blank">En
+ savoir plus &gt;</a></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" data-component-id=3D"text" style=
+=3D"font-family:Arial;padding:0px 10px;font-size:10.5pt;color:rgb(85, 85, 8=
+5);height:auto;width:auto;text-align:left;vertical-align:baseline;" data-ha=
+s-int-mso-hack=3D"true" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"auto"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85); height: auto; text-align: left;" ><![endi=
+f]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p>=F0=9F=92=BA Places assises, couchettes ou places-lits </p>
+<p>=F0=9F=92=A4 Optimisez votre temps de trajet : arrivez repos=C3=A9 dans =
+la destination de votre choix
+</p>
+<p>=F0=9F=9B=8F=EF=B8=8F =C3=89pargnez une nuit d'h=C3=B4tel </p>
+<p><br>
+</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:10px;color:rgb(0, 105, 180);" data-component-id=3D"text" data-contentedit=
+able=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 10px; color: rgb(0,=
+ 105, 180);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-weight:700;">European Sleeper : r=C3=A9veillez-vous =
+=C3=A0 Berlin ou Prague</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:8a1de988-2fc9-=
+4bea-9e88-0e92f72c5f7f" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<th class=3D"colspan1 is-mobile-hidden" style=3D"padding-top:0px;padding-bo=
+ttom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><![endif]--=
+>
+<div class=3D"acr-fragment acr-component image-container is-mobile-hidden" =
+style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-co=
+ntenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEuro=
+pean-Sleeper%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Dd=
+edicated%26utm_content%3Dimage-fr-es-warmup-v1&amp;data=3D05%7C02%7Candreas=
+.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c52=
+4980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850974408%7CUnknown%7CTWFpbGZsb3d8e=
+yJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIs=
+IldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3D6p8yo%2FxEeceqF%2FO82e%2F6Pf%=
+2F2nls2KmZ0Bl9HT7lft9w%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-eu=
+rope.com/FR/Trains/European-Sleeper?utm_campaign=3Dbeurope&amp;utm_medium=
+=3Demail&amp;utm_source=3Ddedicated&amp;utm_content=3Dimage-fr-es-warmup-v1=
+" shash=3D"UMvH26fi0c5T84qFqQ4pwJKD8V/ZagnAvoQ8VZ0Gdz1BPl/IxKuM1rGXlxlcWyhA=
+GzATlZDtKl1h4/tYUmER3HwOcBo3y6LJrrcsGlsKfLjGlmiZizUYi0R40XWUE3MeAPzwrLIXM4+=
+XeHwsDupee2nIwwrIXWF04loqim/mLxE=3D" id=3D"acr-link-80574229" style=3D"text=
+-decoration:underline;" target=3D"_blank"><img style=3D"height:auto;width:1=
+00%;" width=3D"640" class=3D"" data-medialibrary-source=3D"aem" alt=3D"Euro=
+pean sleeper" title=3D"European sleeper" height=3D"250" src=3D"https://cdn.=
+email.belgiantrain.be/64297e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:2f1=
+d71b8-dbb8-427c-8098-3d035db4fd92/oak:1.0::ci:c96506a349d43023bd8bbd285c813=
+2e9/682a56e9-2333-35c9-a21f-503aeaf4be42"></a><!--[if mso]></td></tr></tabl=
+e><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<th class=3D"colspan1 is-desktop-hidden" style=3D"padding-top:0px;padding-b=
+ottom:10px;">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null"><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-desktop-hidden"=
+ style=3D"width:100%;text-align:center;" data-component-id=3D"image" data-c=
+ontenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEuro=
+pean-Sleeper%3Futm_campaign%3Dbeurope%26utm_medium%3Demail%26utm_source%3Dd=
+edicated%26utm_content%3Dimage-fr-es-warmup-v1&amp;data=3D05%7C02%7Candreas=
+.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c52=
+4980bfcdce7ffd32f1ea%7C0%7C0%7C638744533850987843%7CUnknown%7CTWFpbGZsb3d8e=
+yJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIs=
+IldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=3DmfPpF70bBTSY0QB8GxYhefjnFNe%2=
+FY59YLTHqRCUY4Ec%3D&amp;reserved=3D0" originalsrc=3D"https://www.b-europe.c=
+om/FR/Trains/European-Sleeper?utm_campaign=3Dbeurope&amp;utm_medium=3Demail=
+&amp;utm_source=3Ddedicated&amp;utm_content=3Dimage-fr-es-warmup-v1" shash=
+=3D"dE/FvnjOKRMUXtg1Z2ePQpoUYLDSqmfv2zsgx2cUu64nYs6or5sYV2zGGquECk4Bsp4beg+=
+nuHEZw/xnC90dHYNNWk1UMq+lGWwElVexuS7eWnbPhZed6lEO/t6dcSNZH1oW8b0g4qMxOdRHZc=
+sxydr2/NeeuuRUjkNMvIBO/t8=3D" id=3D"acr-link-34777924" style=3D"text-decora=
+tion:underline;"><img style=3D"height:auto;width:100%;" width=3D"640" data-=
+medialibrary-source=3D"aem" class=3D"" title=3D"European sleeper" alt=3D"Eu=
+ropean sleeper" height=3D"400" src=3D"https://cdn.email.belgiantrain.be/642=
+97e00-edf6-11ea-9d34-7703acf36721/urn:aaid:aem:b896fbaf-d35a-448e-ac7a-ee77=
+d9ad7ab6/oak:1.0::ci:234080aa5a76003f0f57f6edac146f25/483e5ad3-8545-3142-9a=
+6a-625ee68df01d"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+<!--[if mso]></td></tr></table><![endif]-->
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"2-2-column" data-structur=
+e-name=3D"richtext.structure_2_2_column" style=3D"vertical-align:top;text-a=
+lign:start;" data-has-int-mso-hack=3D"true">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: start;" ><![endif]-->
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"font-family:Arial;paddin=
+g:0px 10px;font-size:10.5pt;color:rgb(85, 85, 85);" data-component-id=3D"te=
+xt" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85);"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:justify;">Le Good Night train d=E2=80=99European Sle=
+eper circulent plusieurs fois par semaine et vous emm=C3=A8nent de Bruxelle=
+s et Anvers =C3=A0 Berlin ou Prague.</p>
+<p><br>
+</p>
+<p style=3D"text-align:right;"><a class=3D"arc-link" data-nl-type=3D"extern=
+alLink" href=3D"https://eur01.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Fwww.b-europe.com%2FFR%2FTrains%2FEuropean-Sleeper%3Futm_campaign%3=
+Dbeurope%26utm_medium%3Demail%26utm_source%3Ddedicated%26utm_content%3Dcta-=
+fr-es-warmup-v1&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.be%7C4db=
+d7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C0%7C0%7C=
+638744533851001750%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIw=
+LjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%=
+7C&amp;sdata=3DXLScsCN3q35858eYHLFCiCphE%2BexrwP%2Bssv3H8Vegak%3D&amp;reser=
+ved=3D0" originalsrc=3D"https://www.b-europe.com/FR/Trains/European-Sleeper=
+?utm_campaign=3Dbeurope&amp;utm_medium=3Demail&amp;utm_source=3Ddedicated&a=
+mp;utm_content=3Dcta-fr-es-warmup-v1" shash=3D"m/GKIxa3F1q/g6nrgbOguKHt+mN6=
+Y3juBfWs/K81LCutdS1JzHGUPHvLmG2DacXC2oBvLy4YkzyXgaVPDFfTm7XJA382v/6ylU9cD0B=
+r/yoEdkdOlYAN01qq2+34rUa+ODFtMh0FKriP73AVXqzcodH+oxa20ZIFQNHQLvxr8IU=3D" st=
+yle=3D"text-decoration:underline;" target=3D"_blank">En
+ savoir plus &gt;</a></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+<th class=3D"colspan2">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:f48c51fc-92e4-=
+4927-baa9-d32391630ebc" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1" style=3D"padding-top:10px;padding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" data-component-id=3D"text" style=
+=3D"font-family:Arial;padding:0px 10px;font-size:10.5pt;color:rgb(85, 85, 8=
+5);height:auto;width:auto;text-align:left;vertical-align:baseline;" data-ha=
+s-int-mso-hack=3D"true" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"auto"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-size=
+: 10.5pt; color: rgb(85, 85, 85); height: auto; text-align: left;" ><![endi=
+f]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p>=F0=9F=92=BA Places assises, couchettes ou places-lits </p>
+<p>=F0=9F=92=A4 Optimisez votre temps de trajet : arrivez repos=C3=A9 dans =
+la destination de votre choix
+</p>
+<p>=F0=9F=9B=8F=EF=B8=8F =C3=89pargnez une nuit d'h=C3=B4tel </p>
+<p><br>
+</p>
+<p><br>
+</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:5cd41d17-8948-=
+482c-8d22-56458d52b85d" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null" ><![endif]-=
+->
+<div style=3D"background-color:#ffffff;" data-fragmentbuilder-label=3D"Sele=
+cted" data-has-ext-mso-hack=3D"true" data-has-int-mso-hack=3D"true" class=
+=3D"is-desktop-visible">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"background-color: rgb(255, 255, 255);"><![endif]=
+-->
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan4" style=3D"background-color:#ffffff;padding-top:10px;p=
+adding-bottom:10px;border-width:0px;border-style:none;">
+<div class=3D"acr-fragment acr-component" style=3D"padding-top:5px;padding-=
+bottom:5px;color:rgb(95, 95, 95);border-width:0px;border-style:none;font-fa=
+mily:Verdana;" data-component-id=3D"text" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"padding-top: 5px; padding-bottom: 5px; color: rg=
+b(95, 95, 95); font-family: Verdana;"><![endif]-->
+<div class=3D"text-container" style=3D"text-align:center;" data-contentedit=
+able=3D"true">
+<span style=3D"font-size:14px;"><a class=3D"arc-link" data-nl-type=3D"exter=
+nalLink" href=3D"#" style=3D"color:#000049;" data-nl-lnkep-perso-attr-href=
+=3D"https://www.belgiantrain.be/fr/support/forms?utm_medium=3Demail&amp;utm=
+_source=3Dinfo&amp;utm_campaign=3Dstatic&amp;utm_content=3Dfooter_fr_suppor=
+t">Contactez-nous</a></span></div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+<th class=3D"colspan4" style=3D"background-color:#ffffff;padding-top:10px;p=
+adding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"padding-top:5px;padding-=
+bottom:5px;color:rgb(95, 95, 95);border-width:0px;border-style:none;font-fa=
+mily:Verdana;" data-component-id=3D"text" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"padding-top: 5px; padding-bottom: 5px; color: rg=
+b(95, 95, 95); font-family: Verdana;"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:center;"><span style=3D"font-size:14px;"><a class=3D=
+"arc-link" data-nl-type=3D"externalLink" href=3D"#" style=3D"color:rgb(0, 0=
+, 73);" data-nl-lnkep-perso-attr-href=3D"https://www.belgiantrain.be/fr/pri=
+vacy?utm_medium=3Demail&amp;utm_source=3Dinfo&amp;utm_campaign=3Dstatic&amp=
+;utm_content=3Dfooter_fr_privacy">Vie
+ priv=C3=A9e</a></span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+<th class=3D"colspan4" style=3D"background-color:#ffffff;padding-top:10px;p=
+adding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"padding-top:5px;padding-=
+bottom:5px;color:rgb(95, 95, 95);border-width:0px;border-style:none;font-fa=
+mily:Verdana;" data-component-id=3D"text" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"padding-top: 5px; padding-bottom: 5px; color: rg=
+b(95, 95, 95); font-family: Verdana;"><![endif]-->
+<div class=3D"text-container" style=3D"text-align:center;" data-contentedit=
+able=3D"true">
+<span style=3D"font-size:14px;"><a class=3D"arc-link" data-nl-type=3D"exter=
+nalLink" href=3D"#" style=3D"color:rgb(0, 0, 73);" data-nl-lnkep-perso-attr=
+-href=3D"https://www.belgiantrain.be/fr/my-account?utm_medium=3Demail&amp;u=
+tm_source=3Dinfo&amp;utm_campaign=3Dstatic&amp;utm_content=3Dfooter_fr_my-a=
+ccount">G=C3=A9rer
+ mon profil</a></span></div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+<th class=3D"colspan4" style=3D"background-color:#ffffff;padding-top:10px;p=
+adding-bottom:10px;">
+<div class=3D"acr-fragment acr-component" style=3D"padding-top:5px;padding-=
+bottom:5px;color:rgb(95, 95, 95);font-family:Verdana;" data-component-id=3D=
+"text" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"padding-top: 5px; padding-bottom: 5px; color: rg=
+b(95, 95, 95); font-family: Verdana;"><![endif]-->
+<div class=3D"text-container" style=3D"text-align:center;" data-contentedit=
+able=3D"true">
+<span style=3D"font-size:14px;"><a class=3D"arc-link" data-nl-type=3D"exter=
+nalLink" href=3D"https://www.belgiantrain.be/api/myaccount/UnSubscribeCampa=
+ignEmails?&amp;customerId=3DPRO_&amp;utm_source=3Ddedicated&amp;utm_medium=
+=3Demail&amp;utm_campaign=3Dstatic&amp;utm_content=3Dfooter_nl_privacy" sty=
+le=3D"color:rgb(0, 0, 73);text-decoration:underline;" target=3D"_blank" dat=
+a-label=3D"Me d=C3=A9sinscrire" data-tracking-type=3D"OPT_OUT" data-tags=3D=
+"">Me
+ d=C3=A9sinscrire</a></span></div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--><!--[if mso]><table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D"mso-is-deskto=
+p-hidden" style=3D"mso-hide:all"><tr><td style=3D"null" ><![endif]-->
+<div data-has-ext-mso-hack=3D"true" style=3D"display:none;" class=3D"is-mob=
+ile-visible" id=3D"acr-2523837">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan2">
+<div class=3D"acr-fragment acr-component" style=3D"padding-top:5px;padding-=
+bottom:5px;color:rgb(95, 95, 95);border-width:0px;border-style:none;font-fa=
+mily:Verdana;" data-component-id=3D"text" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"padding-top: 5px; padding-bottom: 5px; color: rg=
+b(95, 95, 95); font-family: Verdana;"><![endif]-->
+<div class=3D"text-container" style=3D"text-align:center;" data-contentedit=
+able=3D"true">
+<span style=3D"font-size:14px;"><a class=3D"arc-link" data-nl-type=3D"exter=
+nalLink" href=3D"#" style=3D"color:#000049;" data-nl-lnkep-perso-attr-href=
+=3D"https://www.belgiantrain.be/fr/support/forms?utm_medium=3Demail&amp;utm=
+_source=3Dinfo&amp;utm_campaign=3Dstatic&amp;utm_content=3Dfooter_fr_suppor=
+t">Contactez-nous</a></span></div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-fragment acr-component" style=3D"padding-top:5px;padding-=
+bottom:5px;color:rgb(95, 95, 95);border-width:0px;border-style:none;font-fa=
+mily:Verdana;" data-component-id=3D"text" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"padding-top: 5px; padding-bottom: 5px; color: rg=
+b(95, 95, 95); font-family: Verdana;"><![endif]-->
+<div class=3D"text-container" style=3D"text-align:center;" data-contentedit=
+able=3D"true">
+<span style=3D"font-size:14px;"><a class=3D"arc-link" data-nl-type=3D"exter=
+nalLink" href=3D"#" style=3D"color:rgb(0, 0, 73);" data-nl-lnkep-perso-attr=
+-href=3D"https://www.belgiantrain.be/fr/my-account?utm_medium=3Demail&amp;u=
+tm_source=3Dinfo&amp;utm_campaign=3Dstatic&amp;utm_content=3Dfooter_fr_my-a=
+ccount">G=C3=A9rer
+ mon profil</a></span></div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+<th class=3D"colspan2">
+<div class=3D"acr-fragment acr-component" style=3D"padding-top:5px;padding-=
+bottom:5px;color:rgb(95, 95, 95);border-width:0px;border-style:none;font-fa=
+mily:Verdana;" data-component-id=3D"text" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"padding-top: 5px; padding-bottom: 5px; color: rg=
+b(95, 95, 95); font-family: Verdana;"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:center;"><span style=3D"font-size:14px;"><a class=3D=
+"arc-link" data-nl-type=3D"externalLink" href=3D"#" style=3D"color:rgb(0, 0=
+, 73);" data-nl-lnkep-perso-attr-href=3D"https://www.belgiantrain.be/fr/pri=
+vacy?utm_medium=3Demail&amp;utm_source=3Dinfo&amp;utm_campaign=3Dstatic&amp=
+;utm_content=3Dfooter_fr_privacy">Vie
+ priv=C3=A9e</a></span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div class=3D"acr-fragment acr-component" style=3D"padding-top:5px;padding-=
+bottom:5px;color:rgb(95, 95, 95);font-family:Verdana;" data-component-id=3D=
+"text" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"padding-top: 5px; padding-bottom: 5px; color: rg=
+b(95, 95, 95); font-family: Verdana;"><![endif]-->
+<div class=3D"text-container" style=3D"text-align:center;" data-contentedit=
+able=3D"true">
+<span style=3D"font-size:14px;"><a class=3D"arc-link" data-nl-type=3D"exter=
+nalLink" href=3D"#" style=3D"color:rgb(0, 0, 73);text-decoration:underline;=
+">Me d=C3=A9sinscrire</a></span></div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<div data-params-shared-vars=3D"{}" data-fragment-ref=3D"ajo:3f3a39e3-f800-=
+45d2-b287-31085e4ee84b" data-contenteditable=3D"false">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding: 10px 0px;" ><![en=
+dif]-->
+<div class=3D"acr-fragment acr-component" style=3D"font-size:14px;font-fami=
+ly:verdana;color:rgb(95, 95, 95);margin:10px 0px;padding:10px;" data-has-ex=
+t-mso-hack=3D"true" data-has-int-mso-hack=3D"true" data-component-id=3D"tex=
+t" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"font-size: 14px; font-family: verdana; color: rg=
+b(0, 0, 73); text-align: left; font-weight: normal; font-style: normal; pad=
+ding: 10px;" ><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p><span style=3D"font-size:11px;">Disclaimer</span></p>
+<p><br>
+</p>
+<p><span style=3D"font-size:11px;">La SNCB traite vos donn=C3=A9es =C3=A0 c=
+aract=C3=A8re personnel, comme indiqu=C3=A9 dans sa politique sur la vie pr=
+iv=C3=A9e que vous trouvez sur
+</span><a class=3D"arc-link" data-nl-type=3D"externalLink" style=3D"text-de=
+coration:underline;font-size:11px;color:rgb(0, 0, 73);" href=3D"https://eur=
+01.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Fwww.sncb.be%2Fpriv=
+acy&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1641f=
+a318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C0%7C0%7C638744533851=
+016653%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIs=
+IlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=
+=3DfWHWTwY5qK%2BcDvJkHHRvmihgOZyRw%2FE%2FAgNXSbG77II%3D&amp;reserved=3D0" o=
+riginalsrc=3D"https://www.sncb.be/privacy" shash=3D"ItZArj34XTHrEkgMT0IL7q4=
+1H5CmuvaLs/WMZGVMr0ilAISre45BfwN+YV+XoO9DlzucbF6u11pm0gcNXLnxIK/wrZIF2lZ4UL=
+WIYHpB5pYl0JJdneLqwAGtXwt3rHXY6v3r5kD3yf0M218HoIDu0D4P/AB+J9YmkPiZiMnE5vw=
+=3D" target=3D"_blank">www.sncb.be/privacy<span style=3D"font-size:11px;">.=
+</span></a><span style=3D"font-size:11px;"></span></p>
+<p><br>
+</p>
+<p><span style=3D"font-size:11px;">Vous y retrouvez aussi l'information sur=
+ vos droits comme le droit d=E2=80=99acc=C3=A8s aux informations qui vous c=
+oncernent et d=E2=80=99un droit de correction ainsi que, le cas =C3=A9ch=C3=
+=A9ant, d=E2=80=99un droit de suppression moyennant certaines op=C3=A9ratio=
+ns
+ de traitement. Vous pouvez vous adresser =C3=A0 cette fin par mail =C3=A0 =
+</span><a class=3D"arc-link" data-nl-type=3D"externalLink" style=3D"text-de=
+coration:underline;font-size:11px;color:rgb(0, 0, 73);" href=3D"#">privacy@=
+sncb.be</a><span style=3D"font-size:11px;">.</span></p>
+<p><br>
+</p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+</tr>
+</tbody>
+</table>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div style=3D"background-color:#f2f2f5;" data-params-shared-vars=3D"{}" dat=
+a-fragment-ref=3D"ajo:b18b2d82-6a4b-4221-a393-78820ee79951" data-contentedi=
+table=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null" ><![endif]-=
+->
+<div data-fragmentbuilder-label=3D"Selected" data-has-ext-mso-hack=3D"true"=
+ class=3D"is-desktop-visible">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bg=
+color=3D"#f2f2f5" style=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component" style=3D"color:rgb(0, 105, 180);f=
+ont-family:verdana;padding:10px 10px 20px;" data-component-id=3D"text" data=
+-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"color: rgb(0, 105, 180); font-family: verdana; p=
+adding: 10px 10px 20px;"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:center;"><span style=3D"font-weight:700;">Que pensez=
+-vous de ce mail ?</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso]></td></tr></table><![endif]--><!--[if mso]><table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D"" style=3D"ms=
+o-hide:"><tr><td style=3D"null" ><![endif]-->
+<div data-has-ext-mso-hack=3D"true" class=3D"is-desktop-visible">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bg=
+color=3D"#f2f2f5" style=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div class=3D"acr-fragment acr-component image-container" style=3D"width:10=
+0%;text-align:center;padding-bottom:20px;" data-component-id=3D"image" data=
+-contenteditable=3D"false">
+<center>
+<table cellpadding=3D"15" cellspacing=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td style=3D"text-align:center;"><a class=3D"arc-link" data-nl-type=3D"exte=
+rnalLink" href=3D"https://eur01.safelinks.protection.outlook.com/?url=3Dhtt=
+ps%3A%2F%2Fforms.office.com%2FPages%2FResponsePage.aspx%3Fid%3DZeoZeVJMgEm_=
+zc5__TLx6hC_Ge3risdCnwyt291ZgGxUQlhBWFg5QkFYNDg3T0JOQkRRMzlQWjJSSCQlQCN0PWc=
+u&amp;data=3D05%7C02%7Candreas.olidis%40belgiantrain.be%7C4dbd7e1ffa1641fa3=
+18b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1ea%7C0%7C0%7C63874453385103=
+0321%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIl=
+AiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C40000%7C%7C%7C&amp;sdata=
+=3Dk53l1mGnpAew%2FhpiIRkCrhypSAdHR2gLbcvYNqSsolM%3D&amp;reserved=3D0" origi=
+nalsrc=3D"https://forms.office.com/Pages/ResponsePage.aspx?id=3DZeoZeVJMgEm=
+_zc5__TLx6hC_Ge3risdCnwyt291ZgGxUQlhBWFg5QkFYNDg3T0JOQkRRMzlQWjJSSCQlQCN0PW=
+cu" shash=3D"XdzFVCrGeTSsvScf6sKmAQ3BbNYNzFQyakwrdng0i0zItx3bsDYur1fki1ivVi=
+zMbGjpzzJxO7Xj9JXJxM42eHXusxq2BWEM69BMjjZPmfKaPFrqSfWmZ8/SWE//8/srijXl/SKMC=
+8SHnhMz7JbIvOpx7aQPFI+cprDzLUN7OC4=3D" style=3D"padding-right:15px;padding-=
+left:10px;text-decoration:underline;" target=3D"_blank"><img src=3D"http://=
+res1.communication.belgiantrain.be/res/belgiantrain_mkt_prod1/072f1d2b2e7a5=
+e530c9e93d82213461b4bf128cfe98ef2d7a2eee1d94b3c7b57.png" style=3D"width:75p=
+x;height:auto;max-width:75px;" width=3D"75" height=3D"75"></a></td>
+<td><a class=3D"arc-link" data-nl-type=3D"externalLink" href=3D"#" data-nl-=
+lnkep-perso-attr-href=3D"https://forms.office.com/Pages/ResponsePage.aspx?i=
+d=3DZeoZeVJMgEm_zc5__TLx6hC_Ge3risdCnwyt291ZgGxUQlhBWFg5QkFYNDg3T0JOQkRRMzl=
+QWjJSSCQlQCN0PWcu" style=3D"padding-right:15px;padding-left:15px;"><img src=
+=3D"http://res1.communication.belgiantrain.be/res/belgiantrain_mkt_prod1/45=
+6f456a6a2e6d506c8a74ff2aa74543f9fa665508a59a6dc906708b7bb71aac.png" style=
+=3D"width:75px;height:auto;max-width:75px;" width=3D"75" height=3D"75"></a>=
+</td>
+<td><a class=3D"arc-link" data-nl-type=3D"externalLink" href=3D"#" data-nl-=
+lnkep-perso-attr-href=3D"https://forms.office.com/e/xBtPF3ntg1" style=3D"pa=
+ddding-right:10px;padding-left:15px;"><img src=3D"http://res1.communication=
+.belgiantrain.be/res/belgiantrain_mkt_prod1/36aa93f61c3c4d0c9eef70870bbdb78=
+d84f1b797dc148b77e557fe855ef8d6d6.png" style=3D"width:75px;height:auto;max-=
+width:75px;" width=3D"75" height=3D"75"></a></td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structur=
+e-name=3D"richtext.structure_1_1_column">
+<table class=3D"structure__table" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"640">
+<tbody>
+<tr>
+<th class=3D"colspan1">
+<div style=3D"background-color:#f2f2f5;" data-params-shared-vars=3D"{}" dat=
+a-fragment-ref=3D"ajo:8c1bba93-5506-4160-a737-fdd0c45645af" data-contentedi=
+table=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr><td st=
+yle=3D"null" ><![endif]-->
+<div data-fragmentbuilder-label=3D"Selected" data-has-ext-mso-hack=3D"true"=
+ style=3D"display:none;" class=3D"is-mobile-visible">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bg=
+color=3D"#f2f2f5" style=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" width=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"ms=
+o-hide:all"><tr><td style=3D"null" ><![endif]-->
+<div class=3D"acr-fragment acr-component is-mobile-visible" style=3D"color:=
+rgb(0, 105, 180);font-family:verdana;padding:10px 10px 20px;display:none;" =
+data-has-ext-mso-hack=3D"true" data-has-int-mso-hack=3D"true" data-componen=
+t-id=3D"text" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"color: rgb(0, 105, 180); font-family: verdana; p=
+adding:10px 10px 20px;"><![endif]-->
+<div class=3D"text-container" data-contenteditable=3D"true">
+<p style=3D"text-align:center;"><span style=3D"font-weight:700;">Que pensez=
+-vous de ce mail ?</span></p>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso]></td></tr></table><![endif]--><!--[if mso]><table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D"mso-is-deskto=
+p-hidden" style=3D"mso-hide:all"><tr><td style=3D"null" ><![endif]-->
+<div data-has-ext-mso-hack=3D"true" style=3D"display:none;" class=3D"is-mob=
+ile-visible">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bg=
+color=3D"#f2f2f5" style=3D"width:100%;table-layout:fixed;">
+<tbody>
+<tr>
+<th class=3D"colspan1"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" width=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"ms=
+o-hide:all"><tr><td style=3D"null" ><![endif]-->
+<div class=3D"acr-fragment acr-component image-container is-mobile-visible"=
+ style=3D"width:100%;text-align:center;padding-bottom:20px;display:none;" d=
+ata-has-ext-mso-hack=3D"true" data-has-int-mso-hack=3D"true" data-component=
+-id=3D"image" data-contenteditable=3D"false">
+<!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"https://eur01.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Fforms.office.com%2FPages%2FResponsePa=
+ge.aspx%3Fid%3DZeoZeVJMgEm_zc5__TLx6hC_Ge3risdCnwyt291ZgGxUQlhBWFg5QkFYNDg3=
+T0JOQkRRMzlQWjJSSCQlQCN0PWcu&amp;data=3D05%7C02%7Candreas.olidis%40belgiant=
+rain.be%7C4dbd7e1ffa1641fa318b08dd46c4c342%7C7919ea654c524980bfcdce7ffd32f1=
+ea%7C0%7C0%7C638744533851044047%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnR=
+ydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7=
+C40000%7C%7C%7C&amp;sdata=3DCGOFmf5EaQ4JX8ZU2HZXwEb2%2FkCUkhaRZJHFzK6rQeQ%3=
+D&amp;reserved=3D0" originalsrc=3D"https://forms.office.com/Pages/ResponseP=
+age.aspx?id=3DZeoZeVJMgEm_zc5__TLx6hC_Ge3risdCnwyt291ZgGxUQlhBWFg5QkFYNDg3T=
+0JOQkRRMzlQWjJSSCQlQCN0PWcu" shash=3D"ndMlH6TqBHaS8qTMeJo1tZEFseBvKl0yocjXE=
+iQrxR5QS+9XvOBro8NPmkwS0iqt81cM3dhohYgLmdkMWGPcWvh55LkeYj31jsX9iNaM6AXIRTEj=
+C+ItFNJVkp5PwGlGGkEraUmXsg4AbtlU7FnKB+ESo4FB4E4fES2PuZrLekw=3D" target=3D"_=
+blank" style=3D"text-decoration:underline;"><img src=3D"http://res1.communi=
+cation.belgiantrain.be/res/belgiantrain_mkt_prod1/072f1d2b2e7a5e530c9e93d82=
+213461b4bf128cfe98ef2d7a2eee1d94b3c7b57.png" style=3D"width:75px;height:75p=
+x;max-width:75px;max-height:75px;" width=3D"75" height=3D"75"></a>
+<img src=3D"http://res1.communication.belgiantrain.be/res/belgiantrain_mkt_=
+prod1/c337278aa407b2a5c2b637dca7b52791a26dd2f1bd850500d4fd59e734b56ad1.png"=
+ style=3D"width:65px;height:75px;max-width:65px;max-height:75px;" width=3D"=
+65" height=3D"75">
+<a class=3D"arc-link" data-nl-type=3D"externalLink" href=3D"#" data-nl-lnke=
+p-perso-attr-href=3D"https://forms.office.com/e/xBtPF3ntg1">
+<img src=3D"http://res1.communication.belgiantrain.be/res/belgiantrain_mkt_=
+prod1/36aa93f61c3c4d0c9eef70870bbdb78d84f1b797dc148b77e557fe855ef8d6d6.png"=
+ style=3D"width:75px;height:75px;max-width:75px;max-height:75px;" width=3D"=
+75" height=3D"75"></a><!--[if mso]></td></tr></table><![endif]--></div>
+<!--[if mso]></td></tr></table><![endif]--></th>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso]></td></tr></table><![endif]--></div>
+</th>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

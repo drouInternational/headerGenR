@@ -1,0 +1,1346 @@
+Received: from AS8PR02MB9212.eurprd02.prod.outlook.com (2603:10a6:20b:5c0::22)
+ by AM7PR02MB6241.eurprd02.prod.outlook.com with HTTPS; Thu, 17 Oct 2024
+ 07:25:07 +0000
+Received: from DU2PR04CA0344.eurprd04.prod.outlook.com (2603:10a6:10:2b4::17)
+ by AS8PR02MB9212.eurprd02.prod.outlook.com (2603:10a6:20b:5c0::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8069.18; Thu, 17 Oct
+ 2024 07:25:04 +0000
+Received: from DB5PEPF00014B90.eurprd02.prod.outlook.com
+ (2603:10a6:10:2b4:cafe::64) by DU2PR04CA0344.outlook.office365.com
+ (2603:10a6:10:2b4::17) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8069.19 via Frontend
+ Transport; Thu, 17 Oct 2024 07:25:04 +0000
+Authentication-Results: spf=pass (sender IP is 66.117.26.159)
+ smtp.mailfrom=international.belgiantrain.be; dkim=pass (signature was
+ verified) header.d=international.belgiantrain.be;dmarc=pass action=none
+ header.from=international.belgiantrain.be;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ international.belgiantrain.be designates 66.117.26.159 as permitted sender)
+ receiver=protection.outlook.com; client-ip=66.117.26.159;
+ helo=r159.international.belgiantrain.be; pr=C
+Received: from r159.international.belgiantrain.be (66.117.26.159) by
+ DB5PEPF00014B90.mail.protection.outlook.com (10.167.8.228) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8069.17 via Frontend Transport; Thu, 17 Oct 2024 07:25:04 +0000
+Return-Path: bounce@international.belgiantrain.be
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=international.belgiantrain.be; s=belgiantrain; t=1729149901;
+	bh=TLa73DOzNcuxkwOmo9Yacehf2mBscIgs9rXFQaKYyec=;
+	h=From:Date:Subject:To:MIME-Version:Message-ID:List-Unsubscribe:
+	 List-Unsubscribe-Post:Content-Type;
+	b=KqoodZNU+5DiugWtq7XG/D1pxrBQwL4sXIlDSMPDWJSMSSvbbiw9rj4tH0T62r0xS
+	 b5txcedMwyoT0jM9fVtd/U2iuxGVgRf/+haZbK9Wiw4wN37FOmLskADAAYZD0EFNZO
+	 T7Lj5K5kUBTlN0OKTzfXfOlmfyxjkA3Lf5F9iT1OR2gUw4LGRVthWVZp7qqrunejZN
+	 6oIBGc2EDaCVgWcnzICv9EA0jgn1bzH/G5KFvg0RQHm/QmZ9Rs+n9q/lc7Ox0RqCRG
+	 68+4JvUUIpPPgSP39gtQh1JQT8K4AWYCc7+bCfyFzOASi3viH6amW4FpZVYvWO0bXj
+	 5sxWyOqMX84/A==
+X-MSFBL: srFX7TpTAUI+uLR0NztIajWUqdO+DrNRyFsYlncIxfo=|eyJnIjoiZGVmYXVsdF9
+	kYjA2YmIxYy03NTIyLTQ1ZWUtOWI2Yy02NTZlMzc5MTU3Y2UiLCJiIjoiYmVsZ2l
+	hbnRyYWluXzY2LjExNy4yNi4xNTlfZGVmYXVsdF9kYjA2YmIxYy03NTIyLTQ1ZWU
+	tOWI2Yy02NTZlMzc5MTU3Y2UiLCJyY3B0X21ldGEiOnsgImluIjogImJlbGdpYW5
+	0cmFpbl9ta3RfcHJvZDIiLCAiciI6ICJhbmRyZWFzLm9saWRpc0BiZWxnaWFudHJ
+	haW4uYmUiLCAibSI6ICI2NTY5MDE0IiwgImQiOiAiMjQ1NTE5NTAiLCAiaSI6ICI
+	yQUNGMzUzNTVGNTBGOTA2MEE0OTVDRkJAQWRvYmVPcmciIH0sInIiOiJhbmRyZWF
+	zLm9saWRpc0BiZWxnaWFudHJhaW4uYmUifQ==
+Received: from [52.30.183.98] ([52.30.183.98:34089] helo=r156.international.belgiantrain.be)
+	by irl1-prod1-mta-i-091f5650e3b9530e4 (envelope-from <bounce@international.belgiantrain.be>)
+	(ecelerity 4.4.1.20033 r(msys-ecelerity:tags/4.4.1.0^0)) with ESMTP
+	id DB/FC-63015-DCBB0176; Thu, 17 Oct 2024 07:25:01 +0000
+From: "SNCB International" <communication@international.belgiantrain.be>
+Date: Thu, 17 Oct 2024 09:24:59 +0200
+Subject: [Proof 12 en_gb] New trains to the Netherlands, greater value.
+To: <andreas.olidis@belgiantrain.be>
+Reply-To: "NMBS - SNCB" <no-reply@international.belgiantrain.be>
+X-mailer: nlserver, Build 7.0.0.10693
+Message-ID: <AC70000000000643C360176A20Ebelgiantrain_mkt_prod2@international.belgiantrain.be>
+List-Unsubscribe: <http://t2.international.belgiantrain.be/lp/bl?pkey=%40oSx6TVdA0DhnXC1BXq75wC6MGBR9SSnp6YuOvbKlTXgmehfa98Z1pRy6uofdpO02h9HQlf-RXGzDB6D38u2NtEkuAW4&OneClick=true>,<mailto:bounce@international.belgiantrain.be?subject=unsubscribe%3CAC70000000000643C360176A20Ebelgiantrain_mkt_prod2@international.belgiantrain.be%3E>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-MS-Exchange-Organization-ExpirationStartTime: 17 Oct 2024 07:25:04.1890
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 9c3c986a-17f9-4ff3-1ef9-08dcee7cd1bc
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 7919ea65-4c52-4980-bfcd-ce7ffd32f1ea:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB5PEPF00014B90:EE_|AS8PR02MB9212:EE_|AM7PR02MB6241:EE_
+X-MS-Exchange-Organization-AuthSource: DB5PEPF00014B90.eurprd02.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 9c3c986a-17f9-4ff3-1ef9-08dcee7cd1bc
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: -1
+X-Microsoft-Antispam: BCL:3;ARA:13230040|4022899009|69100299015|1032899013|12012899012|8096899003|2066899003;
+X-Forefront-Antispam-Report: CIP:66.117.26.159;CTRY:US;LANG:en;SCL:-1;SRV:;IPV:NLI;SFV:SFE;H:r159.international.belgiantrain.be;PTR:r159.international.belgiantrain.be;CAT:NONE;SFS:(13230040)(4022899009)(69100299015)(1032899013)(12012899012)(8096899003)(2066899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Oct 2024 07:25:04.1890
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9c3c986a-17f9-4ff3-1ef9-08dcee7cd1bc
+X-MS-Exchange-CrossTenant-Id: 7919ea65-4c52-4980-bfcd-ce7ffd32f1ea
+X-MS-Exchange-CrossTenant-AuthSource: DB5PEPF00014B90.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8PR02MB9212
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.1245774
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8069.009
+X-Microsoft-Antispam-Mailbox-Delivery:
+	wl:1;pcwl:1;ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(811239)(255002)(410001)(930097)(140003)(1420198);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?L2l4eWF4cXhLSVNzdXlPMDlZbUgxWVRxZERmb2FTbFZPMEt4SFd0bnVLYlZM?=
+ =?utf-8?B?NVlWTEUzWHcvVWp3M2FURVJ1c01WVlRLc2s2V1dXSiszNStucmhaWmhmY3N6?=
+ =?utf-8?B?TmQ3RithVkdoVHRldGpwaFk5WWpiMDNNelVzRFVPZ2VLWGRUZG1QaDZkM3FT?=
+ =?utf-8?B?UGV1dU90SzlGTWpWWU0wekgvMExhK0diUnJGRmxJKzJ6cXdXMFJTWStLTjN6?=
+ =?utf-8?B?K3lrVmpzZnJ4SWd0R0M3OERHRmJQQmIxaUNMeFpYY1ZqQm96OEJIYVdmdEE4?=
+ =?utf-8?B?WWZnME54d0h6UCtIQjBUWmJBNUVwajJWTUdYSW5HMnJIa01ZM3o1Wll3T29P?=
+ =?utf-8?B?SnFVajZnUlNzTDJ5ZmQyL1dqeVNtalYwZ3dDYVgrSmVKQkc5SXl1eWdIeGgv?=
+ =?utf-8?B?VTlES0FFZ3lQRS9Fa0JzbktmNk5HblNqTDN0REJldmlPWFdyN09UTTJCUDUx?=
+ =?utf-8?B?aWk3ZDd0U3huR2VKanZSTTJrN3RsZDFMa1VtalVrSVJwZ1Y4RXdBMVg5ZXow?=
+ =?utf-8?B?U3BMbnBzSGFOYjFwcDBqYUZGU2NxaVBrTE9YaWlqdmxQaUZ4UERNaTFmbHNn?=
+ =?utf-8?B?OXhjMTVTNmh2UnBWb1dKZlVVMktrZkZBQmdCNnd3RU1rL2pyRGNFSG5nRm9M?=
+ =?utf-8?B?NGRmeEtQQnhEeGpCVFJvUU11MmoxTU1QR3ZsVHlOcUlSbHRDWTFZaEVkaDZ5?=
+ =?utf-8?B?YUZvdWpWSWFieWhFSWJjTkNtTm5nclR2Uk9pakVQdGt0N2ZTdFp6UFVRYVhY?=
+ =?utf-8?B?bUd2dXUxZzdXZUFCZ3Q5TU9nMHZvL2lJLzBpQmVlK2FocVJERzhqUzM4WVJP?=
+ =?utf-8?B?SkhhQXd4R1BWUUVFZ29aRE9FM2tKeFQ5ZUc1RUxzb2djamEzS1c5V21pWlhx?=
+ =?utf-8?B?c1VjV3hoNVdEUXA5dmFxbGh5N0MyNFRvZHhRRU01SDdkNllYdzNJSldsNzlp?=
+ =?utf-8?B?S0hBN3ZuK0tOZnpacEZBRlppUHBrY3d3YStSa0tYWU12bk95aHo2L09FcGJF?=
+ =?utf-8?B?OW9lbkp1WHB6S2h4WTA0ME0yMFRlVHBkN1N4L1FsS0k1L291aHRZa25VQW9t?=
+ =?utf-8?B?aUs0eXBZUW1TTkhPRjUxbFhrdkUxa0EzODRIQTJDenZZRWdzQmJBNW1kMW5v?=
+ =?utf-8?B?MHBhbGdSRE9VNy9EK2hYbXQxZmorQWlTWUhMS3A2elI0QldLTExjOFYxYzcy?=
+ =?utf-8?B?a1l0amhSRTdBOUU4OUJWTk1RUnFjcUszbkxSNHJtMUlpaG0xdkVwdzc1eHlK?=
+ =?utf-8?B?TFBzUjJXMTJkUTA2ZHpqWFlqR1V4bHpiZHF1MjNJZ0ZuTTRGMms1Uk5MUndL?=
+ =?utf-8?B?ZldCbmphS1BwdE4reWRYQlp2c2lZaWljbVRUMjlBbFlkYkZHeVowN3VQVlh0?=
+ =?utf-8?B?K0ZRejdTSmVmbGdsd1VNYjliUzBzMUlWSW1STDBkVjF6alVlMU5sY1hYMHFj?=
+ =?utf-8?B?bm13R2ZHeDYwVEJKNUkrcEwxYklXN0V1cGhnVDVUeWx0a0wwYWkySWJFUTc0?=
+ =?utf-8?B?NmRnS1hDWGZPTGp4ZEM5NWN1RzNja1hKUEtjdytKUlRhR0M0cGhkVCtLR2Ji?=
+ =?utf-8?B?aU91ZjhRQWhZZHV5TklzbmlZaHh6QmNzR1ZxN01DRS9OeGJWczVyVUxIcVhP?=
+ =?utf-8?B?L1hXMGtKM0d4R0hKTk00elZ2S2pKVnhBMmZDTVVaVkNHS1NHcjk5WVdERk1n?=
+ =?utf-8?B?L1NQajQycnBrSUhrNjErUWpJUStIMlMrQUFSRGZreWpPczErdFVndHN1WHZT?=
+ =?utf-8?B?ckg4bkx5cEZ5SkxxMHI2dFRiMDNiZEFzRC9xRmlFQkQ3aVM4SWpUTlB2WUxi?=
+ =?utf-8?B?aWJBR3ZUeHlrR0dka2czY1ZFZllIOHlicEJIQUxLOFI0WlFKOExjT1NDUnNr?=
+ =?utf-8?B?dnM2cjdKNWJrNFdpZ1R1TEhGc0dWSkt5cytEMnFLb25OQ21GYkNRNmVGUzhL?=
+ =?utf-8?B?TTZrRGRvWjluZ29XMDRVRjRvTXR4UTNyUFFXVTFBSUV2Rit5TnhLVDVxRCtx?=
+ =?utf-8?B?d2Y0NkFsOE9tMXY0NGU1ZjBzWGxaRlJpQUF0ck96RzhJTld0UWtLbmc0R1RD?=
+ =?utf-8?B?V1JwMEp0bGxJdjJnS25BcUgvUEYrUDJUL1N0K2pHV0VGL3pHbzY1YldqS0xi?=
+ =?utf-8?B?WHJaSzNGSk9iaCtneVpsZVZ5dFNadGZBR2dBcDhWV0UxaDI1TVhqeTNCaGJx?=
+ =?utf-8?B?WGkrLy9vZ1FVMjNYMVRHekwxYUEvVHg3b1JWZFc5K3ZtWXo1bXEzN2xtUy96?=
+ =?utf-8?B?ZDc5eU4vRlpHVEhUWWY1MmZtSXQ4N1lHQTRkdm5sRzRjMWEzOXh0U2lTdWdr?=
+ =?utf-8?B?KytuUkdybXdUdUF2amREZlRKOHJkSnAraUQzb1ZRNzU3UkY2MUpKeXNLaW0w?=
+ =?utf-8?B?Vk9UYkJFT2Q0cVFqYXZVV0NPVS9iVG56dEJ1ekM0N2pHOGRydlY4NUdVdjZr?=
+ =?utf-8?B?RjVYVy9CbjBZUnZvOG8xSXpBV3VOZEx1OGttMUxDdDZRTWp5c25RTGtzbTc4?=
+ =?utf-8?B?Q2xXOXRSNk1wN3MybWtsd1oxaGxCd0xCaVF1eDY3aFZkU0ppYkRXbFdRTVI0?=
+ =?utf-8?B?ditCUHdIQ2kxVm1PMHFwZ1Vud1NTdDcxRzhiZmh3TDJtTGVvcW9vczEzaTVk?=
+ =?utf-8?B?Mit6Y0JVcytPMUdqZTN3dk1OTFl4bXRlM3NxV3JOOVA5VFJZQlJsd2J6S0VF?=
+ =?utf-8?B?dlUrMk9wcU96ckZmOHdsa3RiZkFNckh2dlFzRDBVaTF2VWpmcnR6eHVvN3Iz?=
+ =?utf-8?B?eExkc0RMdHAwRWFtRUhvaXdRR1EvQkFCSzBmODBEK3QyMjNHdStOM1RRQzIx?=
+ =?utf-8?B?NGZ3bzZyNTNZL3BsZDRJZE5Sbk9raWdMTk1LaVlKanUxN2tSQThvSzNCbzIv?=
+ =?utf-8?Q?w32QPOKFHe90aY1hpBGLAnABN7qB+1RSFXP2TKFc=3D?=
+MIME-Version: 1.0
+
+<!DOCTYPE html><html style=3D""><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><m=
+eta name=3D"content-version" content=3D"3.3.9"><base href=3D"http://t2.inte=
+rnational.belgiantrain.be"><meta name=3D"x-apple-disable-message-reformatti=
+ng"><meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=
+=3D1.0"><style data-name=3D"default" type=3D"text/css">body{font-family:san=
+s-serif;margin:0 !important;padding:0 !important;background:#FFFFFF;min-wid=
+th:750px;}td{padding:0;border-collapse:collapse;}th{font-weight:normal;text=
+-align:left;}.acr-fragment,.acr-component{padding:0;}.divider-container{pad=
+ding:5px 0;font-size:0px;}.text-container p{margin:0;}.image-container{line=
+-height:0;}.acr-tmp-component img,.image-container img{height:auto;}.button=
+-container a{text-decoration:none;color:inherit;}.acr-structure{background-=
+size:auto;background-repeat:no-repeat;}.structure__table{table-layout:fixed=
+;margin:0 auto;border-spacing:0;background-size:auto;background-repeat:no-r=
+epeat;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;}.col=
+span1,.colspan2,.colspan3,.colspan4,.colspan33,.colspan66{background-size:a=
+uto;background-repeat:no-repeat;box-sizing:border-box;}.colspan1{width:100%=
+;}.colspan2{width:50%;}.colspan3{width:75%;}.colspan4{width:25%;}.colspan33=
+{width:33%;}.colspan66{width:66%;}.component-social-container{width:100%;te=
+xt-align:center;}span.preheader{display:none !important;visibility:hidden;m=
+so-hide:all;opacity:0;}.ExternalClass{width:100%;}.ExternalClass,.ExternalC=
+lass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalC=
+lass div{line-height:100%;}h1,h2,h3,h4,h5{display:block;font-weight:bold;}h=
+1{font-size:24px;margin:19px 0 19px 0;}h2{font-size:24px;margin:20px 0 20px=
+ 0;}h3{font-size:19px;margin:19px 0 19px 0;}h4{font-size:16px;margin:21px 0=
+ 21px 0;}h5{font-size:13px;margin:22px 0 22px 0;}h6{font-size:11px;margin:2=
+5px 0 25px 0;}.mso-is-desktop-hidden,.mso-is-desktop-hidden table{mso-hide:=
+all;}@media screen and (min-width: 500px){.is-desktop-hidden{display:none !=
+important;}}</style><style data-name=3D"custom" type=3D"text/css">body{min-=
+width:640px;}body,#acr-21635956{background-color:rgb(242,242,242)!important=
+;}.structure__table{background-color:#ffffff;}</style><style data-name=3D"m=
+edia-default-max-width-500px" type=3D"text/css">@media screen and (max-widt=
+h: 500px){body{width:100% !important;min-width:0px !important;}.structure__=
+table{width:100%;}.colspan1,.colspan2,.colspan3,.colspan4,.colspan33,.colsp=
+an66,.colspan-n{display:block !important;min-width:100%;}.container-small-s=
+ize .colspan1,.container-small-size .colspan2,.container-small-size .colspa=
+n3,.container-small-size .colspan4,.container-small-size .colspan33,.contai=
+ner-small-size .colspan66,.container-small-size .colspan-n{display:table-ce=
+ll !important;width:100% !important;}.is-mobile-hidden{display:none !import=
+ant;}}</style><style data-name=3D"media-custom-max-width-500px" type=3D"tex=
+t/css">@media screen and (max-width: 500px){body{min-width:0px;}#acr-184462=
+75 th{display:table-cell !important;}#acr-16707775 th{display:table-cell !i=
+mportant;}#acr-99594246 th{display:table-cell !important;}#acr-96660705 th{=
+display:table-cell !important;}#acr-828137 th{display:table-cell !important=
+;}#acr-16172775 th{display:table-cell !important;}#acr-87897134 th{display:=
+table-cell !important;}#acr-61361095 th{display:table-cell !important;}#acr=
+-57402232 th{display:table-cell !important;}#acr-31030839 th{display:table-=
+cell !important;}#acr-43121312 th{display:table-cell !important;}#acr-67142=
+27 th{display:table-cell !important;}#acr-7218606 th{display:table-cell !im=
+portant;}#acr-72439614 th{display:table-cell !important;}#acr-18871506 th{d=
+isplay:table-cell !important;}#acr-21829863 th{display:table-cell !importan=
+t;}#acr-91145142 th{display:table-cell !important;}#acr-67600633 th{display=
+:table-cell !important;}#acr-79954179 th{display:table-cell !important;}#ac=
+r-89796538 th{display:table-cell !important;}#acr-53639392 th{display:table=
+-cell !important;}#acr-49198295 th{display:table-cell !important;}#acr-6867=
+9929 th{display:table-cell !important;}#acr-24018226 th{display:table-cell =
+!important;}#acr-55131050 th{display:table-cell !important;}#acr-80179092 t=
+h{display:table-cell !important;}#acr-1777254 th{display:table-cell !import=
+ant;}#acr-285715 th{display:table-cell !important;}#acr-45407403 th{display=
+:table-cell !important;}#acr-43935644 th{display:table-cell !important;}#ac=
+r-9751888 th{display:table-cell !important;}#acr-50318061 th{display:table-=
+cell !important;}#acr-36318783 th{display:table-cell !important;}#acr-56005=
+440 th{display:table-cell !important;}#acr-837628 th{display:table-cell !im=
+portant;}#acr-96236889 th{display:table-cell !important;}#acr-46173830 th{d=
+isplay:table-cell !important;}#acr-57264723{text-align:left!important;}#acr=
+-81174803{text-align:right!important;}}</style><!--[if gte mso 9]><style ac=
+rite-mso-css=3D"true">.image-container div {  display: block;}.structure__t=
+able td {  padding: 0;  border: none;}.button-container {  border: none !im=
+portant;  padding: 0 !important;  margin: 0 !important;  line-height: norma=
+l !important;}.acr-structure {  margin: 0 !important;}.acr-component {  mar=
+gin: 0 !important;}.acr-fragment {  margin: 0 !important;}.colspan1, .colsp=
+an2, .colspan3, .colspan4, .colspan33, .colspan66 {  box-sizing: border-box=
+ !important;}</style><![endif]--></head><body class=3D"" id=3D"acr-21635956=
+"><span style=3D"display:none !important;visibility:hidden;mso-hide:all;opa=
+city:0;" class=3D"acr-preheader">2 trains, your choice. Find your perfect r=
+ide and hop on board as of 15/12!</span><!--[if mso]><table cellpadding=3D"=
+0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"backgroun=
+d-color: rgb(242, 242, 242);"><![endif]--><div class=3D"acr-container"><div=
+ class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structure-na=
+me=3D"richtext.structure_1_1_column"><table class=3D"structure__table" alig=
+n=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"640"=
+><tbody><tr><th class=3D"colspan1"><div><style data-name=3D"media-custom-ma=
+x-width-500px" type=3D"text/css">
+                    @media screen and (max-width: 500px) {
+                      [data-media-id=3D"acr-85353206"] th {
+                        display: table-cell !important;
+                      }
+                    }
+                  </style><table align=3D"center" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" style=3D"width:100%;table-layout:fixed;"><tbody dat=
+a-media-id=3D"acr-85353206"><tr><th class=3D"colspan2"><div class=3D"acr-fr=
+agment acr-component" style=3D"color:rgb(85, 85, 85);padding:5px 10px;" dat=
+a-component-id=3D"text" data-contenteditable=3D"false"><!--[if mso]><table =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td sty=
+le=3D"color: rgb(85, 85, 85); padding: 5px 10px;"><![endif]--><div class=3D=
+"text-container" data-contenteditable=3D"true"><p><br></p></div><!--[if mso=
+]></td></tr></table><![endif]--></div></th><th class=3D"colspan2"><div clas=
+s=3D"acr-fragment acr-component" data-component-id=3D"text" style=3D"font-f=
+amily:Arial;padding:5px 10px;color:rgb(85, 85, 85);" data-contenteditable=
+=3D"false"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"100%"><tr><td style=3D"font-family: Arial; padding: 5px 10p=
+x; color: rgb(85, 85, 85);"><![endif]--><div class=3D"text-container" data-=
+contenteditable=3D"true"><p style=3D"text-align:right;"><span style=3D"font=
+-size:10px;"></span><p align=3D"center">
+  <font style=3D"font-family: Verdana, Arial; font-size: 10px">
+  Online version
+  <a href=3D"http://t2.international.belgiantrain.be/r/?id=3Dh643c36,176a20=
+e,176a249&amp;e=3DcDE9QFR2R2ZQUmlRS2h4cmcwb1owMjJCT2xTUnFYYWlvd2FELWhBSzVCM=
+VdpTUQwSWd6THd6ZXZhX254VkRjSXlldjQxTVNsb3VrWl9wRkhSamMtQVBQRGlIdGhIQ0ZrUkJF=
+RTNkUDNlNS1hOFJESWtMbUQ&amp;s=3DwgatHYKce6G0VFMR0PhE2rlSkBVTGej6b2C6sEFrco8=
+" _label=3D"Mirror page" _type=3D"mirrorPage">click here</a>
+  </font>
+</p><span style=3D"font-size:10px;"></span></p></div><!--[if mso]></td></tr=
+></table><![endif]--></div></th></tr></tbody></table></div></th></tr></tbod=
+y></table></div><div class=3D"acr-structure is-hover" data-structure-id=3D"=
+1-1-column" data-structure-name=3D"richtext.structure_1_1_column">=20
+        <table class=3D"structure__table" align=3D"center" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"640">=20
+          <tbody>=20
+            <tr>=20
+              <th class=3D"colspan1"><div class=3D"acr-fragment acr-compone=
+nt image-container" data-component-id=3D"image" style=3D"width:100%;text-al=
+ign:center;" data-contenteditable=3D"false"><!--[if mso]><table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"text-=
+align: center;"><![endif]--><a class=3D"arc-link" data-nl-type=3D"externalL=
+ink" href=3D"http://t2.international.belgiantrain.be/r/?id=3Dh643c36,176a20=
+e,176a24a"><img src=3D"http://res2.international.belgiantrain.be/res/belgia=
+ntrain_mkt_prod2/95183332cde6c5185e4ab805a683623f7b5550a9efddeefa5b734f43c2=
+796152.png" style=3D"width:100%;height:auto;" width=3D"640" height=3D"367" =
+title=3D"To the Netherlands? By train, of course."></a><!--[if mso]></td></=
+tr></table><![endif]--></div></th></tr></tbody></table></div><div class=3D"=
+acr-structure" data-structure-id=3D"1-1-column" data-structure-name=3D"rich=
+text.structure_1_1_column">=20
+        <table class=3D"structure__table" align=3D"center" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"640">=20
+          <tbody>=20
+            <tr>=20
+              <th class=3D"colspan1"><div class=3D"acr-fragment acr-compone=
+nt is-hover" data-component-id=3D"text" style=3D"font-family:Arial;padding:=
+25px 10px 4px;color:rgb(94, 72, 145);" data-contenteditable=3D"false"><!--[=
+if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%"><tr><td style=3D"font-family: Arial; padding: 25px 10px 4px; color: rgb=
+(94, 72, 145);"><![endif]--><div class=3D"text-container" data-contentedita=
+ble=3D"true"><p style=3D"text-align:center;"><span style=3D"font-weight:700=
+;">Faster and more often</span></p></div><!--[if mso]></td></tr></table><![=
+endif]--></div><div class=3D"acr-fragment acr-component" style=3D"font-fami=
+ly:Arial;padding:0px 10px 15px;font-size:10.5pt;color:rgb(221, 67, 104);fon=
+t-weight:900;" data-component-id=3D"text" data-contenteditable=3D"false"><!=
+--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D=
+"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px 15px; font-si=
+ze: 10.5pt; color: rgb(221, 67, 104);"><![endif]--><div class=3D"text-conta=
+iner" data-contenteditable=3D"true"><p style=3D"text-align:center;"><span s=
+tyle=3D"font-size:24px;font-weight:700;">By train to the Netherlands</span>=
+</p></div><!--[if mso]></td></tr></table><![endif]--></div></th></tr></tbod=
+y></table></div><div class=3D"acr-structure" data-structure-id=3D"1-1-colum=
+n" data-structure-name=3D"richtext.structure_1_1_column"><table class=3D"st=
+ructure__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table align=3D=
+"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:10=
+0%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"padding-=
+top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top: 0px; =
+padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-component"=
+ style=3D"font-family:Arial;padding:0px 40px 10px;font-size:10.5pt;color:rg=
+b(85, 85, 85);margin-top:0px;margin-bottom:0px;" data-component-id=3D"text"=
+ data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"font-family: Aria=
+l; padding: 0px 40px 10px; font-size: 10.5pt; color: rgb(85, 85, 85);"><![e=
+ndif]--><div class=3D"text-container" data-contenteditable=3D"true"><p>As o=
+f 15 december 2024, <span style=3D"font-weight:700;">two new trains</span> =
+will be operating the service between&nbsp;<span style=3D"font-weight:700;"=
+>Belgium </span><span style=3D"font-size:10.5pt;">and the </span><span styl=
+e=3D"font-weight:700;">Netherlands </span><span style=3D"font-size:10.5pt;"=
+>in lieu of the </span><span style=3D"font-weight:700;">InterCity </span><s=
+pan style=3D"font-size:10.5pt;">trains. They are called </span><span style=
+=3D"font-weight:700;">Eurocity Direct</span><span style=3D"font-size:10.5pt=
+;"> and </span><span style=3D"font-weight:700;">EuroCity</span><span style=
+=3D"font-size:10.5pt;">.</span></p><p><br></p><p>These trains aim to streng=
+hten the sustainable offering between the two countries for <span style=3D"=
+font-weight:700;">all travellers alike</span>. Whether travelling for busin=
+ess or leisure, valuing <span style=3D"font-weight:700;">value for money</s=
+pan> or&nbsp;<span style=3D"font-size:10.5pt;font-weight:700;">competitive =
+fares</span><span style=3D"font-size:10.5pt;">, both trains offer a pleasan=
+t </span><span style=3D"font-size:10.5pt;font-weight:700;">flexibility </sp=
+an><span style=3D"font-size:10.5pt;">level.</span></p><p><br></p><p><span s=
+tyle=3D"font-weight:700;">How do both trains differ from one another?</span=
+> Which one should you choose? Find out below in the blink of an eye!</p><p=
+>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table></div><div class=3D"acr-structure" =
+data-structure-id=3D"1-1-column" data-structure-name=3D"richtext.structure_=
+1_1_column">=20
+        <table class=3D"structure__table" align=3D"center" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"640">=20
+          <tbody>=20
+            <tr>=20
+              <th class=3D"colspan1"><div class=3D"acr-fragment acr-compone=
+nt" data-component-id=3D"text" style=3D"font-family:Arial;padding:40px 10px=
+ 4px;" data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"font-family=
+: Arial; padding: 40px 10px 4px;"><![endif]--><div class=3D"text-container"=
+ data-contenteditable=3D"true"><p style=3D"text-align:center;"><span style=
+=3D"font-weight:700;font-size:14px;">Seamless journeys</span></p></div><!--=
+[if mso]></td></tr></table><![endif]--></div><div class=3D"acr-fragment acr=
+-component" style=3D"font-family:Arial;padding:0px 10px 15px;font-size:10.5=
+pt;color:rgb(0, 105, 180);font-weight:900;" data-component-id=3D"text" data=
+-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"font-family: Arial; pa=
+dding: 0px 10px 15px; font-size: 10.5pt; color: rgb(0, 105, 180);"><![endif=
+]--><div class=3D"text-container" data-contenteditable=3D"true"><p style=3D=
+"text-align:center;"><span style=3D"font-size:20px;font-weight:700;">From B=
+russels and Antwerp, to Rotterdam and Amsterdam</span></p></div><!--[if mso=
+]></td></tr></table><![endif]--></div></th></tr></tbody></table></div><div =
+class=3D"acr-structure" data-structure-id=3D"1-1-column" data-structure-nam=
+e=3D"richtext.structure_1_1_column"> <table class=3D"structure__table" alig=
+n=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"640"=
+> <tbody> <tr> <th class=3D"colspan1"><div class=3D"acr-fragment acr-compon=
+ent image-container" data-component-id=3D"image" style=3D"width:100%;text-a=
+lign:center;" data-upload=3D"uploadLoader-1729149583588-160509120" data-con=
+tenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" width=3D"100%"><tr><td style=3D"text-align: center;"><![en=
+dif]--><a class=3D"arc-link" data-nl-type=3D"externalLink" href=3D"http://t=
+2.international.belgiantrain.be/r/?id=3Dh643c36,176a20e,176a24b"><img src=
+=3D"http://res2.international.belgiantrain.be/res/belgiantrain_mkt_prod2/1b=
+051237caded66aca670f44ab4731104d7520b2f22340c8f72bb2eef901a668.png" style=
+=3D"width:100%;height:auto;" width=3D"640" title=3D"Map" height=3D"906"></a=
+><!--[if mso]></td></tr></table><![endif]--></div></th> </tr> </tbody> </ta=
+ble> </div> <div class=3D"acr-structure" data-structure-id=3D"2-2-column" d=
+ata-structure-name=3D"richtext.structure_2_2_column" id=3D"acr-285715">=20
+        <table class=3D"structure__table" align=3D"center" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"640">=20
+          <tbody>=20
+            <tr>=20
+              <th class=3D"colspan2"><div><table align=3D"center" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;table-layout:fi=
+xed;"><tbody><tr><th class=3D"colspan1"><div class=3D"acr-fragment acr-comp=
+onent" style=3D"font-family:Arial;padding:20px 10px 10px;color:rgb(100, 166=
+, 67);" data-component-id=3D"text" data-contenteditable=3D"false"><!--[if m=
+so]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">=
+<tr><td style=3D"font-family: Arial; padding: 20px 10px 10px; color: rgb(10=
+0, 166, 67);"><![endif]--><div class=3D"text-container" data-contenteditabl=
+e=3D"true"><p><span style=3D"font-weight:700;">Eurocity Direct</span></p></=
+div><!--[if mso]></td></tr></table><![endif]--></div></th></tr></tbody></ta=
+ble></div></th><th class=3D"colspan2"><div><table align=3D"center" cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;table-layout:f=
+ixed;"><tbody><tr><th class=3D"colspan1"><div class=3D"acr-fragment acr-com=
+ponent" style=3D"font-family:Arial;padding:20px 10px 10px;color:rgb(0, 105,=
+ 180);" data-component-id=3D"text" data-contenteditable=3D"false"><!--[if m=
+so]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">=
+<tr><td style=3D"font-family: Arial; padding: 20px 10px 10px; color: rgb(0,=
+ 105, 180);"><![endif]--><div class=3D"text-container" data-contenteditable=
+=3D"true"><p><span style=3D"font-weight:700;">EuroCity</span></p></div><!--=
+[if mso]></td></tr></table><![endif]--></div></th></tr></tbody></table></di=
+v></th></tr></tbody></table></div><div class=3D"acr-structure" data-structu=
+re-id=3D"2-2-column" data-structure-name=3D"richtext.structure_2_2_column" =
+id=3D"acr-46173830"> <table class=3D"structure__table" align=3D"center" cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"640"> <tbody> <tr> <=
+th class=3D"colspan2"><div class=3D"acr-fragment acr-component image-contai=
+ner" data-component-id=3D"image" style=3D"width:100%;text-align:left;" id=
+=3D"acr-57264723" data-contenteditable=3D"false"><!--[if mso]><table cellpa=
+dding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"=
+text-align: left;"><![endif]--><a class=3D"arc-link" data-nl-type=3D"extern=
+alLink" href=3D"http://t2.international.belgiantrain.be/r/?id=3Dh643c36,176=
+a20e,176a24c"><img src=3D"http://res2.international.belgiantrain.be/res/bel=
+giantrain_mkt_prod2/dd7afe85e3afd17e3f5b7d87366b1d2ba471191af0b3ae41fba2d72=
+b7b1e3e36.png" style=3D"width:98%;height:auto;" width=3D"314" height=3D"157=
+" title=3D"Picture of the Eurocity Direct train"></a><!--[if mso]></td></tr=
+></table><![endif]--></div></th> <th class=3D"colspan2"><div class=3D"acr-f=
+ragment acr-component image-container" data-component-id=3D"image" style=3D=
+"width:100%;text-align:right;" id=3D"acr-81174803" data-contenteditable=3D"=
+false"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ width=3D"100%"><tr><td style=3D"text-align: right;"><![endif]--><a class=
+=3D"arc-link" data-nl-type=3D"externalLink" href=3D"http://t2.international=
+.belgiantrain.be/r/?id=3Dh643c36,176a20e,176a24d"><img src=3D"http://res2.i=
+nternational.belgiantrain.be/res/belgiantrain_mkt_prod2/cc1a86c26d93b27bbdd=
+d16dcdeb9a6d9121ca31065b00944b10fc621377ccb71.png" style=3D"width:98%;heigh=
+t:auto;" width=3D"314" height=3D"157" title=3D"Picture of the EuroCity trai=
+n"></a><!--[if mso]></td></tr></table><![endif]--></div></th> </tr> </tbody=
+> </table> </div><div class=3D"acr-structure" data-structure-id=3D"2-2-colu=
+mn" data-structure-name=3D"richtext.structure_2_2_column" id=3D"acr-4540740=
+3">=20
+        <table class=3D"structure__table" align=3D"center" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"640">=20
+          <tbody>=20
+            <tr>=20
+              <th class=3D"colspan2" style=3D"vertical-align:top;"><div><ta=
+ble align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=
+=3D"width:100%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=
+=3D"padding-top:10px;padding-bottom:10px;"><div class=3D"acr-fragment acr-c=
+omponent" style=3D"font-family:Arial;padding:0px 10px;font-size:10.5pt;colo=
+r:rgb(85, 85, 85);" data-component-id=3D"text" data-contenteditable=3D"fals=
+e"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wid=
+th=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10px; font-si=
+ze: 10.5pt; color: rgb(85, 85, 85);"><![endif]--><div class=3D"text-contain=
+er" data-contenteditable=3D"true"><p>Eurocity Direct trains ensure a swift =
+connection between major cities on the high speed line, with 16 trains runn=
+ing daily in both directions,&nbsp;</p><p><br></p><p>Prices vary according =
+to ticket flexibility and occupancy. Flex tickets allow for instance travel=
+lers to take the train of their choice on the specified travel date.</p><p>=
+<br></p><p>
+</p><p>
+</p></div><!--[if mso]></td></tr></table><![endif]--></div></th></tr></tbod=
+y></table></div></th><th class=3D"colspan2" style=3D"vertical-align:top;"><=
+div><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" style=3D"width:100%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1=
+" style=3D"padding-top:10px;padding-bottom:10px;"><div class=3D"acr-fragmen=
+t acr-component" style=3D"font-family:Arial;padding:0px 10px;font-size:10.5=
+pt;color:rgb(85, 85, 85);" data-component-id=3D"text" data-contenteditable=
+=3D"false"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"100%"><tr><td style=3D"font-family: Arial; padding: 0px 10p=
+x; font-size: 10.5pt; color: rgb(85, 85, 85);"><![endif]--><div class=3D"te=
+xt-container" data-contenteditable=3D"true"><p>EuroCity trains offer the mo=
+st affordable service to Breda and Rotterdam and&nbsp;<span style=3D"font-s=
+ize:10.5pt;">many local connections, with 16 trains running daily in both d=
+irections.</span></p><p><br></p><p>Prices vary based on the ticket flexibil=
+ity and the occupancy rate. Can be combined with national discounts (for ie=
+. large families,...) for the Belgian part of the journey.</p><p>
+</p><p>
+</p></div><!--[if mso]></td></tr></table><![endif]--></div></th></tr></tbod=
+y></table></div></th></tr></tbody></table></div><div class=3D"acr-structure=
+" data-structure-id=3D"2-2-column" data-structure-name=3D"richtext.structur=
+e_2_2_column" id=3D"acr-43935644">=20
+        <table class=3D"structure__table" align=3D"center" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"640">=20
+          <tbody>=20
+            <tr>=20
+              <th class=3D"colspan2"><div><table align=3D"center" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:100%;table-layout:fi=
+xed;"><tbody><tr><th class=3D"colspan1"><div class=3D"acr-fragment acr-comp=
+onent" style=3D"font-family:Arial;padding:10px;color:rgb(100, 166, 67);" da=
+ta-component-id=3D"text" data-contenteditable=3D"false"><!--[if mso]><table=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td st=
+yle=3D"font-family: Arial; padding: 10px; color: rgb(100, 166, 67);"><![end=
+if]--><div class=3D"text-container" data-contenteditable=3D"true"><p><span =
+style=3D"font-weight:700;font-size:14px;">Main routes</span></p></div><!--[=
+if mso]></td></tr></table><![endif]--></div></th></tr></tbody></table></div=
+></th><th class=3D"colspan2"><div><table align=3D"center" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" style=3D"width:100%;table-layout:fixed;"><t=
+body><tr><th class=3D"colspan1"><div class=3D"acr-fragment acr-component" s=
+tyle=3D"font-family:Arial;padding:10px;color:rgb(0, 105, 180);" data-compon=
+ent-id=3D"text" data-contenteditable=3D"false"><!--[if mso]><table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"fo=
+nt-family: Arial; padding: 10px; color: rgb(0, 105, 180);"><![endif]--><div=
+ class=3D"text-container" data-contenteditable=3D"true"><p><span style=3D"f=
+ont-weight:700;font-size:14px;">Main routes</span></p></div><!--[if mso]></=
+td></tr></table><![endif]--></div></th></tr></tbody></table></div></th></tr=
+></tbody></table></div><div class=3D"acr-structure" data-structure-id=3D"2-=
+2-column" data-structure-name=3D"richtext.structure_2_2_column" id=3D"acr-3=
+6318783"> <table class=3D"structure__table" align=3D"center" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" width=3D"640"> <tbody> <tr> <th class=3D=
+"colspan2"><div class=3D"acr-fragment acr-component" data-component-id=3D"h=
+tml" style=3D"padding-bottom:10px;color:rgb(62, 61, 61);" data-contentedita=
+ble=3D"true"><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" width=3D"100%" style=3D"max-width:90%;border:1px solid #d0d0d0;b=
+order-collapse:separate;border-spacing:0;"><tbody><!-- Row for the content =
+with two columns --><tr><!-- Column 1: 5% width with blue background --><td=
+ style=3D"width:5%;background-color:#64a643;line-height:0;font-size:0;">
+        &nbsp;
+      </td><!-- Column 2: The actual content (Brussels - Amsterdam and Dire=
+ct | 2h00) --><td style=3D"padding:10px 0px 0px 10px;font-family:Arial, san=
+s-serif;font-size:12px;color:#333333;text-align:left;">
+        <span style=3D"font-weight:700;">Brussels - Amsterdam</span><div st=
+yle=3D"font-size:11px;color:#555555;padding-top:10px;padding-bottom:10px;">
+          Direct | 1:59</div></td></tr><!-- Row for the Pricing Information=
+ --><tr><td style=3D"width:5%;background-color:#64a643;">&nbsp;</td><td sty=
+le=3D"padding:10px;font-family:Arial, sans-serif;font-size:12px;font-weight=
+:bold;color:#ffffff;text-align:center;background-color:#64a643;">
+        <a class=3D"arc-link" data-nl-type=3D"externalLink" href=3D"http://=
+t2.international.belgiantrain.be/r/?id=3Dh643c36,176a20e,176a24e" style=3D"=
+text-decoration:none;color:rgb(255, 255, 255);">from =E2=82=AC 25*</a>
+      </td></tr></tbody></table></div></th> <th class=3D"colspan2"><div cla=
+ss=3D"acr-fragment acr-component" data-component-id=3D"html" style=3D"paddi=
+ng-bottom:10px;" data-contenteditable=3D"true"><table align=3D"center" cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" style=3D"max-wi=
+dth:90%;border:1px solid #d0d0d0;border-collapse:separate;border-spacing:0;=
+"><tbody><!-- Row for the content with two columns --><tr><!-- Column 1: 5%=
+ width with blue background --><td style=3D"width:5%;background-color:#006a=
+b3;line-height:0;font-size:0;">
+        &nbsp;
+      </td><!-- Column 2: The actual content (Brussels - Amsterdam and Dire=
+ct | 2h00) --><td style=3D"padding:10px 0px 0px 10px;font-family:Arial, san=
+s-serif;font-size:12px;color:#333333;text-align:left;">
+        <span style=3D"font-weight:700;">Brussels - Breda</span><div style=
+=3D"font-size:11px;color:#555555;padding-top:10px;padding-bottom:10px;">
+          Direct | 1:34</div></td></tr><!-- Row for the Pricing Information=
+ --><tr><td style=3D"width:5%;background-color:#006ab3;">&nbsp;</td><td sty=
+le=3D"padding:10px;font-family:Arial, sans-serif;font-size:12px;font-weight=
+:bold;color:#ffffff;text-align:center;background-color:#006ab3;">
+        <a class=3D"arc-link" data-nl-type=3D"externalLink" href=3D"http://=
+t2.international.belgiantrain.be/r/?id=3Dh643c36,176a20e,176a24f" style=3D"=
+text-decoration:none;color:rgb(255, 255, 255);">from =E2=82=AC 8,40**</a></=
+td></tr></tbody></table></div></th> </tr> </tbody> </table> </div><div clas=
+s=3D"acr-structure" data-structure-id=3D"2-2-column" data-structure-name=3D=
+"richtext.structure_2_2_column" id=3D"acr-837628"> <table class=3D"structur=
+e__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ width=3D"640"> <tbody> <tr> <th class=3D"colspan2"><div class=3D"acr-fragm=
+ent acr-component" data-component-id=3D"html" style=3D"padding-bottom:10px;=
+" data-contenteditable=3D"true"><table align=3D"center" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" width=3D"100%" style=3D"max-width:90%;border:=
+1px solid #d0d0d0;border-collapse:separate;border-spacing:0;"><tbody><!-- R=
+ow for the content with two columns --><tr><!-- Column 1: 5% width with blu=
+e background --><td style=3D"width:5%;background-color:#64a643;line-height:=
+0;font-size:0;">
+        &nbsp;
+      </td><!-- Column 2: The actual content (Brussels - Amsterdam and Dire=
+ct | 2h00) --><td style=3D"padding:10px 0px 0px 10px;font-family:Arial, san=
+s-serif;font-size:12px;color:#333333;text-align:left;">
+        <span style=3D"font-weight:700;">Brussels - Rotterdam</span><div st=
+yle=3D"font-size:11px;color:#555555;padding-top:10px;padding-bottom:10px;">
+          Direct | 1:22</div></td></tr><!-- Row for the Pricing Information=
+ --><tr><td style=3D"width:5%;background-color:#64a643;">&nbsp;</td><td sty=
+le=3D"padding:10px;font-family:Arial, sans-serif;font-size:12px;font-weight=
+:bold;color:#ffffff;text-align:center;background-color:#64a643;">
+        <a class=3D"arc-link" data-nl-type=3D"externalLink" href=3D"http://=
+t2.international.belgiantrain.be/r/?id=3Dh643c36,176a20e,176a250" style=3D"=
+text-decoration:none;color:rgb(255, 255, 255);">from =E2=82=AC 20*</a>
+      </td></tr></tbody></table></div></th> <th class=3D"colspan2"><div cla=
+ss=3D"acr-fragment acr-component" data-component-id=3D"html" style=3D"paddi=
+ng-bottom:10px;" data-contenteditable=3D"true"><table align=3D"center" cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" style=3D"max-wi=
+dth:90%;border:1px solid #d0d0d0;border-collapse:separate;border-spacing:0;=
+"><tbody><!-- Row for the content with two columns --><tr><!-- Column 1: 5%=
+ width with blue background --><td style=3D"width:5%;background-color:#006a=
+b3;line-height:0;font-size:0;">
+        &nbsp;
+      </td><!-- Column 2: The actual content (Brussels - Amsterdam and Dire=
+ct | 2h00) --><td style=3D"padding:10px 0px 0px 10px;font-family:Arial, san=
+s-serif;font-size:12px;color:#333333;text-align:left;">
+        <span style=3D"font-weight:700;">Brussels - Rotterdam</span><div st=
+yle=3D"font-size:11px;color:#555555;padding-top:10px;padding-bottom:10px;">
+          Direct | 2:06</div></td></tr><!-- Row for the Pricing Information=
+ --><tr><td style=3D"width:5%;background-color:#006ab3;">&nbsp;</td><td sty=
+le=3D"padding:10px;font-family:Arial, sans-serif;font-size:12px;font-weight=
+:bold;color:#ffffff;text-align:center;background-color:#006ab3;">
+        <a class=3D"arc-link" data-nl-type=3D"externalLink" href=3D"http://=
+t2.international.belgiantrain.be/r/?id=3Dh643c36,176a20e,176a251" style=3D"=
+text-decoration:none;color:rgb(255, 255, 255);">from =E2=82=AC 13,10**</a><=
+/td></tr></tbody></table></div></th> </tr> </tbody> </table> </div><div cla=
+ss=3D"acr-structure" data-structure-id=3D"2-2-column" data-structure-name=
+=3D"richtext.structure_2_2_column" id=3D"acr-96236889"> <table class=3D"str=
+ucture__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"640"> <tbody> <tr> <th class=3D"colspan2"><div class=3D"acr=
+-fragment acr-component" data-component-id=3D"button:2" style=3D"width:100%=
+;text-align:center;" data-contenteditable=3D"false"><!--[if mso]><table cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"150"><tr><td style=
+=3D"text-align: center;"><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" style=3D"height:22.5=
+pt; width:114pt; v-text-anchor:middle;" arcsize=3D"27%" fillcolor=3D"rgb(25=
+5, 255, 255)" strokeweight=3D"0.75pt" strokecolor=3D"rgb(100, 166, 67)"><v:=
+stroke dashstyle=3D"solid" /><v:textbox inset=3D"0,0,0,0"><center style=3D"=
+color:rgb(100, 166, 67); font-family:sans-serif; font-size:14px"><![endif]-=
+-><a href=3D"http://t2.international.belgiantrain.be/r/?id=3Dh643c36,176a20=
+e,176a252" class=3D"arc-link" style=3D"text-decoration:none;" data-nl-type=
+=3D"externalLink"><div class=3D"button-container" style=3D"width:150px;text=
+-align:center;margin:auto;max-width:100%;display:inline-block;border:2px so=
+lid rgb(100, 166, 67);border-radius:8px;height:28px;line-height:28px;backgr=
+ound-color:rgb(255, 255, 255);">
+          <span style=3D"color:rgb(100, 166, 67);font-size:14px;font-weight=
+:700;" data-contenteditable=3D"true">Eurocity Direct &gt;</span>
+        </div>
+      </a><!--[if mso]></center></v:textbox></v:stroke></v:roundrect></td><=
+/tr></table><![endif]--></div></th> <th class=3D"colspan2"><div class=3D"ac=
+r-fragment acr-component" data-component-id=3D"button:2" style=3D"width:100=
+%;text-align:center;" data-contenteditable=3D"false"><!--[if mso]><table ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"150"><tr><td style=
+=3D"text-align: center;"><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" style=3D"height:22.5=
+pt; width:114pt; v-text-anchor:middle;" arcsize=3D"27%" fillcolor=3D"rgb(25=
+5, 255, 255)" strokeweight=3D"0.75pt" strokecolor=3D"rgb(0, 107, 179)"><v:s=
+troke dashstyle=3D"solid" /><v:textbox inset=3D"0,0,0,0"><center style=3D"c=
+olor:rgb(0, 107, 179); font-family:sans-serif; font-size:14px"><![endif]-->=
+<a href=3D"http://t2.international.belgiantrain.be/r/?id=3Dh643c36,176a20e,=
+176a253" class=3D"arc-link" style=3D"text-decoration:none;" data-nl-type=3D=
+"externalLink"><div class=3D"button-container" style=3D"width:150px;text-al=
+ign:center;margin:auto;max-width:100%;display:inline-block;border:2px solid=
+ rgb(0, 107, 179);border-radius:8px;height:28px;line-height:28px;background=
+-color:rgb(255, 255, 255);">
+          <span style=3D"color:rgb(0, 107, 179);font-size:14px;font-weight:=
+700;" data-contenteditable=3D"true">EuroCity &gt;</span>
+        </div>
+      </a><!--[if mso]></center></v:textbox></v:stroke></v:roundrect></td><=
+/tr></table><![endif]--></div></th> </tr> </tbody> </table> </div><div clas=
+s=3D"acr-structure" data-structure-id=3D"1-1-column" data-structure-name=3D=
+"richtext.structure_1_1_column">=20
+        <table class=3D"structure__table" align=3D"center" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"640">=20
+          <tbody>=20
+            <tr>=20
+              <th class=3D"colspan1"><div class=3D"acr-fragment acr-compone=
+nt" data-component-id=3D"text" style=3D"font-family:Arial;padding:40px 10px=
+ 4px;" data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"font-family=
+: Arial; padding: 40px 10px 4px;"><![endif]--><div class=3D"text-container"=
+ data-contenteditable=3D"true"><p style=3D"text-align:center;"><span style=
+=3D"font-weight:700;font-size:14px;">Additional information</span></p></div=
+><!--[if mso]></td></tr></table><![endif]--></div><div class=3D"acr-fragmen=
+t acr-component" style=3D"font-family:Arial;padding:0px 10px 15px;font-size=
+:10.5pt;color:rgb(0, 105, 180);font-weight:900;" data-component-id=3D"text"=
+ data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"font-family: Aria=
+l; padding: 0px 10px 15px; font-size: 10.5pt; color: rgb(0, 105, 180);"><![=
+endif]--><div class=3D"text-container" data-contenteditable=3D"true"><p sty=
+le=3D"text-align:center;"><span style=3D"font-size:20px;font-weight:700;">F=
+requently Asked Questions</span></p></div><!--[if mso]></td></tr></table><!=
+[endif]--></div></th></tr></tbody></table></div><div class=3D"acr-structure=
+" data-structure-id=3D"1-1-column" data-structure-name=3D"richtext.structur=
+e_1_1_column" style=3D"background-color:rgb(242, 242, 242);"><!--[if mso]><=
+table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><=
+td style=3D"background-color: rgb(242, 242, 242);"><![endif]--><table class=
+=3D"structure__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table al=
+ign=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"wi=
+dth:100%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"pa=
+dding-top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top:=
+ 0px; padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-comp=
+onent" style=3D"font-family:Arial;padding:0px 45px;font-size:10.5pt;color:r=
+gb(85, 85, 85);margin-top:0px;margin-bottom:0px;background-color:rgb(255, 2=
+55, 255);" data-component-id=3D"text" data-contenteditable=3D"false"><!--[i=
+f mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100=
+%"><tr><td style=3D"font-family: Arial; padding: 0px 45px; font-size: 10.5p=
+t; color: rgb(85, 85, 85); background-color: rgb(255, 255, 255);"><![endif]=
+--><div class=3D"text-container" data-contenteditable=3D"true"><p><span sty=
+le=3D"font-weight:700;">&#128186; Do I have to reserve my seat on the EuroC=
+ity and on the Eurocity Direct?</span></p><p>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table><!--[if mso]></td></tr></table><![e=
+ndif]--></div><div class=3D"acr-structure" data-structure-id=3D"1-1-column"=
+ data-structure-name=3D"richtext.structure_1_1_column"><table class=3D"stru=
+cture__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table align=3D=
+"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:10=
+0%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"padding-=
+top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top: 0px; =
+padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-component"=
+ style=3D"font-family:Arial;padding:0px 45px 10px;font-size:10.5pt;color:rg=
+b(85, 85, 85);margin-top:0px;margin-bottom:0px;" data-component-id=3D"text"=
+ data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"font-family: Aria=
+l; padding: 0px 45px 10px; font-size: 10.5pt; color: rgb(85, 85, 85);"><![e=
+ndif]--><div class=3D"text-container" data-contenteditable=3D"true"><p>No, =
+seat reservations are not offered on either the Eurocity Direct or the Euro=
+City train.
+</p><p>You can sit down on the seat of your choice, in the comfort class me=
+ntioned on your ticket.</p><p>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table></div><div class=3D"acr-structure" =
+data-structure-id=3D"1-1-column" data-structure-name=3D"richtext.structure_=
+1_1_column" style=3D"background-color:rgb(242, 242, 242);"><!--[if mso]><ta=
+ble cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td=
+ style=3D"background-color: rgb(242, 242, 242);"><![endif]--><table class=
+=3D"structure__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table al=
+ign=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"wi=
+dth:100%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"pa=
+dding-top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top:=
+ 0px; padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-comp=
+onent" style=3D"font-family:Arial;padding:0px 45px;font-size:10.5pt;color:r=
+gb(85, 85, 85);margin-top:0px;margin-bottom:0px;background-color:rgb(255, 2=
+55, 255);" data-component-id=3D"text" data-contenteditable=3D"false"><!--[i=
+f mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100=
+%"><tr><td style=3D"font-family: Arial; padding: 0px 45px; font-size: 10.5p=
+t; color: rgb(85, 85, 85); background-color: rgb(255, 255, 255);"><![endif]=
+--><div class=3D"text-container" data-contenteditable=3D"true"><p><span sty=
+le=3D"font-weight:700;">&#128338; Is my ticket for the EuroCity or Eurocity=
+ Direct valid at any time of day?</span></p><p>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table><!--[if mso]></td></tr></table><![e=
+ndif]--></div><div class=3D"acr-structure" data-structure-id=3D"1-1-column"=
+ data-structure-name=3D"richtext.structure_1_1_column"><table class=3D"stru=
+cture__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table align=3D=
+"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:10=
+0%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"padding-=
+top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top: 0px; =
+padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-component"=
+ style=3D"font-family:Arial;padding:0px 45px 10px;font-size:10.5pt;color:rg=
+b(85, 85, 85);margin-top:0px;margin-bottom:0px;" data-component-id=3D"text"=
+ data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"font-family: Aria=
+l; padding: 0px 45px 10px; font-size: 10.5pt; color: rgb(85, 85, 85);"><![e=
+ndif]--><div class=3D"text-container" data-contenteditable=3D"true"><p>If y=
+ou have opted for the Flex fare, your ticket is valid on the train of your =
+choice, at the time of your choice, on the route, date and train type indic=
+ated (Eurocity Direct or EuroCity).
+</p><p><br></p><p>However, if you have opted for the Saver fare, which is c=
+heaper, you will have to travel on the train selected at the time of purcha=
+se (as shown on your ticket), at the time specified at the time of purchase=
+.</p><p>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table></div><div class=3D"acr-structure" =
+data-structure-id=3D"1-1-column" data-structure-name=3D"richtext.structure_=
+1_1_column" style=3D"background-color:rgb(242, 242, 242);"><!--[if mso]><ta=
+ble cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td=
+ style=3D"background-color: rgb(242, 242, 242);"><![endif]--><table class=
+=3D"structure__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table al=
+ign=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"wi=
+dth:100%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"pa=
+dding-top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top:=
+ 0px; padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-comp=
+onent" style=3D"font-family:Arial;padding:0px 45px;font-size:10.5pt;color:r=
+gb(85, 85, 85);margin-top:0px;margin-bottom:0px;background-color:rgb(255, 2=
+55, 255);" data-component-id=3D"text" data-contenteditable=3D"false"><!--[i=
+f mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100=
+%"><tr><td style=3D"font-family: Arial; padding: 0px 45px; font-size: 10.5p=
+t; color: rgb(85, 85, 85); background-color: rgb(255, 255, 255);"><![endif]=
+--><div class=3D"text-container" data-contenteditable=3D"true"><p><span sty=
+le=3D"font-weight:700;">&#127915; I have a ticket for the Eurocity Direct. =
+Is it also valid on a EuroCity train?</span></p><p>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table><!--[if mso]></td></tr></table><![e=
+ndif]--></div><div class=3D"acr-structure" data-structure-id=3D"1-1-column"=
+ data-structure-name=3D"richtext.structure_1_1_column"><table class=3D"stru=
+cture__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table align=3D=
+"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:10=
+0%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"padding-=
+top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top: 0px; =
+padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-component"=
+ style=3D"font-family:Arial;padding:0px 45px 10px;font-size:10.5pt;color:rg=
+b(85, 85, 85);margin-top:0px;margin-bottom:0px;" data-component-id=3D"text"=
+ data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"font-family: Aria=
+l; padding: 0px 45px 10px; font-size: 10.5pt; color: rgb(85, 85, 85);"><![e=
+ndif]--><div class=3D"text-container" data-contenteditable=3D"true"><p>No.&=
+nbsp;<span style=3D"font-size:10.5pt;">Despite their similar names and the =
+fact that they run partly on the same route, Eurocity Direct and EuroCity a=
+re two different trains, operated with different rolling stock and offering=
+ different services, journey times and prices.</span></p><p><span style=3D"=
+font-size:10.5pt;"><br></span></p><p>A ticket for a Eurocity Direct train i=
+s therefore not valid on a EuroCity train and vice versa.</p><p>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table></div><div class=3D"acr-structure" =
+data-structure-id=3D"1-1-column" data-structure-name=3D"richtext.structure_=
+1_1_column" style=3D"background-color:rgb(242, 242, 242);"><!--[if mso]><ta=
+ble cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td=
+ style=3D"background-color: rgb(242, 242, 242);"><![endif]--><table class=
+=3D"structure__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table al=
+ign=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"wi=
+dth:100%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"pa=
+dding-top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top:=
+ 0px; padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-comp=
+onent" style=3D"font-family:Arial;padding:0px 45px;font-size:10.5pt;color:r=
+gb(85, 85, 85);margin-top:0px;margin-bottom:0px;background-color:rgb(255, 2=
+55, 255);" data-component-id=3D"text" data-contenteditable=3D"false"><!--[i=
+f mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100=
+%"><tr><td style=3D"font-family: Arial; padding: 0px 45px; font-size: 10.5p=
+t; color: rgb(85, 85, 85); background-color: rgb(255, 255, 255);"><![endif]=
+--><div class=3D"text-container" data-contenteditable=3D"true"><p><span sty=
+le=3D"font-weight:700;">&#129489;=E2=80=8D&#129490; From what age do childr=
+en have to pay?</span></p><p>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table><!--[if mso]></td></tr></table><![e=
+ndif]--></div><div class=3D"acr-structure" data-structure-id=3D"1-1-column"=
+ data-structure-name=3D"richtext.structure_1_1_column"><table class=3D"stru=
+cture__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table align=3D=
+"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:10=
+0%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"padding-=
+top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top: 0px; =
+padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-component"=
+ style=3D"font-family:Arial;padding:0px 45px 10px;font-size:10.5pt;color:rg=
+b(85, 85, 85);margin-top:0px;margin-bottom:0px;" data-component-id=3D"text"=
+ data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"font-family: Aria=
+l; padding: 0px 45px 10px; font-size: 10.5pt; color: rgb(85, 85, 85);"><![e=
+ndif]--><div class=3D"text-container" data-contenteditable=3D"true"><p>Chil=
+dren under 12 accompanied by an adult travel FREE (max. 4 free children per=
+ paying adult).
+</p><p><br></p><p>For children under 12 travelling alone (or if there are m=
+ore than 4 accompanying children for one adult), you will need to buy a tic=
+ket at Flex Kids or Saver Kids fare, corresponding to 50% of the adult fare=
+.
+</p><p><br></p><p>Young people aged 12 to 25 enjoy a specific youth fare.&n=
+bsp;</p><p>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table></div><div class=3D"acr-structure" =
+data-structure-id=3D"1-1-column" data-structure-name=3D"richtext.structure_=
+1_1_column" style=3D"background-color:rgb(242, 242, 242);"><!--[if mso]><ta=
+ble cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td=
+ style=3D"background-color: rgb(242, 242, 242);"><![endif]--><table class=
+=3D"structure__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table al=
+ign=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"wi=
+dth:100%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"pa=
+dding-top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top:=
+ 0px; padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-comp=
+onent" style=3D"font-family:Arial;padding:0px 45px;font-size:10.5pt;color:r=
+gb(85, 85, 85);margin-top:0px;margin-bottom:0px;background-color:rgb(255, 2=
+55, 255);" data-component-id=3D"text" data-contenteditable=3D"false"><!--[i=
+f mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100=
+%"><tr><td style=3D"font-family: Arial; padding: 0px 45px; font-size: 10.5p=
+t; color: rgb(85, 85, 85); background-color: rgb(255, 255, 255);"><![endif]=
+--><div class=3D"text-container" data-contenteditable=3D"true"><p><span sty=
+le=3D"font-weight:700;">&#128690; Can I take my bike on EuroCity and the Eu=
+rocity Direct?</span></p><p>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table><!--[if mso]></td></tr></table><![e=
+ndif]--></div><div class=3D"acr-structure" data-structure-id=3D"1-1-column"=
+ data-structure-name=3D"richtext.structure_1_1_column"><table class=3D"stru=
+cture__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1"><div><table align=3D=
+"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:10=
+0%;table-layout:fixed;"><tbody><tr><th class=3D"colspan1" style=3D"padding-=
+top:10px;padding-bottom:10px;"><!--[if mso]><table cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-top: 0px; =
+padding-bottom: 0px;"><![endif]--><div class=3D"acr-fragment acr-component"=
+ style=3D"font-family:Arial;padding:0px 45px 10px;font-size:10.5pt;color:rg=
+b(85, 85, 85);margin-top:0px;margin-bottom:0px;" data-component-id=3D"text"=
+ data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"font-family: Aria=
+l; padding: 0px 45px 10px; font-size: 10.5pt; color: rgb(85, 85, 85);"><![e=
+ndif]--><div class=3D"text-container" data-contenteditable=3D"true"><p>Yes =
+!&nbsp;<span style=3D"font-size:10.5pt;">Eurocity Direct and EuroCity train=
+s both have a bike compartment, so you can take your bike with you without =
+difficulty. You just need to buy a bike ticket, which can be purchased onli=
+ne, from our Contact Centre or at the ticket offices of our stations sellin=
+g international tickets.</span></p><p><span style=3D"font-size:10.5pt;"><br=
+></span></p><p>The price of the ticket depends on the distance. Some exampl=
+es (price per single journey):
+</p><p></p><ul><li>Brussels-Breda: =E2=82=AC 7,50
+</li><li>Brussels-Rotterdam: =E2=82=AC 10,30
+</li><li>Brussels-Amsterdam: =E2=82=AC 14,10</li></ul><p></p><p>Folding bic=
+ycles can be taken along free of charge, provided they are stored in the ba=
+ggage areas.</p><p>
+</p><p>
+</p><p></p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p><p>
+                              </p></div><!--[if mso]></td></tr></table><![e=
+ndif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr></tbody>=
+</table></div></th></tr></tbody></table></div><div class=3D"acr-structure" =
+data-structure-id=3D"1-1-column" data-structure-name=3D"richtext.structure_=
+1_1_column" style=3D"margin-top:25px;"><!--[if mso]><table cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding-to=
+p: 25px; text-align: center;"><![endif]--><table class=3D"structure__table"=
+ align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D=
+"640"><tbody><tr><th class=3D"colspan1" style=3D"padding-top:10px;"><div cl=
+ass=3D"acr-fragment acr-component" style=3D"color:rgb(0, 105, 180);padding-=
+top:0px;padding-bottom:10px;" data-upload=3D"uploadLoader-1706278885844-510=
+289382" data-component-id=3D"text" data-contenteditable=3D"false"><!--[if m=
+so]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">=
+<tr><td style=3D"color: rgb(0, 105, 180); padding-top: 0px; padding-bottom:=
+ 10px;"><![endif]--><div class=3D"text-container" data-contenteditable=3D"t=
+rue"><p style=3D"text-align:center;"><span style=3D"font-size:25px;font-wei=
+ght:700;">@SNCBINTERNATIONAL&nbsp;</span></p></div><!--[if mso]></td></tr><=
+/table><![endif]--></div></th></tr></tbody></table><!--[if mso]></td></tr><=
+/table><![endif]--></div><div class=3D"acr-structure" data-structure-id=3D"=
+n-n-column" data-structure-name=3D"richtext.structure_n_n_column" id=3D"acr=
+-87897134"><table class=3D"structure__table" align=3D"center" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" width=3D"640"><tbody><tr><th class=3D=
+"colspan-n" style=3D"width:20%;"><div class=3D"acr-fragment acr-component d=
+ivider-container" style=3D"text-align:center;" data-component-id=3D"divider=
+" data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"text-align: cent=
+er;border-top: 1px solid #095ABA;"><![endif]--><div style=3D"border-top:1px=
+ solid #095ABA;width:100%;display:inline-block;"></div><!--[if mso]></td></=
+tr></table><![endif]--></div></th><th class=3D"colspan-n" style=3D"width:20=
+%;"><div class=3D"acr-fragment acr-component image-container" style=3D"widt=
+h:100%;text-align:right;margin-top:10px;margin-bottom:10px;" data-component=
+-id=3D"image" data-contenteditable=3D"false"><!--[if mso]><table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padd=
+ing-top: 10px; padding-bottom: 10px; text-align: center;"><table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"text=
+-align: right;"><![endif]--><a class=3D"arc-link" data-nl-type=3D"externalL=
+ink" href=3D"http://t2.international.belgiantrain.be/r/?id=3Dh643c36,176a20=
+e,176a254"><img src=3D"http://belgiantrain-mkt-stage2-res.adobe-campaign.co=
+m/res/belgiantrain_mkt_stage2/ef0109609a98872cfe9906bb5999df51bacacaa51c0b9=
+93d26a6b7770c625e4f.png" style=3D"width:50%;height:auto;" width=3D"64" heig=
+ht=3D"64"></a><!--[if mso]></td></tr></table></td></tr></table><![endif]-->=
+</div></th><th class=3D"colspan-n" style=3D"width:20%;"><div class=3D"acr-f=
+ragment acr-component image-container" style=3D"width:100%;text-align:cente=
+r;margin-top:10px;margin-bottom:10px;" data-upload=3D"uploadLoader-17001396=
+74342-249393665" data-component-id=3D"image" data-contenteditable=3D"false"=
+><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"padding-top: 10px; padding-bottom: 10px; text-al=
+ign: center;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td style=3D"text-align: center;"><![endif]--><a class=3D"arc=
+-link" data-nl-type=3D"externalLink" href=3D"http://t2.international.belgia=
+ntrain.be/r/?id=3Dh643c36,176a20e,176a255"><img src=3D"http://belgiantrain-=
+mkt-stage2-res.adobe-campaign.com/res/belgiantrain_mkt_stage2/9513faed644ca=
+b4a4a02b5b53ac1e9be2d2c5b1351de81840d950beb4880d834.png" style=3D"width:50%=
+;height:auto;" width=3D"64" height=3D"64"></a><!--[if mso]></td></tr></tabl=
+e></td></tr></table><![endif]--></div></th><th class=3D"colspan-n" style=3D=
+"width:20%;"><div class=3D"acr-fragment acr-component image-container" styl=
+e=3D"width:100%;text-align:left;margin-top:10px;margin-bottom:10px;" data-c=
+omponent-id=3D"image" data-contenteditable=3D"false"><!--[if mso]><table ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=
+=3D"padding-top: 10px; padding-bottom: 10px; text-align: center;"><table ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=
+=3D"text-align: left;"><![endif]--><a class=3D"arc-link" data-nl-type=3D"ex=
+ternalLink" href=3D"http://t2.international.belgiantrain.be/r/?id=3Dh643c36=
+,176a20e,176a256"><img src=3D"http://belgiantrain-mkt-stage2-res.adobe-camp=
+aign.com/res/belgiantrain_mkt_stage2/77c4548670548b50c16e52218da3f0863cd1cb=
+4a3b9d55c2566e515365fdef41.png" style=3D"width:50%;height:auto;" width=3D"6=
+4" height=3D"64"></a><!--[if mso]></td></tr></table></td></tr></table><![en=
+dif]--></div></th><th class=3D"colspan-n" style=3D"width:20%;"><div class=
+=3D"acr-fragment acr-component divider-container" style=3D"text-align:cente=
+r;" data-component-id=3D"divider" data-contenteditable=3D"false"><!--[if ms=
+o]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><=
+tr><td style=3D"text-align: center;border-top: 1px solid #095ABA;"><![endif=
+]--><div style=3D"border-top:1px solid #095ABA;width:100%;display:inline-bl=
+ock;"></div><!--[if mso]></td></tr></table><![endif]--></div></th></tr></tb=
+ody></table></div><div class=3D"acr-structure" data-structure-id=3D"1-1-col=
+umn" data-structure-name=3D"richtext.structure_1_1_column"><table class=3D"=
+structure__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan1" style=3D"padding-b=
+ottom:10px;"><div class=3D"acr-fragment acr-component" style=3D"color:rgb(8=
+5, 85, 85);padding:10px 10px 0px;" data-component-id=3D"text" data-contente=
+ditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" width=3D"100%"><tr><td style=3D"color: rgb(85, 85, 85); padding=
+: 10px 10px 0px;"><![endif]--><div class=3D"text-container" data-contentedi=
+table=3D"true"><p style=3D"text-align:center;"><span style=3D"font-size:14p=
+x;">Do you have a question? Want to share an experience or travel photos?</=
+span></p><p style=3D"text-align:center;"><span style=3D"font-size:14px;">=
+=E2=80=8B=E2=80=8B=E2=80=8B=E2=80=8B=E2=80=8B=E2=80=8B=E2=80=8BJoin us on s=
+ocial media!</span></p></div><!--[if mso]></td></tr></table><![endif]--></d=
+iv></th></tr></tbody></table></div><div class=3D"acr-structure" data-struct=
+ure-id=3D"2-2-column" data-structure-name=3D"richtext.structure_2_2_column"=
+ id=3D"acr-16707775" style=3D"margin-top:25px;margin-bottom:25px;"><!--[if =
+mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"=
+><tr><td style=3D"padding-top: 25px; text-align: center; padding-bottom: 25=
+px;"><![endif]--><table class=3D"structure__table" align=3D"center" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"640"><tbody><tr><th clas=
+s=3D"colspan2" style=3D"padding-top:5px;padding-bottom:5px;"><div class=3D"=
+acr-fragment acr-component image-container" data-component-id=3D"image" sty=
+le=3D"width:100%;text-align:center;" data-contenteditable=3D"false"><!--[if=
+ mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%=
+"><tr><td style=3D"text-align: center; padding: 10px;"><![endif]--><a class=
+=3D"arc-link" data-nl-type=3D"externalLink" href=3D"http://t2.international=
+.belgiantrain.be/r/?id=3Dh643c36,176a20e,176a257"><img src=3D"http://res2.i=
+nternational.belgiantrain.be/res/belgiantrain_mkt_prod2/45b75db504b3aaaa85e=
+e03316658c981ccde4173b3f5b65b32e247af6351f874.png" style=3D"width:70%;heigh=
+t:auto;padding:10px;" width=3D"244" height=3D"93"></a><!--[if mso]></td></t=
+r></table><![endif]--></div></th><th class=3D"colspan2" style=3D"padding-to=
+p:5px;padding-bottom:5px;"><div class=3D"acr-fragment acr-component image-c=
+ontainer" data-component-id=3D"image" style=3D"width:100%;text-align:center=
+;" data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"text-align: cen=
+ter; padding: 10px;"><![endif]--><a class=3D"arc-link" data-nl-type=3D"exte=
+rnalLink" href=3D"http://t2.international.belgiantrain.be/r/?id=3Dh643c36,1=
+76a20e,176a258"><img src=3D"http://res2.international.belgiantrain.be/res/b=
+elgiantrain_mkt_prod2/8c421e1dfd158a47d36973e27026cc25aba8d1e960548a4369528=
+ad90eabff88.png" style=3D"width:70%;height:auto;padding:10px;" width=3D"244=
+" height=3D"93"></a><!--[if mso]></td></tr></table><![endif]--></div></th><=
+/tr></tbody></table><!--[if mso]></td></tr></table><![endif]--></div><div c=
+lass=3D"acr-structure" data-structure-id=3D"1-1-column" data-structure-name=
+=3D"richtext.structure_1_1_column"><table class=3D"structure__table" align=
+=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"640">=
+<tbody><tr><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"=
+><![endif]--><th class=3D"colspan1 is-mobile-hidden" style=3D"padding:20px =
+50px;"><!--[if gte mso 9]><style acrite-mso-css=3D"true">.image-container d=
+iv {  display: block;}.structure__table td {  padding: 0;  border: none;}.b=
+utton-container {  border: none !important;  padding: 0 !important;  margin=
+: 0 !important;  line-height: normal !important;}.acr-structure {  margin: =
+0 !important;}.acr-component {  margin: 0 !important;}.acr-fragment {  marg=
+in: 0 !important;}.colspan1, .colspan2, .colspan3, .colspan4, .colspan33, .=
+colspan66 {  box-sizing: border-box !important;}</style><![endif]--><div cl=
+ass=3D"acr-fragment is-locked" data-fragment-id=3D"@DtTxQrOYJxFeQctGhemcNQS=
+OWOPTrSvnL7pQcSDqjCPkwzDaqIN4Y9V_-BwS29CdZSccXqCCdW6KoisxFsKhOmXbaho" data-=
+fragment-ref=3D"CMDL140" data-nl-name=3D"(News) - Contact center - NL (CMDL=
+140)" data-fragment-name=3D"(News) - Contact center - NL (CMDL140)">  <styl=
+e data-name=3D"media-custom-max-width-500px" type=3D"text/css">
+@media screen and (max-width: 500px) {
+  [data-media-id=3D"acr-19353857"] th {
+    display: table-cell !important;
+  }
+}
+</style><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" style=3D"width: 100%; table-layout: fixed;"> <tbody> <tr> <th class=
+=3D"colspan-n" style=3D"width:33.3333%;"><!--[if mso]><table cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D"" style=3D"mso-h=
+ide:"><tr><td style=3D"null"><![endif]--><div class=3D"acr-tmp-component is=
+-mobile-hidden" style=3D"font-family:Arial;background-color:rgb(0, 106, 179=
+);color:rgb(255, 255, 255);padding:10px;border-width:1px;border-style:solid=
+;border-color:rgb(0, 106, 179);" data-contenteditable=3D"false" data-tmp-co=
+mponent-id=3D"text"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" width=3D"100%"><tr><td style=3D"font-family: Arial; backgroun=
+d-color: rgb(0, 106, 179); color: rgb(255, 255, 255); padding: 10px;"><![en=
+dif]--><div class=3D"text-container" data-contenteditable=3D"true"><p style=
+=3D"text-align:center;"><span style=3D"font-size:12px;">Contact center</spa=
+n></p></div><!--[if mso]></td></tr></table><![endif]--></div><!--[if mso]><=
+/td></tr></table><![endif]--></th> <th class=3D"colspan-n" style=3D"width:3=
+3.3333%;"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" width=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"><!=
+[endif]--><div class=3D"acr-tmp-component is-mobile-hidden" style=3D"paddin=
+g:10px;border-width:1px 0px 1px 1px;border-style:solid none solid solid;bor=
+der-color:rgb(0, 106, 179);color:rgb(0, 106, 179);font-family:Arial;" data-=
+contenteditable=3D"false" data-tmp-component-id=3D"text"><!--[if mso]><tabl=
+e cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td s=
+tyle=3D"padding: 10px; color: rgb(0, 106, 179); font-family: Arial;"><![end=
+if]--><div class=3D"text-container" data-contenteditable=3D"true"><p style=
+=3D"text-align:center;"><span style=3D"font-size:12px;"><a class=3D"arc-lin=
+k" data-nl-type=3D"externalLink" href=3D"tel:+32 (0)70 79 79 79" style=3D"c=
+olor:rgb(0, 106, 179);text-decoration:none;">+32 (0)70 79 79 79&nbsp;</a></=
+span></p></div><!--[if mso]></td></tr></table><![endif]--></div><!--[if mso=
+]></td></tr></table><![endif]--></th> <th class=3D"colspan-n" style=3D"widt=
+h:33.3333%;"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"100%" class=3D"" style=3D"mso-hide:"><tr><td style=3D"null"=
+><![endif]--><div class=3D"acr-tmp-component is-mobile-hidden" style=3D"pad=
+ding:10px;border-width:1px 1px 1px 0px;border-style:solid solid solid none;=
+border-color:rgb(0, 106, 179);color:rgb(204, 204, 204);font-family:Arial;" =
+data-contenteditable=3D"false" data-tmp-component-id=3D"text"><!--[if mso]>=
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr>=
+<td style=3D"padding: 10px; color: rgb(204, 204, 204); font-family: Arial;"=
+><![endif]--><div class=3D"text-container" data-contenteditable=3D"true"><p=
+ style=3D"text-align:center;"><span style=3D"font-size:12px;">&nbsp; &nbsp;=
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; =E2=
+=82=AC 0,30/min</span></p></div><!--[if mso]></td></tr></table><![endif]-->=
+</div><!--[if mso]></td></tr></table><![endif]--></th>   </tr> </tbody> </t=
+able>  </div></th><!--[if mso]></td></tr></table><![endif]--></tr></tbody><=
+/table></div><div class=3D"acr-structure" data-structure-id=3D"1-1-column" =
+data-structure-name=3D"richtext.structure_1_1_column"><table class=3D"struc=
+ture__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" width=3D"640"><tbody><tr><!--[if mso]><table cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" width=3D"100%" class=3D"mso-is-desktop-hidden" style=
+=3D"mso-hide:all"><tr><td style=3D"null"><![endif]--><th class=3D"colspan1 =
+is-desktop-hidden" style=3D"padding-left:20px;padding-right:20px;padding-to=
+p:20px;"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" width=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><t=
+r><td style=3D"null"><![endif]--><div class=3D"acr-fragment acr-component i=
+s-desktop-hidden" style=3D"font-family:Arial;background-color:rgb(0, 106, 1=
+79);color:rgb(255, 255, 255);padding:10px;border-width:1px;border-style:sol=
+id;border-color:rgb(0, 106, 179);" data-component-id=3D"text" data-contente=
+ditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" width=3D"100%"><tr><td style=3D"font-family: Arial; background-=
+color: rgb(0, 106, 179); color: rgb(255, 255, 255); padding: 10px;"><![endi=
+f]--><div class=3D"text-container" data-contenteditable=3D"true"><p style=
+=3D"text-align:center;"><span style=3D"font-size:12px;">Contact center</spa=
+n></p></div><!--[if mso]></td></tr></table><![endif]--></div><!--[if mso]><=
+/td></tr></table><![endif]--></th><!--[if mso]></td></tr></table><![endif]-=
+-></tr></tbody></table></div><!--[if mso]><table cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" width=3D"100%" class=3D"mso-is-desktop-hidden" style=
+=3D"mso-hide:all"><tr><td style=3D"null"><![endif]--><div class=3D"acr-stru=
+cture is-desktop-hidden" data-structure-id=3D"2-2-column" data-structure-na=
+me=3D"richtext.structure_2_2_column" id=3D"acr-99594246"><table class=3D"st=
+ructure__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"640"><tbody><tr><th class=3D"colspan2" style=3D"padding-lef=
+t:20px;padding-bottom:20px;"><!--[if mso]><table cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" width=3D"100%" class=3D"mso-is-desktop-hidden" style=
+=3D"mso-hide:all"><tr><td style=3D"null"><![endif]--><div class=3D"acr-frag=
+ment acr-component is-desktop-hidden" style=3D"padding:10px;border-width:1p=
+x 0px 1px 1px;border-style:solid none solid solid;border-color:rgb(0, 106, =
+179);color:rgb(0, 107, 179);font-family:Arial;" data-component-id=3D"text" =
+data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"padding: 10px; col=
+or: rgb(0, 107, 179); font-family: Arial;"><![endif]--><div class=3D"text-c=
+ontainer" data-contenteditable=3D"true"><p style=3D"text-align:center;"><sp=
+an style=3D"font-size:12px;"><a class=3D"arc-link" data-nl-type=3D"external=
+Link" href=3D"tel:+32 (0)70 79 79 79" style=3D"color:rgb(0, 106, 179);text-=
+decoration:none;">+32 (0)70 79 79 79&nbsp;</a></span></p></div><!--[if mso]=
+></td></tr></table><![endif]--></div><!--[if mso]></td></tr></table><![endi=
+f]--></th><th class=3D"colspan2" style=3D"padding-right:20px;padding-bottom=
+:20px;"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" width=3D"100%" class=3D"mso-is-desktop-hidden" style=3D"mso-hide:all"><tr=
+><td style=3D"null"><![endif]--><div class=3D"acr-fragment acr-component is=
+-desktop-hidden" style=3D"padding:10px;border-width:1px 1px 1px 0px;border-=
+style:solid solid solid none;border-color:rgb(0, 106, 179);color:rgb(204, 2=
+04, 204);font-family:Arial;" data-component-id=3D"text" data-contenteditabl=
+e=3D"false"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"100%"><tr><td style=3D"padding: 10px; color: rgb(204, 204, =
+204); font-family: Arial;"><![endif]--><div class=3D"text-container" data-c=
+ontenteditable=3D"true"><p style=3D"text-align:center;"><span style=3D"font=
+-size:12px;">=E2=82=AC 0,30/min</span></p></div><!--[if mso]></td></tr></ta=
+ble><![endif]--></div><!--[if mso]></td></tr></table><![endif]--></th></tr>=
+</tbody></table></div><!--[if mso]></td></tr></table><![endif]--><div class=
+=3D"acr-structure" data-structure-id=3D"n-n-column" data-structure-name=3D"=
+richtext.structure_n_n_column" id=3D"acr-96660705"><table class=3D"structur=
+e__table" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ width=3D"640"><tbody><tr><th class=3D"colspan-n" style=3D"width:14.2857%;b=
+ackground-color:rgb(242, 242, 242);padding-top:20px;padding-bottom:20px;"><=
+div class=3D"acr-fragment acr-component divider-container" style=3D"text-al=
+ign:center;background-color:rgb(242, 242, 242);" data-component-id=3D"divid=
+er" data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"text-align: ce=
+nter; border-top: 1px solid rgb(242, 242, 242); background-color: rgb(242, =
+242, 242);"><![endif]--><div style=3D"border-top:1px solid rgb(242, 242, 24=
+2);width:100%;display:inline-block;"></div><!--[if mso]></td></tr></table><=
+![endif]--></div></th><th class=3D"colspan-n" style=3D"width:14.2857%;backg=
+round-color:rgb(242, 242, 242);padding-top:20px;padding-bottom:20px;"><div =
+class=3D"acr-fragment acr-component image-container" style=3D"width:100%;te=
+xt-align:center;background-color:rgb(242, 242, 242);" data-component-id=3D"=
+image" data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"text-align:=
+ center; background-color: rgb(242, 242, 242);"><![endif]--><img src=3D"htt=
+p://belgiantrain-mkt-stage2-res.adobe-campaign.com/res/belgiantrain_mkt_sta=
+ge2/85d36f205784774ea5422230ce4678f982c857087be3ecb1903bd0d28b655fb1.png" s=
+tyle=3D"width:70%;height:auto;" width=3D"64" height=3D"34"><!--[if mso]></t=
+d></tr></table><![endif]--></div></th><th class=3D"colspan-n" style=3D"widt=
+h:14.2857%;background-color:rgb(242, 242, 242);padding-top:20px;padding-bot=
+tom:20px;"><div class=3D"acr-fragment acr-component image-container" style=
+=3D"width:100%;text-align:center;background-color:rgb(242, 242, 242);" data=
+-component-id=3D"image" data-contenteditable=3D"false"><!--[if mso]><table =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td sty=
+le=3D"text-align: center; background-color: rgb(242, 242, 242);"><![endif]-=
+-><img src=3D"http://belgiantrain-mkt-stage2-res.adobe-campaign.com/res/bel=
+giantrain_mkt_stage2/56214273ef21dac490db36446994c42bbbf9c3004718fb1f47e7a3=
+a487eb62a6.png" style=3D"width:70%;height:auto;" width=3D"64" height=3D"15"=
+><!--[if mso]></td></tr></table><![endif]--></div></th><th class=3D"colspan=
+-n" style=3D"width:14.2857%;background-color:rgb(242, 242, 242);padding-top=
+:20px;padding-bottom:20px;"><div class=3D"acr-fragment acr-component image-=
+container" style=3D"width:100%;text-align:center;background-color:rgb(242, =
+242, 242);" data-component-id=3D"image" data-contenteditable=3D"false"><!--=
+[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"1=
+00%"><tr><td style=3D"text-align: center; background-color: rgb(242, 242, 2=
+42);"><![endif]--><img src=3D"http://belgiantrain-mkt-stage2-res.adobe-camp=
+aign.com/res/belgiantrain_mkt_stage2/b793ecc12abf28164009cc134c69585bd85805=
+4eb2b7047377d8355b916cb705.png" style=3D"width:70%;height:auto;" width=3D"6=
+4" height=3D"29"><!--[if mso]></td></tr></table><![endif]--></div></th><th =
+class=3D"colspan-n" style=3D"width:14.2857%;background-color:rgb(242, 242, =
+242);padding-top:20px;padding-bottom:20px;"><div class=3D"acr-fragment acr-=
+component image-container" style=3D"width:100%;text-align:center;background=
+-color:rgb(242, 242, 242);" data-component-id=3D"image" data-contenteditabl=
+e=3D"false"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"100%"><tr><td style=3D"text-align: center; background-color=
+: rgb(242, 242, 242);"><![endif]--><img src=3D"http://belgiantrain-mkt-stag=
+e2-res.adobe-campaign.com/res/belgiantrain_mkt_stage2/1e832dc61f7b7360920aa=
+541470597d0d8cd2b125bfb11bcd185c64e37c5025f.png" style=3D"width:70%;height:=
+auto;" width=3D"64" height=3D"33"><!--[if mso]></td></tr></table><![endif]-=
+-></div></th><th class=3D"colspan-n" style=3D"width:14.2857%;background-col=
+or:rgb(242, 242, 242);padding-top:20px;padding-bottom:20px;"><div class=3D"=
+acr-fragment acr-component image-container" style=3D"width:100%;text-align:=
+center;background-color:rgb(242, 242, 242);" data-component-id=3D"image" da=
+ta-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"text-align: center; =
+background-color: rgb(242, 242, 242);"><![endif]--><img src=3D"http://belgi=
+antrain-mkt-stage2-res.adobe-campaign.com/res/belgiantrain_mkt_stage2/62c43=
+9435f337d2fb904d0e143ac0f20f3123e8ec22d41c56fca02344151ccd5.png" style=3D"w=
+idth:50%;height:auto;" width=3D"46" height=3D"38"><!--[if mso]></td></tr></=
+table><![endif]--></div></th><th class=3D"colspan-n" style=3D"width:14.2857=
+%;background-color:rgb(242, 242, 242);padding-top:20px;padding-bottom:20px;=
+"><div class=3D"acr-fragment acr-component divider-container" style=3D"text=
+-align:center;background-color:rgb(242, 242, 242);" data-component-id=3D"di=
+vider" data-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"text-align:=
+ center; border-top: 1px solid rgb(242, 242, 242); background-color: rgb(24=
+2, 242, 242);"><![endif]--><div style=3D"border-top:1px solid rgb(242, 242,=
+ 242);width:100%;display:inline-block;"></div><!--[if mso]></td></tr></tabl=
+e><![endif]--></div></th></tr></tbody></table></div><div class=3D"acr-struc=
+ture" data-structure-id=3D"1-1-column" data-structure-name=3D"richtext.stru=
+cture_1_1_column" style=3D"margin-top:15px;margin-bottom:15px;"><!--[if mso=
+]><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><t=
+r><td style=3D"padding-top: 15px; text-align: center; padding-bottom: 15px;=
+"><![endif]--><table class=3D"structure__table" align=3D"center" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"640"><tbody><tr><th class=
+=3D"colspan1"><div class=3D"acr-fragment acr-component" data-component-id=
+=3D"text" style=3D"background-color:rgb(242, 242, 242);font-size:10pt;font-=
+family:Arial;" data-contenteditable=3D"false"><!--[if mso]><table cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"bac=
+kground-color: rgb(242, 242, 242); font-size: 10pt; font-family: Arial;"><!=
+[endif]--><div class=3D"text-container" data-contenteditable=3D"true"><p st=
+yle=3D"text-align:center;"><span style=3D"font-size:14px;"><a class=3D"arc-=
+link" data-nl-type=3D"externalLink" href=3D"http://t2.international.belgian=
+train.be/r/?id=3Dh643c36,176a20e,176a259" style=3D"color:rgb(0, 106, 179);"=
+>Contact us</a>&nbsp; |&nbsp;&nbsp;<a class=3D"arc-link" data-nl-type=3D"ex=
+ternalLink" href=3D"http://t2.international.belgiantrain.be/r/?id=3Dh643c36=
+,176a20e,176a25a" style=3D"color:rgb(0, 106, 179);">Privacy Policy</a>&nbsp=
+; |&nbsp; <a class=3D"arc-link" href=3D"http://t2.international.belgiantrai=
+n.be/r/?id=3Dh643c36,176a20e,176a25b&amp;e=3DcDE9JTQwb1N4NlRWZEEwRGhuWEMxQl=
+hxNzV3QzZNR0JSOVNTbnA2WXVPdmJLbFRYZ21laGZhOThaMXBSeTZ1b2ZkcE8wMmg5SFFsZi1SW=
+Ed6REI2RDM4dTJOdEVrdUFXNA&amp;s=3DiQukkTeFbx4WT551TM9aS9Bv3liyieeviNGPEGNoJ=
+PM" style=3D"color:rgb(0, 106, 179);">Unsubscribe</a></span></p></div><!--[=
+if mso]></td></tr></table><![endif]--></div></th></tr></tbody></table><!--[=
+if mso]></td></tr></table><![endif]--></div><div class=3D"acr-structure" da=
+ta-structure-id=3D"1-1-column" data-structure-name=3D"richtext.structure_1_=
+1_column"><table class=3D"structure__table" align=3D"center" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" width=3D"640"><tbody><tr><th class=3D"co=
+lspan1"><div><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" style=3D"width:100%;table-layout:fixed;"><tbody><tr><th class=3D=
+"colspan1" style=3D"padding-top:10px;padding-bottom:10px;border-width:0px;b=
+order-style:none;background-color:rgb(242, 242, 242);"><div class=3D"acr-fr=
+agment acr-component" style=3D"color:rgb(85, 85, 85);padding:0px 10px;backg=
+round-color:rgb(242, 242, 242);font-size:8pt;" data-component-id=3D"text" d=
+ata-contenteditable=3D"false"><!--[if mso]><table cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"color: rgb(85, 85, =
+85); padding: 0px 10px; background-color: rgb(242, 242, 242); font-size: 8p=
+t;"><![endif]--><div class=3D"text-container" data-contenteditable=3D"true"=
+><p></p><p><span style=3D"font-size:11px;">*</span><span style=3D"font-weig=
+ht:700;">Terms and conditions for the Adult Saver fare with Eurocity Direct=
+</span><span style=3D"font-size:11px;">: price per adult and per journey be=
+tween the respective stations. The journey is only valid on Eurocity Direct=
+, for the train and timetable selected at the time of purchase as shown on =
+the ticket. Ticket is non-refundable but can be exchanged for a =E2=82=AC5 =
+fee up to the day before the planned trip.</span></p><p><span style=3D"font=
+-size:11px;"><br></span></p><p><span style=3D"font-weight:700;">**Terms and=
+ conditions for the Adult Saver fare with EuroCity</span><span style=3D"fon=
+t-size:11px;">: price per adult and per journey between the respective stat=
+ions. The journey is only valid on EuroCity, for the train and timetable se=
+lected at the time of purchase as shown on the ticket. Ticket is non-refund=
+able but can be exchanged for a =E2=82=AC5 fee up to the day before the pla=
+nned trip.</span></p><p><span style=3D"font-size:11px;"><br></span></p><p><=
+span style=3D"font-size:11px;">You have received this email because you sub=
+scribed to our newsletter via the SNCB International website or Contact Cen=
+tre. You have the right to access, modify or remove any personal data at an=
+y time. For more details, please refer to our privacy policy. Contact us vi=
+a our website if you have any questions or comments, but please do not repl=
+y to this email. It was sent automatically and any email sent to this addre=
+ss cannot be answered.</span><br></p><p><span style=3D"font-size:11px;"><br=
+></span></p><p><span style=3D"font-size:11px;">Unless expressly stated othe=
+rwise, all fares quoted on www.sncb-international.com are per person/per le=
+g, based on an online reservation for a 2nd class return from Brussels. Ter=
+ms and conditions apply. All fares are VAT included. To get the best fares =
+and your preferred seating option on Eurostar, TGV INOUI and ICE, we recomm=
+end you book your trip as early as possible. Availability of the lowest Eur=
+ostar and ICE fares is limited, but for most international trains you can r=
+eserve from 4 months before your departure date. For Eurostar journeys to a=
+nd from London, bookings can be made as early as 330 days before the date o=
+f travel, and for ICE as early as 6 months before the departure.</span></p>=
+<p><span style=3D"font-size:11px;"><br></span></p><p><span style=3D"font-si=
+ze:11px;">To ensure you receive our newsletters, please add communication@i=
+nternational.belgiantrain.be to your address book or safe senders list.</sp=
+an></p><p><span style=3D"font-size:11px;"><br></span></p><p><span style=3D"=
+font-size:11px;">SNCB International, 10-14 B-CS 422, Avenue de la Porte de =
+Hal 40, 1060 Brussels =E2=80=93 Belgium&nbsp;</span></p><p><span style=3D"f=
+ont-size:11px;">&nbsp;</span></p></div><!--[if mso]></td></tr></table><![en=
+dif]--></div></th></tr></tbody></table></div></th></tr></tbody></table></di=
+v></div><!--[if mso]></td></tr></table><![endif]-->
+<img height=3D"0" width=3D"0" alt=3D"" src=3D"http://t2.international.belgi=
+antrain.be/r/?id=3Dh643c36,176a20e,1">
+</body></html>
+
